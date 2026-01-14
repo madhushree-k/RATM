@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+html,body
+
+.container-fluid {
+    background-color: #FFF7CC;
+	width:100%;
+	height:100%;
+	margin:0;
+	padding:0;
+	overflow-x:hidden;
+}
+	image-container {
+    position: relative; /* Container acts as reference for absolute positioning */
+    width: 100%; /* Make the container responsive */
+    max-width: 800px; /* Optional: set a maximum width for the container */
+    margin: auto; /* Center the container on the page */
+}
+
+.background-image, .overlay-image {
+    display: block;
+    width: 100%; /* Images scale to the width of their container */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.overlay-image {
+    position: absolute; /* Position relative to the container */
+    top: 52px;
+    left: 3px;
+    cursor: pointer; /* Changes cursor to a hand icon, indicating it's clickable */
+}
+
+.container-fluid .container .navbar.navbar-expand-lg.navbar-light.bg-light {
+    background-color: #8C1B07;
+    background-image: -webkit-linear-gradient(270deg,rgba(140,27,7,1.00) 0%,rgba(140,27,7,1.00) 100%);
+    background-image: -moz-linear-gradient(270deg,rgba(140,27,7,1.00) 0%,rgba(140,27,7,1.00) 100%);
+    background-image: -o-linear-gradient(270deg,rgba(140,27,7,1.00) 0%,rgba(140,27,7,1.00) 100%);
+    background-image: linear-gradient(180deg,rgba(140,27,7,1.00) 0%,rgba(140,27,7,1.00) 100%);
+}
+#navbarSupportedContent1 .navbar-nav.mr-auto .nav-item {
+    color: #8C1B07;
+}
+.navbar-nav.mr-auto .nav-item.active .nav-link {
+}
+.container .navbar.navbar-expand-lg.navbar-light.bg-light .navbar-brand {
+    color: #8C1B07;
+    background-color: #8C1B07;
+}
+.navbar.navbar-expand-lg.navbar-light.bg-light .navbar-toggler {
+    background-color: #8C1B07;
+}
+.navbar.navbar-expand-lg.navbar-light.bg-light #navbarSupportedContent1 {
+    background-color: #8C1B07;
+}
+.navbar.navbar-expand-lg.navbar-light.bg-light .navbar-brand {
+    background-color: #8C1B07;
+}
+.navbar.navbar-expand-lg.navbar-light.bg-light {
+    background-color: #8C1B07;
+}
+.navbar.navbar-expand-lg.navbar-light.bg-light {
+    background-color: #8C1B07;
+    background-image: -webkit-linear-gradient(270deg,rgba(140,27,7,1.00) 0%,rgba(140,27,7,1.00) 100%);
+    background-image: -moz-linear-gradient(270deg,rgba(140,27,7,1.00) 0%,rgba(140,27,7,1.00) 100%);
+    background-image: -o-linear-gradient(270deg,rgba(140,27,7,1.00) 0%,rgba(140,27,7,1.00) 100%);
+    background-image: linear-gradient(180deg,rgba(140,27,7,1.00) 0%,rgba(140,27,7,1.00) 100%);
+}
+.navbar.navbar-expand-lg.navbar-light.bg-light .navbar-brand {
+    color: #FFFFFF;
+}
+.navbar-nav.mr-auto .nav-item.active .nav-link {
+    color: #FFFFFF;
+}
+.navbar-nav.mr-auto .nav-item .nav-link {
+    color: #FFFFFF;
+}
+.container-fluid .container {
+	background-color: #FFF7CC;
+	width:100%;
+	height:100%;
+	margin-top:5%;
+	margin-bottom:0;
+	margin-left:5%;
+	margin-right:0;
+	overflow-x:scroll;
+}

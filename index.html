@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>RATM</title>
+    <!-- Bootstrap -->
+	<style type="text/css">
+	</style>
+<link href="style.css" rel="stylesheet" type="text/css">
+	<link href="css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
+</head>
+  <body>
+	<a href="#"><img src="Images/overlay_image.jpg" alt="Overlay Image" class="overlay-image" id="overlayImage" onclick="hideOverlay();"></a>
+  	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a class="navbar-brand" href="index.html">Home&nbsp;</a>
+  	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span></button>
+  	  <div class="collapse navbar-collapse" id="navbarSupportedContent1"></div>
+  </nav>
+	  
+  <div class="container-fluid">
+<div class="image-container">
+  <img src="Images/background_image.png" alt="Background Image" class="background-image" width="3840" height="2160" usemap="#housemap" id="background">
+  <map name="housemap"><area shape="circle" coords="56,396,43" href="Room10.html" target="_self" alt="Room 10"><area shape="circle" coords="604,564,33" href="Room9.html" target="_self" alt="Room 9"><area shape="circle" coords="891,572,58" href="Room8.html" target="_self" alt="Room 8"><area shape="circle" coords="695,178,33" href="Room7.html" target="_self" alt="Room 7"><area shape="circle" coords="608,172,33" href="Room6.html" target="_self" alt="Room 6"><area shape="circle" coords="694,404,48" href="Room5.html" target="_self" alt="Room 5"><area shape="circle" coords="977,395,48" href="Room4.html" target="_self" alt="Room 4"><area shape="circle" coords="975,277,48" href="Room3.html" target="_self" alt="Room 3"><area shape="circle" coords="423,252,48" href="Room2.html" target="_self" alt="Room 2"><area shape="circle" coords="299,538,53" href="Room1.html" target="_self" alt="Room 1">
+        
+      </map>
+  
+    </div>
+</div>
+  	<!-- body code goes here -->
+ <script>
+    // Function to hide the overlay image
+    function hideOverlay() {
+        var overlay = document.getElementById("overlayImage");
+            overlay.style.display = "none"; // Hides the image
+    }
+
+</script>
+
+
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+	<script src="../../../../Work/IFA Grant/WORKING DOCS/Exhibition Root/js/jquery-3.4.1.min.js"></script>
+
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script src="../../../../Work/IFA Grant/WORKING DOCS/Exhibition Root/js/popper.min.js"></script> 
+	<script src="../../../../Work/IFA Grant/WORKING DOCS/Exhibition Root/js/bootstrap-4.4.1.js"></script>
+	 
+</body>
+	
+</html>
