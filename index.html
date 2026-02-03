@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+	  <script src="../../../../Work/IFA Grant/WORKING DOCS/Exhibition Root/js/jquery.rwdImageMaps.min.js"></script>
     <meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,7 +22,7 @@
   <div class="container-fluid">
 <div class="image-container">
   <img src="Images/background_image.png" alt="Background Image" class="background-image" width="3840" height="2160" usemap="#housemap" id="background">
-  <map name="housemap"><area shape="circle" coords="85,626,48" href="Room10.html" target="_self" alt="Room 10"><area shape="circle" coords="954,893,33" href="Room9.html" target="_self" alt="Room 9"><area shape="circle" coords="1412,907,59" href="Room8.html" target="_self" alt="Room 8"><area shape="circle" coords="1101,279,33" href="Room7.html" target="_self" alt="Room 7"><area shape="circle" coords="969,279,33" href="Room6.html" target="_self" alt="Room 6"><area shape="circle" coords="1100,639,48" href="Room5.html" target="_self" alt="Room 5"><area shape="circle" coords="1542,627,48" href="Room4.html" target="_self" alt="Room 4"><area shape="circle" coords="1542,435,48" href="Room3.html" target="_self" alt="Room 3"><area shape="circle" coords="671,397,48" href="Room2.html" target="_self" alt="Room 2"><area shape="circle" coords="476,852,53" href="Room1.html" target="_self" alt="Room 1">
+  <map name="housemap"><area shape="circle" coords="153,1041,127" href="Room10.html" target="_self" alt="Room 10"><area shape="circle" coords="1594,1489,85" href="Room9.html" target="_self" alt="Room 9"><area shape="circle" coords="2352,1509,163" href="Room8.html" target="_self" alt="Room 8"><area shape="circle" coords="1830,465,82" href="Room7.html" target="_self" alt="Room 7"><area shape="circle" coords="1609,462,78" href="Room6.html" target="_self" alt="Room 6"><area shape="circle" coords="1826,1065,90" href="Room5.html" target="_self" alt="Room 5"><area shape="circle" coords="2576,1041,106" href="Room4.html" target="_self" alt="Room 4"><area shape="circle" coords="2566,730,105" href="Room3.html" target="_self" alt="Room 3"><area shape="circle" coords="1127,654,131" href="Room2.html" target="_self" alt="Room 2"><area shape="circle" coords="792,1421,124" href="Room1.html" target="_self" alt="Room 1">
         
       </map>
   
@@ -44,6 +45,11 @@
 	<!-- Include all compiled plugins (below), or include individual files as needed -->
 	<script src="../../../../Work/IFA Grant/WORKING DOCS/Exhibition Root/js/popper.min.js"></script> 
 	<script src="../../../../Work/IFA Grant/WORKING DOCS/Exhibition Root/js/bootstrap-4.4.1.js"></script>
+	  <script>
+$(document).ready(function(e) {
+    $('img[usemap]').rwdImageMaps();
+});
+</script>
 	 
 </body>
 	

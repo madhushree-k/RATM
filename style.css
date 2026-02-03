@@ -19,7 +19,7 @@ html,body
 
 .background-image, .overlay-image {
     display: block;
-    width: 100%; /* Images scale to the width of their container */
+    max-width: 100%; /* Images scale to the width of their container */
     height: auto; /* Maintain aspect ratio */
 }
 
