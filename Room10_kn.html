@@ -1,69 +1,97 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>RATM</title>
-    <!-- Bootstrap -->
-	<style type="text/css">
-	</style>
-<link href="style.css" rel="stylesheet" type="text/css">
-	<link href="css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
+<html lang="kn">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ಕೊಠಡಿ ೧೦ — RATM</title>
+  <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+  <style>
+    :root { --bg: #FFF7CC; --navbar: #8C1B07; --border: rgba(140,27,7,0.2); }
+    body { background-color: var(--bg); color: #000; font-family: inherit; }
+    .site-nav { background: var(--navbar); padding: 0.75rem 1.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; }
+    .site-nav .lang-icon img { width: 48px; height: 48px; border-radius: 50%; }
+    .nav-links { display: flex; gap: 0; flex-wrap: wrap; margin-left: auto; }
+    .nav-links a { color: #fff; text-decoration: none; font-size: 1.05rem; padding: 0.5rem 1rem; min-height: 44px; display: flex; align-items: center; }
+    .nav-links a:hover { opacity: 0.75; }
+    .room-hero { background: var(--navbar); padding: 2rem 1.5rem 1.75rem; text-align: center; color: #fff; }
+    .room-number { font-size: 0.82rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.7; margin-bottom: 0.3rem; }
+    .room-title { font-size: clamp(1.7rem, 4vw, 2.6rem); font-weight: 700; margin: 0; }
+    .room-subtitle { font-size: 1rem; opacity: 0.65; margin-top: 0.35rem; font-style: italic; }
+    .room-body { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+    .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start; }
+    @media (max-width: 767px) { .content-grid { grid-template-columns: 1fr; gap: 1.5rem; } }
+    .image-panel { position: sticky; top: 74px; }
+    @media (max-width: 767px) { .image-panel { position: static; } }
+    .room-image-wrap img { width: 100%; height: auto; display: block; }
+    .audio-section { margin-top: 1rem; }
+    .audio-section audio { width: 100%; }
+    .audio-caption { font-size: 0.95rem; font-style: italic; color: #555; }
+    p { font-size: 1.05rem; line-height: 1.85; margin-bottom: 1rem; }
+    h4 { font-size: 1.2rem; font-weight: 700; margin: 1.4rem 0 0.6rem; }
+    hr.divider { border: none; border-top: 1px solid var(--border); margin: 1.5rem 0 1.25rem; }
+    .ritual-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; margin: 0.75rem 0 1rem; }
+    @media (max-width: 500px) { .ritual-grid { grid-template-columns: 1fr; } }
+    .ritual-card { background: #fff; border: 1px solid var(--border); border-left: 3px solid var(--navbar); padding: 0.85rem 1rem; font-size: 0.95rem; line-height: 1.6; }
+    .closing-quote { margin-top: 1.75rem; padding: 1.35rem 1.5rem; background: var(--navbar); color: #fff; font-style: italic; font-size: 1.05rem; line-height: 1.7; text-align: center; }
+    .fade-up { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+  </style>
 </head>
-  <body>
-  	<nav class="navbar navbar-expand-lg navbar-light bg-light col-xl-12"> <a href="Room10.html"><img src="Images/EnglishIcon.png" alt="Placeholder image" width="74" height="74" class="rounded-circle img-fluid"></a> <a class="navbar-brand" href="index.html">&nbsp; &nbsp; &nbsp; &nbsp; ಮನೆ&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a> <a class="navbar-brand" href="Room9_kn.html">&lt; 
-ಹಿಂದಿನ ಕೊಠಡಿ&nbsp; &nbsp; &nbsp; &nbsp;</a> <a class="navbar-brand" href="Room1_kn.html">ಮುಂದಿನ ಕೊಠಡಿ &gt;&nbsp;</a>
-  	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span></button>
-  	  	  
-      <div class="collapse navbar-collapse" id="navbarSupportedContent1"></div>
+<body>
+  <nav class="site-nav">
+    <a href="Room10.html" class="lang-icon"><img src="Images/EnglishIcon.png" alt="English version"></a>
+    <div class="nav-links">
+      <a href="index.html">ಮನೆ</a>
+      <a href="Room9_kn.html">&lt; ಹಿಂದಿನ ಕೊಠಡಿ</a>
+      <a href="Room1_kn.html">ಮುಂದಿನ ಕೊಠಡಿ &gt;</a>
+    </div>
   </nav>
-    <div class="container-fluid">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6"><img src="Images/Room10.png" class="img-fluid" alt="Placeholder image">&nbsp;<br><img src="Images/AudioIcon.png" alt="Placeholder image" width="81" height="81" class="rounded-circle img-fluid">&nbsp;<em>ಈ ವಸ್ತುವಿನ ಬಗ್ಗೆ ಒಂದು ಕಥೆಯನ್ನು ಕೇಳಿ</em></div>
-          <div class="col-lg-6">
-          
-            <h4 dir="ltr"><strong id="docs-internal-guid-267a426d-7fff-1038-d27e-b6085f6eaeec2">ಜೀವನದ ಪವಿತ್ರ ವೃತ್ತ</strong></h4>
-            <p dir="ltr">ಒಬ್ಬ ವ್ಯಕ್ತಿ ಸತ್ತಾಗ, ಅಂತ್ಯಕ್ರಿಯೆಯ ಸಮಾರಂಭಗಳಿಗೆ ಮೊದಲು ಅವರ ದೇಹಕ್ಕೆ ಅಂತಿಮ ಧಾರ್ಮಿಕ ಸ್ನಾನ ಮಾಡಲಾಗುತ್ತಿತ್ತು. ನವಜಾತ ಶಿಶುವನ್ನು ತೆಂಗಿನ ಚಿಪ್ಪಿನಿಂದ ಸುರಿದ ನೀರಿನಿಂದ ಸ್ನಾನ ಮಾಡಿದಂತೆ, ಅದೇ ಮೂರು ಕಣ್ಣುಗಳ ತೆಂಗಿನ ಚಿಪ್ಪಿನಿಂದ ಮೃತ ವ್ಯಕ್ತಿಯ ಮೇಲೆ ನೀರನ್ನು ಸುರಿಯಲಾಗುತ್ತಿತ್ತು. ಆ ವ್ಯಕ್ತಿ ಜನಿಸಿದಾಗ ಅದೇ ಸೌಮ್ಯತೆಯಿಂದ ಅವರನ್ನು ನೋಡಿಕೊಳ್ಳಲಾಗುತ್ತಿದೆ ಎಂದು ಅದು ತೋರಿಸಿತು.           </p>
-            <p dir="ltr">ಅಂತ್ಯಕ್ರಿಯೆಯ ಆಚರಣೆಗಳ ಸಮಯದಲ್ಲಿ, ಸಮಾರಂಭದ ಭಾಗವಾಗಿ ತೆಂಗಿನಕಾಯಿಗಳನ್ನು ಒಡೆಯಲಾಗುತ್ತಿತ್ತು. ತೆಂಗಿನಕಾಯಿ ಒಡೆಯುವುದು ಆಧ್ಯಾತ್ಮಿಕ ಅರ್ಥವನ್ನು ಹೊಂದಿತ್ತು:</p>
-            <ul>
-              <li>ಇದು ವ್ಯಕ್ತಿಯ ಐಹಿಕ ಜೀವನಕ್ಕೆ ಇರುವ ಸಂಪರ್ಕವನ್ನು ಮುರಿಯುವುದನ್ನು ಪ್ರತಿನಿಧಿಸುತ್ತದೆ</li>
-              <li>ಆತ್ಮವು ಶಾಂತಿಯುತವಾಗಿ ಮುಂದುವರಿಯಲು ಸಹಾಯ ಮಾಡುವ ಅರ್ಪಣೆಯಾಗಿತ್ತು</li>
-              <li>ಇದು ಮರಣ ಹೊಂದಿದ ವ್ಯಕ್ತಿಯನ್ನು ಗೌರವಿಸಿತು</li>
-            </ul>
-            <p dir="ltr">ಅಂತಿಮ ಆಚರಣೆಗಳ ಸಮಯದಲ್ಲಿ ಗೌರವಿಸುವ ಸಂಕೇತವಾಗಿದೆ:</p>
-            <ul>
-              <li>ಅರಿಶಿನ ಮತ್ತು ಶಿಕಾಕಾಯಿಯನ್ನು ದೇಹದ ವಿವಿಧ ಭಾಗಗಳಿಗೆ ಹಚ್ಚಲಾಗುತ್ತಿತ್ತು</li>
-              <li>ಒಡೆದ ತೆಂಗಿನಕಾಯಿಯನ್ನು ವ್ಯಕ್ತಿಯ ಬಳಿ ಇಡಲಾಗುತ್ತಿತ್ತು</li>
-              <li>ದೀಪಗಳನ್ನು ಬೆಳಗಿಸಲಾಗುತ್ತಿತ್ತು</li>
-              <li>ಅಂತಿಮ ಸ್ನಾನಕ್ಕಾಗಿ ನೀರನ್ನು ಸುರಿಯಲು ತೆಂಗಿನ ಚಿಪ್ಪನ್ನು ಬಳಸಲಾಗುತ್ತಿತ್ತು</li>
-            </ul>
-            <p>&nbsp;</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6 offset-xl-0 col-xl-1"></div>
-          <div class="col-lg-6 col-xl-2">
-            <p></p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6">&nbsp;</div>
-          <div class="col-lg-6">&nbsp;</div>
+  <div class="room-hero">
+    <div class="room-number">ಕೊಠಡಿ ೧೦ · ಅಂತಿಮ ಕೊಠಡಿ</div>
+    <h1 class="room-title">ಜೀವನದ ಪವಿತ್ರ ವೃತ್ತ</h1>
+    <p class="room-subtitle">ಹುಟ್ಟಿನಿಂದ ಸಾವಿನವರೆಗೆ, ತೆಂಗಿನಕಾಯಿ ಯಾತ್ರೆ ಪೂರ್ಣಗೊಳಿಸುತ್ತದೆ</p>
+  </div>
+  <div class="room-body">
+    <div class="content-grid">
+      <div class="image-panel fade-up">
+        <div class="room-image-wrap"><img src="Images/Room10.png" alt="ಅಂತ್ಯಕ್ರಿಯೆ ಆಚರಣೆ ವಸ್ತುಗಳು"></div>
+        <div class="audio-section">
+          <audio controls style="width:100%;margin-bottom:0.5rem;">
+            <source src="Audio/Room10Audio.mp3" type="audio/mp3">
+          </audio>
+          <div class="audio-caption">ಈ ವಸ್ತುವಿನ ಬಗ್ಗೆ ಒಂದು ಕಥೆಯನ್ನು ಕೇಳಿ.</div>
         </div>
       </div>
+      <div class="text-panel">
+        <p class="fade-up">ಒಬ್ಬ ವ್ಯಕ್ತಿ ಸತ್ತಾಗ, ಅಂತ್ಯಕ್ರಿಯೆಯ ಸಮಾರಂಭಗಳಿಗೆ ಮೊದಲು ಅವರ ದೇಹಕ್ಕೆ ಅಂತಿಮ ಧಾರ್ಮಿಕ ಸ್ನಾನ ಮಾಡಲಾಗುತ್ತಿತ್ತು. ನವಜಾತ ಶಿಶುವನ್ನು ತೆಂಗಿನ ಚಿಪ್ಪಿನಿಂದ ಸುರಿದ ನೀರಿನಿಂದ ಸ್ನಾನ ಮಾಡಿದಂತೆ, ಅದೇ ಮೂರು ಕಣ್ಣುಗಳ ತೆಂಗಿನ ಚಿಪ್ಪಿನಿಂದ ಮೃತ ವ್ಯಕ್ತಿಯ ಮೇಲೆ ನೀರನ್ನು ಸುರಿಯಲಾಗುತ್ತಿತ್ತು. ಆ ವ್ಯಕ್ತಿ ಜನಿಸಿದಾಗ ಅದೇ ಸೌಮ್ಯತೆಯಿಂದ ಅವರನ್ನು ನೋಡಿಕೊಳ್ಳಲಾಗುತ್ತಿದೆ ಎಂದು ಅದು ತೋರಿಸಿತು.</p>
+        <hr class="divider fade-up">
+        <h4 class="fade-up">ತೆಂಗಿನಕಾಯಿ ಒಡೆಯುವಿಕೆ</h4>
+        <p class="fade-up">ಅಂತ್ಯಕ್ರಿಯೆಯ ಆಚರಣೆಗಳ ಸಮಯದಲ್ಲಿ, ತೆಂಗಿನಕಾಯಿಗಳನ್ನು ಒಡೆಯಲಾಗುತ್ತಿತ್ತು. ಈ ಒಡೆಯುವಿಕೆ ಆಳವಾದ ಆಧ್ಯಾತ್ಮಿಕ ಅರ್ಥ ಹೊಂದಿತ್ತು:</p>
+        <div class="ritual-grid fade-up">
+          <div class="ritual-card">ವ್ಯಕ್ತಿಯ ಐಹಿಕ ಜೀವನಕ್ಕಿರುವ ಸಂಪರ್ಕ ಮುರಿಯುವಿಕೆಯ ಸಂಕೇತ</div>
+          <div class="ritual-card">ಆತ್ಮ ಶಾಂತಿಯುತವಾಗಿ ಮುಂದುವರಿಯಲು ಸಹಾಯ ಮಾಡುವ ಅರ್ಪಣೆ</div>
+          <div class="ritual-card">ಮರಣ ಹೊಂದಿದ ವ್ಯಕ್ತಿಯ ಗೌರವ</div>
+          <div class="ritual-card">ಹುಟ್ಟಿನಲ್ಲಿ ಪ್ರಾರಂಭವಾದ ವೃತ್ತ ಪೂರ್ಣಗೊಂಡಿದೆ</div>
+        </div>
+        <hr class="divider fade-up">
+        <h4 class="fade-up">ಅಂತಿಮ ಆಚರಣೆಗಳ ಸಮಯದಲ್ಲಿ</h4>
+        <div class="ritual-grid fade-up">
+          <div class="ritual-card">ದೇಹದ ವಿವಿಧ ಭಾಗಗಳಿಗೆ ಅರಿಶಿನ ಮತ್ತು ಶಿಕಾಕಾಯಿ ಹಚ್ಚಲಾಗುತ್ತಿತ್ತು</div>
+          <div class="ritual-card">ಒಡೆದ ತೆಂಗಿನಕಾಯಿ ವ್ಯಕ್ತಿಯ ಬಳಿ ಇಡಲಾಗುತ್ತಿತ್ತು</div>
+          <div class="ritual-card">ಹೊರಡುವ ಆತ್ಮಕ್ಕೆ ಮಾರ್ಗದರ್ಶನ ನೀಡಲು ದೀಪಗಳನ್ನು ಬೆಳಗಿಸಲಾಗುತ್ತಿತ್ತು</div>
+          <div class="ritual-card">ಅಂತಿಮ ಸ್ನಾನಕ್ಕಾಗಿ ನೀರು ಸುರಿಯಲು ತೆಂಗಿನ ಚಿಪ್ಪು ಬಳಸಲಾಗುತ್ತಿತ್ತು</div>
+        </div>
+        <div class="closing-quote fade-up">ನವಜಾತ ಶಿಶುವಿನ ಮೊದಲ ಮೃದು ಸ್ನಾನದಿಂದ ಹೊರಟ ವ್ಯಕ್ತಿಯ ಅಂತಿಮ ವಿಧಿಗಳವರೆಗೆ — ತೆಂಗಿನಕಾಯಿ ತುಳು ಜೀವನದ ಪ್ರತಿ ಪವಿತ್ರ ಕ್ಷಣಕ್ಕೆ ಸಾಕ್ಷಿಯಾಗಿತ್ತು.</div>
+      </div>
     </div>
-  	<!-- body code goes here -->
-
-
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-	<script src="../../../../Work/IFA Grant/WORKING DOCS/Exhibition Root/js/jquery-3.4.1.min.js"></script>
-
-	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="../../../../Work/IFA Grant/WORKING DOCS/Exhibition Root/js/popper.min.js"></script> 
-	<script src="../../../../Work/IFA Grant/WORKING DOCS/Exhibition Root/js/bootstrap-4.4.1.js"></script>
-	  
+  </div>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap-4.4.1.js"></script>
+  <script>
+    var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target);}});},{threshold:0.1});
+    document.querySelectorAll('.fade-up').forEach(function(el,i){el.style.transitionDelay=(i*0.06)+'s';obs.observe(el);});
+  </script>
 </body>
-	
 </html>

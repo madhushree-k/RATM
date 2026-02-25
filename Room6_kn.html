@@ -1,72 +1,100 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>RATM</title>
-    <!-- Bootstrap -->
-	<style type="text/css">
-	</style>
-<link href="style.css" rel="stylesheet" type="text/css">
-	<link href="css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
+<html lang="kn">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ಕೊಠಡಿ ೬ — RATM</title>
+  <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+  <style>
+    :root { --bg: #FFF7CC; --navbar: #8C1B07; --border: rgba(140,27,7,0.2); }
+    body { background-color: var(--bg); color: #000; font-family: inherit; }
+    .site-nav { background: var(--navbar); padding: 0.75rem 1.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; }
+    .site-nav .lang-icon img { width: 48px; height: 48px; border-radius: 50%; }
+    .nav-links { display: flex; gap: 0; flex-wrap: wrap; margin-left: auto; }
+    .nav-links a { color: #fff; text-decoration: none; font-size: 1.05rem; padding: 0.5rem 1rem; min-height: 44px; display: flex; align-items: center; }
+    .nav-links a:hover { opacity: 0.75; }
+    .room-hero { background: var(--navbar); padding: 2rem 1.5rem 1.75rem; text-align: center; color: #fff; }
+    .room-number { font-size: 0.82rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.7; margin-bottom: 0.3rem; }
+    .room-title { font-size: clamp(1.7rem, 4vw, 2.6rem); font-weight: 700; margin: 0; }
+    .room-subtitle { font-size: 1rem; opacity: 0.65; margin-top: 0.35rem; font-style: italic; }
+    .room-body { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+    .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start; }
+    @media (max-width: 767px) { .content-grid { grid-template-columns: 1fr; gap: 1.5rem; } }
+    .image-panel { position: sticky; top: 74px; }
+    @media (max-width: 767px) { .image-panel { position: static; } }
+    .room-image-wrap img { width: 100%; height: auto; display: block; }
+    .audio-section { margin-top: 1rem; }
+    .audio-section audio { width: 100%; }
+    .audio-caption { font-size: 0.95rem; font-style: italic; color: #555; }
+    p { font-size: 1.05rem; line-height: 1.85; margin-bottom: 1rem; }
+    h4 { font-size: 1.2rem; font-weight: 700; margin: 1.4rem 0 0.6rem; }
+    hr.divider { border: none; border-top: 1px solid var(--border); margin: 1.5rem 0 1.25rem; }
+    .spice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.7rem; margin: 0.75rem 0 1rem; }
+    @media (max-width: 500px) { .spice-grid { grid-template-columns: 1fr; } }
+    .spice-card { background: #fff; border: 1px solid var(--border); border-left: 3px solid var(--navbar); padding: 0.75rem 1rem; font-size: 0.95rem; line-height: 1.55; }
+    .spice-name { font-weight: 700; font-size: 0.9rem; }
+    .closing-quote { margin-top: 1.75rem; padding: 1.35rem 1.5rem; background: var(--navbar); color: #fff; font-style: italic; font-size: 1.05rem; line-height: 1.7; text-align: center; }
+    .fade-up { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+  </style>
 </head>
-  <body>
-  	<nav class="navbar navbar-expand-lg navbar-light bg-light col-xl-12"> <a href="Room6.html"><img src="Images/EnglishIcon.png" alt="Placeholder image" width="74" height="74" class="rounded-circle img-fluid"></a> <a class="navbar-brand" href="index.html">&nbsp; &nbsp; &nbsp; &nbsp; ಮನೆ&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a> <a class="navbar-brand" href="Room5_kn.html">&lt; 
-ಹಿಂದಿನ ಕೊಠಡಿ&nbsp; &nbsp; &nbsp; &nbsp;</a> <a class="navbar-brand" href="Room7_kn.html">ಮುಂದಿನ ಕೊಠಡಿ &gt;&nbsp;</a>
-  	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span></button>
-  	  	  
-      <div class="collapse navbar-collapse" id="navbarSupportedContent1"></div>
+<body>
+  <nav class="site-nav">
+    <a href="Room6.html" class="lang-icon"><img src="Images/EnglishIcon.png" alt="English version"></a>
+    <div class="nav-links">
+      <a href="index.html">ಮನೆ</a>
+      <a href="Room5_kn.html">&lt; ಹಿಂದಿನ ಕೊಠಡಿ</a>
+      <a href="Room7_kn.html">ಮುಂದಿನ ಕೊಠಡಿ &gt;</a>
+    </div>
   </nav>
-    <div class="container-fluid">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6"><img src="Images/Room6.png" class="img-fluid" alt="Placeholder image">&nbsp;<br><img src="Images/AudioIcon.png" alt="Placeholder image" width="81" height="81" class="rounded-circle img-fluid">&nbsp;<em>ಈ ವಸ್ತುವಿನ ಬಗ್ಗೆ ಒಂದು ಕಥೆಯನ್ನು ಕೇಳಿ.</em></div>
-          <div class="col-lg-6">
-		<p dir="ltr">ಮಸಾಲೆ ಮೂಲೆಗೆ ಹೋಗಿ ಉಸಿರಾಡಿ! ಕೊತ್ತಂಬರಿ, ಜೀರಿಗೆ ಮತ್ತು ಮೆಂತ್ಯದ ಪರಿಮಳವನ್ನು ನೀವು ಊಹಿಸಬಲ್ಲಿರಾ?</p>
-            <h4 dir="ltr"><strong id="docs-internal-guid-669c17ef-7fff-91eb-30c4-bf02201b99c7">ಮೊಳಕೆಯೊಡೆದ ತೆಂಗಿನಕಾಯಿಯ ಎರಡನೇ ಜೀವನ</strong></h4>
-            <p dir="ltr">ತೆಂಗಿನಕಾಯಿ ಮೊಳಕೆಯೊಡೆಯಲು ಪ್ರಾರಂಭಿಸಿದಾಗ ಅದು ಸ್ವಲ್ಪ ಹಸಿರು ಚಿಗುರು ಬೆಳೆಯಲು ಪ್ರಾರಂಭಿಸುತ್ತದೆ ಎಂದು ನಿಮಗೆ ತಿಳಿದಿದೆಯೇ? ಸರಿ, ತುಳು ಜನರು ಈ ಮೊಳಕೆಯೊಡೆದ ತೆಂಗಿನಕಾಯಿಗಳಿಗೆ ಒಂದು ಬುದ್ಧಿವಂತ ಬಳಕೆಯನ್ನು ಕಂಡುಕೊಂಡರು! ಅವರು ತೆಂಗಿನಕಾಯಿಯನ್ನು ತೆಗೆದುಕೊಂಡು, ಹೊರಗಿನ ಸಿಪ್ಪೆಯನ್ನು ತೆಗೆದು, ಅದರಲ್ಲಿ ಒಂದು ರಂಧ್ರವನ್ನು ಮಾಡುತ್ತಿದ್ದರು. ನಂತರ, ಒಂದು ಕೋಲನ್ನು ಬಳಸಿ, ಅವರು ಒಳಗಿನಿಂದ ಎಲ್ಲಾ ಮೃದುವಾದ ತೆಂಗಿನಕಾಯಿ ತಿರುಳನ್ನು ಎಚ್ಚರಿಕೆಯಿಂದ ಕೆರೆದು ತೆಗೆಯುತ್ತಿದ್ದರು. ಉಳಿದಿರುವುದು ಪರಿಪೂರ್ಣ ನೈಸರ್ಗಿಕ ಪಾತ್ರೆ!</p>
-            <h4 dir="ltr"><strong id="docs-internal-guid-669c17ef-7fff-91eb-30c4-bf02201b99c7">ಪರಿಪೂರ್ಣ ಮಸಾಲೆ ಪಾಲಕ</strong></h4>
-            <p dir="ltr">ಈ ತೆಂಗಿನ ಚಿಪ್ಪು ಮಸಾಲೆಗಳನ್ನು ಸಂಗ್ರಹಿಸಲು ಏಕೆ ಉತ್ತಮವಾಗಿತ್ತು?</p>
-            <ul>
-              <li>ಇದು ಮಸಾಲೆಗಳನ್ನು ಒಣಗಿಸಿತ್ತು</li>
-              <li>ಇದು ಕೀಟಗಳಿಂದ ಅವುಗಳನ್ನು ರಕ್ಷಿಸಿತು</li>
-              <li>ಇದು ಸಂಪೂರ್ಣವಾಗಿ ನೈಸರ್ಗಿಕವಾಗಿತ್ತು</li>
-              <li>ಇದು ಬಿಗಿಯಾಗಿ ಮುಚ್ಚಲು ನೈಸರ್ಗಿಕ ಮುಚ್ಚಳವನ್ನು ಹೊಂದಿತ್ತು</li>
-              <li>ತೆಂಗಿನಕಾಯಿ ವಾಸನೆಯು ವಾಸ್ತವವಾಗಿ ಮಸಾಲೆಗಳೊಂದಿಗೆ ಚೆನ್ನಾಗಿ ಮಿಶ್ರಣವಾಯಿತು!</li>
-            </ul>
-            <h4 dir="ltr"><strong id="docs-internal-guid-669c17ef-7fff-91eb-30c4-bf02201b99c7">ಒಳಗೆ ಏನು ಹೋಯಿತು?</strong></h4>
-            <p dir="ltr">ತುಳು ಕುಟುಂಬಗಳು ತಮ್ಮ ಅಡುಗೆಗೆ ಬಳಸುವ ಪ್ರಮುಖ ಮಸಾಲೆಗಳನ್ನು ಸಂಗ್ರಹಿಸುತ್ತಾರೆ:</p>
-            <ul>
-              <li>ಕೊತ್ತಂಬರಿ ಬೀಜಗಳು (ತಾಜಾ, ಸಿಟ್ರಸ್ ಪರಿಮಳಕ್ಕಾಗಿ)</li>
-              <li>ರಿಗೆ (ಮಣ್ಣಿನ ಉಷ್ಣತೆಗಾಗಿ)</li>
-              <li>ಮೆಂತ್ಯ (ಸ್ವಲ್ಪ ಕಹಿ, ತುಂಬಾ ಆರೋಗ್ಯಕರ)</li>
-              <li>ಮೆಣಸು (ಉತ್ಸಾಹಕ್ಕಾಗಿ!)</li>
-              <li>ಮತ್ತು ಇತರ ಅನೇಕ ರಹಸ್ಯ ಕುಟುಂಬ ಮಸಾಲೆಗಳು!</li>
-            </ul>
-            <p>&nbsp;</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6">&nbsp;</div>
-          <div class="col-lg-6">&nbsp;</div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6">&nbsp;</div>
-          <div class="col-lg-6">&nbsp;</div>
+  <div class="room-hero">
+    <div class="room-number">ಕೊಠಡಿ ೬ · ಮಸಾಲೆ ಕೊಠಡಿ</div>
+    <h1 class="room-title">ಮೊಳಕೆಯೊಡೆದ ತೆಂಗಿನಕಾಯಿಯ ಎರಡನೇ ಜೀವನ</h1>
+    <p class="room-subtitle">ಪ್ರಕೃತಿಯ ಪರಿಪೂರ್ಣ ಮಸಾಲೆ ಪಾಲಕ</p>
+  </div>
+  <div class="room-body">
+    <div class="content-grid">
+      <div class="image-panel fade-up">
+        <div class="room-image-wrap"><img src="Images/Room6.png" alt="ತೆಂಗಿನಕಾಯಿ ಮಸಾಲೆ ಪಾತ್ರೆ"></div>
+        <div class="audio-section">
+          <audio controls style="width:100%;margin-bottom:0.5rem;">
+            <source src="Audio/Room6Audio.mp3" type="audio/mp3">
+          </audio>
+          <div class="audio-caption">ಈ ವಸ್ತುವಿನ ಬಗ್ಗೆ ಒಂದು ಕಥೆಯನ್ನು ಕೇಳಿ.</div>
         </div>
       </div>
+      <div class="text-panel">
+        <p class="fade-up">ಮಸಾಲೆ ಮೂಲೆಗೆ ಹೋಗಿ ಉಸಿರಾಡಿ! ಕೊತ್ತಂಬರಿ, ಜೀರಿಗೆ ಮತ್ತು ಮೆಂತ್ಯದ ಪರಿಮಳವನ್ನು ನೀವು ಊಹಿಸಬಲ್ಲಿರಾ?</p>
+        <p class="fade-up">ತೆಂಗಿನಕಾಯಿ ಮೊಳಕೆಯೊಡೆಯಲು ಪ್ರಾರಂಭಿಸಿದಾಗ ಸ್ವಲ್ಪ ಹಸಿರು ಚಿಗುರು ಬೆಳೆಯಲು ಪ್ರಾರಂಭಿಸುತ್ತದೆ ಎಂದು ನಿಮಗೆ ತಿಳಿದಿದೆಯೇ? ತುಳು ಜನರು ಈ ಮೊಳಕೆಯೊಡೆದ ತೆಂಗಿನಕಾಯಿಗಳಿಗೆ ಒಂದು ಬುದ್ಧಿವಂತ ಬಳಕೆಯನ್ನು ಕಂಡುಕೊಂಡರು! ಅವರು ತೆಂಗಿನಕಾಯಿಯನ್ನು ತೆಗೆದು, ಹೊರಗಿನ ಸಿಪ್ಪೆಯನ್ನು ತೆಗೆದು, ರಂಧ್ರ ಮಾಡಿ ಒಳಗಿನ ತಿರುಳನ್ನು ಕೆರೆದು ತೆಗೆಯುತ್ತಿದ್ದರು. ಉಳಿದಿರುವುದು ಪರಿಪೂರ್ಣ ನೈಸರ್ಗಿಕ ಪಾತ್ರೆ!</p>
+        <hr class="divider fade-up">
+        <h4 class="fade-up">ಏಕೆ ಪರಿಪೂರ್ಣ ಮಸಾಲೆ ಪಾಲಕ?</h4>
+        <div class="spice-grid fade-up">
+          <div class="spice-card">ಮಸಾಲೆಗಳನ್ನು <strong>ಒಣಗಿಸಿ</strong> ತಾಜಾ ಇಡುತ್ತದೆ</div>
+          <div class="spice-card"><strong>ಕೀಟಗಳಿಂದ</strong> ರಕ್ಷಿಸುತ್ತದೆ</div>
+          <div class="spice-card">ಸಂಪೂರ್ಣ <strong>ನೈಸರ್ಗಿಕ</strong> — ರಾಸಾಯನಿಕ ಇಲ್ಲ</div>
+          <div class="spice-card">ಬಿಗಿಯಾಗಿ ಮುಚ್ಚುವ ನೈಸರ್ಗಿಕ <strong>ಮುಚ್ಚಳ</strong></div>
+        </div>
+        <p class="fade-up">ಮತ್ತು ತೆಂಗಿನಕಾಯಿ ವಾಸನೆ ವಾಸ್ತವವಾಗಿ ಮಸಾಲೆಗಳೊಂದಿಗೆ ಚೆನ್ನಾಗಿ ಮಿಶ್ರಣವಾಗಿತ್ತು!</p>
+        <hr class="divider fade-up">
+        <h4 class="fade-up">ಒಳಗೆ ಏನು ಹೋಯಿತು?</h4>
+        <div class="spice-grid fade-up">
+          <div class="spice-card"><div class="spice-name">ಕೊತ್ತಂಬರಿ ಬೀಜಗಳು</div>ತಾಜಾ, ಸಿಟ್ರಸ್ ಪರಿಮಳ</div>
+          <div class="spice-card"><div class="spice-name">ಜೀರಿಗೆ</div>ಮಣ್ಣಿನ ಉಷ್ಣತೆ</div>
+          <div class="spice-card"><div class="spice-name">ಮೆಂತ್ಯ</div>ಸ್ವಲ್ಪ ಕಹಿ, ತುಂಬಾ ಆರೋಗ್ಯಕರ</div>
+          <div class="spice-card"><div class="spice-name">ಮೆಣಸು</div>ಉತ್ಸಾಹಕ್ಕಾಗಿ!</div>
+        </div>
+        <p class="fade-up">…ಮತ್ತು ಇನ್ನೂ ಅನೇಕ ರಹಸ್ಯ ಕುಟುಂಬ ಮಸಾಲೆಗಳು!</p>
+        <div class="closing-quote fade-up">ತೆಂಗಿನಕಾಯಿ ತೆಂಗಿನಕಾಯಿಯಾಗಿ ಉಳಿಯದಿದ್ದಾಗ, ಅದು ಇನ್ನೂ ಹೆಚ್ಚು ಉಪಯುಕ್ತ ವಸ್ತುವಾಗುತ್ತದೆ.</div>
+      </div>
     </div>
-  	<!-- body code goes here -->
-
-
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-	<script src="../../../../Work/IFA Grant/WORKING DOCS/Exhibition Root/js/jquery-3.4.1.min.js"></script>
-
-	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="../../../../Work/IFA Grant/WORKING DOCS/Exhibition Root/js/popper.min.js"></script> 
-	<script src="../../../../Work/IFA Grant/WORKING DOCS/Exhibition Root/js/bootstrap-4.4.1.js"></script>
-	  
+  </div>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap-4.4.1.js"></script>
+  <script>
+    var obs = new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target);}});},{threshold:0.1});
+    document.querySelectorAll('.fade-up').forEach(function(el,i){el.style.transitionDelay=(i*0.06)+'s';obs.observe(el);});
+  </script>
 </body>
-	
 </html>

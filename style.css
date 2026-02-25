@@ -1,93 +1,337 @@
 @charset "UTF-8";
 
-html,body
-
-.container-fluid {
-    background-color: #FFF7CC;
-	width:100%;
-	height:100%;
-	margin:0;
-	padding:0;
-	overflow-x:hidden;
-}
-	image-container {
-    position: relative; /* Container acts as reference for absolute positioning */
-    width: 100%; /* Make the container responsive */
-    max-width: 800px; /* Optional: set a maximum width for the container */
-    margin: auto; /* Center the container on the page */
+/* ─── Design Tokens ─────────────────────────────────────── */
+:root {
+  --bg:        #FFF7CC;
+  --navbar:    #8C1B07;
+  --border:    rgba(140, 27, 7, 0.2);
+  --text:      #000000;
+  --white:     #ffffff;
+  --body-size: 1.05rem;
 }
 
+/* ─── Reset / Base ──────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+img[usemap] {
+  border: none;
+  width: auto;
+}
+
+/* ─── Sticky Navigation ─────────────────────────────────── */
+.site-nav {
+  background: var(--navbar);
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.site-nav .lang-icon img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: auto;
+}
+
+.nav-links a {
+  color: var(--white);
+  text-decoration: none;
+  font-size: var(--body-size);
+  padding: 0.5rem 1rem;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.nav-links a:hover {
+  opacity: 0.75;
+}
+
+/* ─── Room Hero Banner ──────────────────────────────────── */
+.room-hero {
+  background: var(--navbar);
+  padding: 2rem 1.5rem 1.75rem;
+  text-align: center;
+  color: var(--white);
+}
+
+.room-number {
+  font-size: 0.82rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  opacity: 0.7;
+  margin-bottom: 0.3rem;
+}
+
+.room-title {
+  font-size: clamp(1.7rem, 4vw, 2.6rem);
+  font-weight: 700;
+  margin: 0;
+}
+
+.room-subtitle {
+  font-size: 1rem;
+  opacity: 0.65;
+  margin-top: 0.35rem;
+  font-style: italic;
+}
+
+/* ─── Main Content Layout ───────────────────────────────── */
+.room-body {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+@media (max-width: 767px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+/* ─── Image Panel ───────────────────────────────────────── */
+.image-panel {
+  position: sticky;
+  top: 74px;
+}
+
+@media (max-width: 767px) {
+  .image-panel {
+    position: static;
+  }
+}
+
+.room-image-wrap img {
+  width: 100%;
+  height: auto;
+}
+
+/* ─── Audio ─────────────────────────────────────────────── */
+.audio-section {
+  margin-top: 1rem;
+}
+
+.audio-section audio {
+  width: 100%;
+  margin-bottom: 0.5rem;
+}
+
+.audio-caption {
+  font-size: 0.95rem;
+  font-style: italic;
+  color: #555;
+}
+
+/* ─── Typography ────────────────────────────────────────── */
+p {
+  font-size: var(--body-size);
+  line-height: 1.85;
+  margin-bottom: 1rem;
+}
+
+h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 1.4rem 0 0.6rem;
+}
+
+hr.divider {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 1.5rem 0 1.25rem;
+}
+
+/* ─── Cards (Insight / Spice / Ritual) ──────────────────── */
+.insights-grid,
+.spice-grid,
+.ritual-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.85rem;
+  margin: 0.75rem 0 1rem;
+}
+
+@media (max-width: 500px) {
+  .insights-grid,
+  .spice-grid,
+  .ritual-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.insight-card,
+.spice-card,
+.ritual-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--navbar);
+  padding: 0.85rem 1rem;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.insight-title,
+.spice-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}
+
+.insight-text {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ─── Accordion Steps ───────────────────────────────────── */
+.step-item {
+  border-bottom: 1px solid var(--border);
+}
+
+.step-toggle {
+  width: 100%;
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 0.5rem;
+  text-align: left;
+  font-size: var(--body-size);
+  font-family: inherit;
+  color: var(--text);
+  min-height: 52px;
+}
+
+.step-toggle:hover {
+  background: rgba(140, 27, 7, 0.06);
+}
+
+.step-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  border: 1.5px solid var(--navbar);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.82rem;
+  color: var(--navbar);
+  flex-shrink: 0;
+  transition: all 0.2s;
+}
+
+.step-item.open .step-num {
+  background: var(--navbar);
+  color: var(--white);
+}
+
+.step-arrow {
+  margin-left: auto;
+  font-size: 0.7rem;
+  color: var(--navbar);
+  transition: transform 0.3s;
+}
+
+.step-item.open .step-arrow {
+  transform: rotate(180deg);
+}
+
+.step-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, padding 0.35s ease;
+  padding: 0 0.5rem 0 3.2rem;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.step-item.open .step-content {
+  max-height: 200px;
+  padding: 0 0.5rem 0.9rem 3.2rem;
+}
+
+/* ─── Fun Fact Box ──────────────────────────────────────── */
+.fun-fact {
+  background: rgba(140, 27, 7, 0.07);
+  border-left: 3px solid var(--navbar);
+  padding: 0.9rem 1rem;
+  margin: 1rem 0;
+  font-size: 1rem;
+  line-height: 1.75;
+}
+
+.fun-fact strong {
+  color: var(--navbar);
+}
+
+/* ─── Closing Quote ─────────────────────────────────────── */
+.closing-quote {
+  margin-top: 1.75rem;
+  padding: 1.35rem 1.5rem;
+  background: var(--navbar);
+  color: var(--white);
+  font-style: italic;
+  font-size: var(--body-size);
+  line-height: 1.7;
+  text-align: center;
+}
+
+/* ─── Fade-up Animation ─────────────────────────────────── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(14px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Legacy image overlay (kept for compatibility) ──────── */
 .background-image, .overlay-image {
-    display: block;
-    max-width: 100%; /* Images scale to the width of their container */
-    height: auto; /* Maintain aspect ratio */
+  display: block;
+  max-width: 100%;
+  height: auto;
 }
 
 .overlay-image {
-    position: absolute; /* Position relative to the container */
-    top: 52px;
-    left: 3px;
-    cursor: pointer; /* Changes cursor to a hand icon, indicating it's clickable */
-}
-
-.container-fluid .container .navbar.navbar-expand-lg.navbar-light.bg-light {
-    background-color: #8C1B07;
-    background-image: -webkit-linear-gradient(270deg,rgba(140,27,7,1.00) 0%,rgba(140,27,7,1.00) 100%);
-    background-image: -moz-linear-gradient(270deg,rgba(140,27,7,1.00) 0%,rgba(140,27,7,1.00) 100%);
-    background-image: -o-linear-gradient(270deg,rgba(140,27,7,1.00) 0%,rgba(140,27,7,1.00) 100%);
-    background-image: linear-gradient(180deg,rgba(140,27,7,1.00) 0%,rgba(140,27,7,1.00) 100%);
-}
-
-img[usemap]{
-	border: none;
-	height: auto;
-	max-width: 100%;
-	width: auto;
-}
-#navbarSupportedContent1 .navbar-nav.mr-auto .nav-item {
-    color: #8C1B07;
-}
-.navbar-nav.mr-auto .nav-item.active .nav-link {
-}
-.container .navbar.navbar-expand-lg.navbar-light.bg-light .navbar-brand {
-    color: #8C1B07;
-    background-color: #8C1B07;
-}
-.navbar.navbar-expand-lg.navbar-light.bg-light .navbar-toggler {
-    background-color: #8C1B07;
-}
-.navbar.navbar-expand-lg.navbar-light.bg-light #navbarSupportedContent1 {
-    background-color: #8C1B07;
-}
-.navbar.navbar-expand-lg.navbar-light.bg-light .navbar-brand {
-    background-color: #8C1B07;
-}
-.navbar.navbar-expand-lg.navbar-light.bg-light {
-    background-color: #8C1B07;
-}
-.navbar.navbar-expand-lg.navbar-light.bg-light {
-    background-color: #8C1B07;
-    background-image: -webkit-linear-gradient(270deg,rgba(140,27,7,1.00) 0%,rgba(140,27,7,1.00) 100%);
-    background-image: -moz-linear-gradient(270deg,rgba(140,27,7,1.00) 0%,rgba(140,27,7,1.00) 100%);
-    background-image: -o-linear-gradient(270deg,rgba(140,27,7,1.00) 0%,rgba(140,27,7,1.00) 100%);
-    background-image: linear-gradient(180deg,rgba(140,27,7,1.00) 0%,rgba(140,27,7,1.00) 100%);
-}
-.navbar.navbar-expand-lg.navbar-light.bg-light .navbar-brand {
-    color: #FFFFFF;
-}
-.navbar-nav.mr-auto .nav-item.active .nav-link {
-    color: #FFFFFF;
-}
-.navbar-nav.mr-auto .nav-item .nav-link {
-    color: #FFFFFF;
-}
-.container-fluid .container {
-	background-color: FFF7CC;
-	width:100%;
-	height:100%;
-	margin-top:5%;
-	margin-bottom:5%;
-	margin-left:5%;
-	margin-right:0;
-	
+  position: absolute;
+  top: 52px;
+  left: 3px;
+  cursor: pointer;
 }

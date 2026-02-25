@@ -1,64 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>RATM</title>
-    <!-- Bootstrap -->
-	<style type="text/css">
-	</style>
-<link href="style.css" rel="stylesheet" type="text/css">
-	<link href="css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
+<html lang="kn">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ಕೊಠಡಿ ೩ — RATM</title>
+  <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+  <style>
+    :root { --bg: #FFF7CC; --navbar: #8C1B07; --border: rgba(140,27,7,0.2); }
+    body { background-color: var(--bg); color: #000; font-family: inherit; }
+    .site-nav { background: var(--navbar); padding: 0.75rem 1.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; }
+    .site-nav .lang-icon img { width: 48px; height: 48px; border-radius: 50%; }
+    .nav-links { display: flex; gap: 0; flex-wrap: wrap; margin-left: auto; }
+    .nav-links a { color: #fff; text-decoration: none; font-size: 1.05rem; padding: 0.5rem 1rem; min-height: 44px; display: flex; align-items: center; }
+    .nav-links a:hover { opacity: 0.75; }
+    .room-hero { background: var(--navbar); padding: 2rem 1.5rem 1.75rem; text-align: center; color: #fff; }
+    .room-number { font-size: 0.82rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.7; margin-bottom: 0.3rem; }
+    .room-title { font-size: clamp(1.7rem, 4vw, 2.6rem); font-weight: 700; margin: 0; }
+    .room-subtitle { font-size: 1rem; opacity: 0.65; margin-top: 0.35rem; font-style: italic; }
+    .room-body { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+    .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start; }
+    @media (max-width: 767px) { .content-grid { grid-template-columns: 1fr; gap: 1.5rem; } }
+    .image-panel { position: sticky; top: 74px; }
+    @media (max-width: 767px) { .image-panel { position: static; } }
+    .room-image-wrap img { width: 100%; height: auto; display: block; }
+    .audio-section { margin-top: 1rem; }
+    .audio-section audio { width: 100%; }
+    .audio-caption { font-size: 0.95rem; font-style: italic; color: #555; }
+    p { font-size: 1.05rem; line-height: 1.85; margin-bottom: 1rem; }
+    h4 { font-size: 1.2rem; font-weight: 700; margin: 1.4rem 0 0.6rem; }
+    hr.divider { border: none; border-top: 1px solid var(--border); margin: 1.5rem 0 1.25rem; }
+    .fun-fact { background: rgba(140,27,7,0.07); border-left: 3px solid var(--navbar); padding: 0.9rem 1rem; margin: 1rem 0; font-size: 1rem; line-height: 1.75; }
+    .fun-fact strong { color: var(--navbar); }
+    .closing-quote { margin-top: 1.75rem; padding: 1.35rem 1.5rem; background: var(--navbar); color: #fff; font-style: italic; font-size: 1.05rem; line-height: 1.7; text-align: center; }
+    .fade-up { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+  </style>
 </head>
-  <body>
-  	<nav class="navbar navbar-expand-lg navbar-light bg-light col-xl-12"> <a href="Room3.html"><img src="Images/EnglishIcon.png" alt="Placeholder image" width="74" height="74" class="rounded-circle img-fluid"></a> <a class="navbar-brand" href="index.html">&nbsp; &nbsp; &nbsp; &nbsp; ಮನೆ&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a> <a class="navbar-brand" href="Room2_kn.html">&lt; 
-ಹಿಂದಿನ ಕೊಠಡಿ&nbsp; &nbsp; &nbsp; &nbsp;</a> <a class="navbar-brand" href="Room4_kn.html">ಮುಂದಿನ ಕೊಠಡಿ &gt;&nbsp;</a>
-  	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span></button>
-  	  	  
-      <div class="collapse navbar-collapse" id="navbarSupportedContent1"></div>
+<body>
+  <nav class="site-nav">
+    <a href="Room3.html" class="lang-icon"><img src="Images/EnglishIcon.png" alt="English version"></a>
+    <div class="nav-links">
+      <a href="index.html">ಮನೆ</a>
+      <a href="Room2_kn.html">&lt; ಹಿಂದಿನ ಕೊಠಡಿ</a>
+      <a href="Room4_kn.html">ಮುಂದಿನ ಕೊಠಡಿ &gt;</a>
+    </div>
   </nav>
-    <div class="container-fluid">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6"><img src="Images/Room3.png" class="img-fluid" alt="Placeholder image">&nbsp;<br><img src="Images/AudioIcon.png" alt="Placeholder image" width="81" height="81" class="rounded-circle img-fluid">&nbsp;<em>ಈ ವಸ್ತುವಿನ ಬಗ್ಗೆ ಒಂದು ಕಥೆಯನ್ನು ಕೇಳಿ</em></div>
-          <div class="col-lg-6">
-            <h4 dir="ltr"><strong id="docs-internal-guid-3919e81b-7fff-6707-07fa-f61c20bbb6d1">ಯಾವುದೋ ಕೋಳಿಯಲ್ಲ!</strong></h4>
-            <p>ತುಳುನಾಡಿನಲ್ಲಿ, ಕೋರಿ ಕಟ್ಟ (ತುಳು ಭಾಷೆಯಲ್ಲಿ) ಅಥವಾ ಕೊರಿಡ ಕಟ್ಟ / ಕೋಲಿ ಅಂಕ (ಕನ್ನಡದಲ್ಲಿ) - ಕೋಳಿ ಕಾಳಗ ಕೇವಲ ಕ್ರೀಡೆಯಾಗಿರಲಿಲ್ಲ - ಅದು ಒಂದು ಕಲಾ ಪ್ರಕಾರ ಮತ್ತು ಸಂಪ್ರದಾಯವಾಗಿತ್ತು. ಹೋರಾಡುವ ಹುಂಜಗಳನ್ನು ಚಾಂಪಿಯನ್ ಕ್ರೀಡಾಪಟುಗಳಂತೆ ನಡೆಸಿಕೊಳ್ಳಲಾಗುತ್ತಿತ್ತು! ಅವರಿಗೆ ವಿಶೇಷ ಆಹಾರ, ವಿಶೇಷ ತರಬೇತಿ ಮತ್ತು "ಕುಕ್ಕುಟ ಪಂಚಾಂಗ" ಎಂಬ ಅವರ ಸ್ವಂತ ಜ್ಯೋತಿಷ್ಯ ಪುಸ್ತಕವೂ ಇತ್ತು, ಅದು ಅವರ ಮಾಲೀಕರಿಗೆ ಯಾವ ದಿನ ಹೋರಾಟಕ್ಕೆ ಅದೃಷ್ಟ ಎಂದು ತಿಳಿಸುತ್ತಿತ್ತು!</p>
-            </p>
-            <h4 dir="ltr"><strong>ಕೈ ರೊಂಕ - ಕೋಳಿಯ ರಾಯಲ್ ಕಪ್</strong></h4>
-            <p dir="ltr">ಈ ಸಣ್ಣ ತೆಂಗಿನಕಾಯಿ ಚಿಪ್ಪಿನ ಕಪ್ ನೋಡಿ. ಇದನ್ನು "ಕೈ ರೊಂಕ" ಎಂದು ಕರೆಯಲಾಗುತ್ತದೆ ಮತ್ತು ಇದನ್ನು ನಿರ್ದಿಷ್ಟವಾಗಿ ಹೋರಾಡುವ ಹುಂಜಗಳಿಗೆ ನೀರು ನೀಡಲು ಬಳಸಲಾಗುತ್ತಿತ್ತು..</p>
-            <p dir="ltr">ಕೋಳಿ ಯಾವುದೇ ಹಳೆಯ ಬಟ್ಟಲಿನಿಂದ ಏಕೆ ಕುಡಿಯಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ? ಏಕೆಂದರೆ ಇವು ಸಾಮಾನ್ಯ ಕೋಳಿಗಳಾಗಿರಲಿಲ್ಲ! ಅವು ಗೌರವಾನ್ವಿತ ಯೋಧರು. ಕೋಳಿ ನೀರು ಚೆಲ್ಲದೆ ಅಥವಾ ಅದರ ಗರಿಗಳು ಒದ್ದೆಯಾಗದೆ ಆರಾಮವಾಗಿ ಕುಡಿಯಲು ಕೈ ರೊಂಕವನ್ನು ಎಚ್ಚರಿಕೆಯಿಂದ ತಯಾರಿಸಲಾಗಿತ್ತು. </p>
-            <p dir="ltr">ಇದನ್ನು ಹೀಗೆ ಯೋಚಿಸಿ: ನೀವು ಒಲಿಂಪಿಕ್ಸ್‌ಗಾಗಿ ತರಬೇತಿ ಪಡೆಯುತ್ತಿದ್ದರೆ, ನಿಮಗೆ ಸರಿಯಾದ ಉಪಕರಣಗಳು ಬೇಕಾಗುತ್ತವೆ, ಅಲ್ಲವೇ? ಹೋರಾಡುವ ಹುಂಜಕ್ಕೂ ಅದೇ ಗೌರವ ಸಿಕ್ಕಿತು!
-</p>
-            <h4 dir="ltr"><strong id="docs-internal-guid-1b2c008f-7fff-345a-4c16-51c234653c7f">ಚಾಂಪಿಯನ್ಸ್ ಲೈಫ್</strong></h4>
-            <p dir="ltr">Fಹೋರಾಟದ ಕೋಳಿಗಳು ಬಂಟ ಮತ್ತು ಬಿಲ್ಲವ ಸಮುದಾಯಗಳ ವಿದ್ಯಾವಂತ ಜನರಿಗೆ ಸೇರಿದವು. ಈ ಕೋಳಿಗಳಿಗೆ ಭತ್ತವನ್ನು ನೀಡಲಾಗುತ್ತಿತ್ತು, ಆದರೆ ಸಾಮಾನ್ಯ ಕೋಳಿಗಳಿಗಿಂತ ಭಿನ್ನವಾಗಿ ಇದು ಉತ್ತಮ ಗುಣಮಟ್ಟದ್ದಾಗಿರುತ್ತದೆ.</p>
-            <p dir="ltr"><strong id="docs-internal-guid-1b2c008f-7fff-345a-4c16-51c234653c7f">ಮೋಜಿನ ಸಂಗತಿ: </strong>ಒಂದು ಕೋಳಿ 12 ಪಂದ್ಯಗಳನ್ನು ಗೆದ್ದರೆ, ಅದಕ್ಕೆ ವಿಶೇಷ ಗೌರವ ಸಿಗುತ್ತದೆ - ಸಮುದ್ರದಲ್ಲಿ ಸ್ನಾನ! ಮತ್ತು ಒಂದು ಕೋಳಿ ಹೋರಾಟದಲ್ಲಿ ಸೋತು ಸತ್ತರೆ, ಅದರ ಮಾಲೀಕರು ಅದನ್ನು ಎಂದಿಗೂ ಕರಿ ಬೇಯಿಸುವುದಿಲ್ಲ ಏಕೆಂದರೆ ಅದು ನಾಚಿಕೆಗೇಡಿನ ಸಂಗತಿ.
-<br> 
-            </p>
-            <p dir="ltr">ಈ ಪಕ್ಷಿಗಳಿಗೆ ನೀಡಲಾಗುವ ಕಾಳಜಿಯು ತುಳು ಸಂಸ್ಕೃತಿಯು ಶಿಸ್ತು, ಗೌರವ ಮತ್ತು ಸಂಪ್ರದಾಯವನ್ನು ಎಷ್ಟು ಗೌರವಿಸುತ್ತದೆ ಎಂಬುದನ್ನು ತೋರಿಸುತ್ತದೆ - ಪ್ರಾಣಿಗಳಿಗೂ ಸಹ!</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6">&nbsp;</div>
-          <div class="col-lg-6">&nbsp;</div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6">&nbsp;</div>
-          <div class="col-lg-6">&nbsp;</div>
+  <div class="room-hero">
+    <div class="room-number">ಕೊಠಡಿ ೩ · ಕೋಳಿ ಕಾಳಗ ಕೊಠಡಿ</div>
+    <h1 class="room-title">ಯಾವುದೋ ಕೋಳಿಯಲ್ಲ!</h1>
+    <p class="room-subtitle">ತುಳುನಾಡಿನಲ್ಲಿ ಕೈ ರೊಂಕ ಮತ್ತು ಚಾಂಪಿಯನ್ ಜೀವನ</p>
+  </div>
+  <div class="room-body">
+    <div class="content-grid">
+      <div class="image-panel fade-up">
+        <div class="room-image-wrap"><img src="Images/Room3.png" alt="ಕೋಳಿ ಕಾಳಗ ವಸ್ತುಗಳು"></div>
+        <div class="audio-section">
+          <audio controls style="width:100%;margin-bottom:0.5rem;">
+            <source src="Audio/Room3Audio.mp3" type="audio/mp3">
+          </audio>
+          <div class="audio-caption">ಈ ವಸ್ತುವಿನ ಬಗ್ಗೆ ಒಂದು ಕಥೆಯನ್ನು ಕೇಳಿ.</div>
         </div>
       </div>
+      <div class="text-panel">
+        <p class="fade-up">ತುಳುನಾಡಿನಲ್ಲಿ, ಕೋರಿ ಕಟ್ಟ (ತುಳು ಭಾಷೆಯಲ್ಲಿ) ಅಥವಾ ಕೊರಿಡ ಕಟ್ಟ / ಕೋಲಿ ಅಂಕ (ಕನ್ನಡದಲ್ಲಿ) — ಕೋಳಿ ಕಾಳಗ ಕೇವಲ ಕ್ರೀಡೆಯಾಗಿರಲಿಲ್ಲ, ಅದು ಒಂದು ಕಲಾ ಪ್ರಕಾರ ಮತ್ತು ಸಂಪ್ರದಾಯವಾಗಿತ್ತು. ಹೋರಾಡುವ ಹುಂಜಗಳನ್ನು ಚಾಂಪಿಯನ್ ಕ್ರೀಡಾಪಟುಗಳಂತೆ ನಡೆಸಿಕೊಳ್ಳಲಾಗುತ್ತಿತ್ತು! ಅವರಿಗೆ ವಿಶೇಷ ಆಹಾರ, ವಿಶೇಷ ತರಬೇತಿ ಮತ್ತು "ಕುಕ್ಕುಟ ಪಂಚಾಂಗ" ಎಂಬ ಅವರ ಸ್ವಂತ ಜ್ಯೋತಿಷ್ಯ ಪುಸ್ತಕವೂ ಇತ್ತು!</p>
+        <hr class="divider fade-up">
+        <h4 class="fade-up">ಕೈ ರೊಂಕ — ಕೋಳಿಯ ರಾಯಲ್ ಕಪ್</h4>
+        <p class="fade-up">ಈ ಸಣ್ಣ ತೆಂಗಿನಕಾಯಿ ಚಿಪ್ಪಿನ ಕಪ್ ನೋಡಿ. ಇದನ್ನು "ಕೈ ರೊಂಕ" ಎಂದು ಕರೆಯಲಾಗುತ್ತದೆ ಮತ್ತು ಇದನ್ನು ನಿರ್ದಿಷ್ಟವಾಗಿ ಹೋರಾಡುವ ಹುಂಜಗಳಿಗೆ ನೀರು ನೀಡಲು ಬಳಸಲಾಗುತ್ತಿತ್ತು.</p>
+        <p class="fade-up">ಕೋಳಿ ಯಾವುದೇ ಹಳೆಯ ಬಟ್ಟಲಿನಿಂದ ಏಕೆ ಕುಡಿಯಲು ಸಾಧ್ಯವಾಗಲಿಲ್ಲ? ಏಕೆಂದರೆ ಇವು ಸಾಮಾನ್ಯ ಕೋಳಿಗಳಾಗಿರಲಿಲ್ಲ — ಅವು ಗೌರವಾನ್ವಿತ ಯೋಧರು. ನೀವು ಒಲಿಂಪಿಕ್ಸ್‌ಗಾಗಿ ತರಬೇತಿ ಪಡೆಯುತ್ತಿದ್ದರೆ, ನಿಮಗೆ ಸರಿಯಾದ ಉಪಕರಣಗಳು ಬೇಕಾಗುತ್ತವೆ, ಅಲ್ಲವೇ? ಹೋರಾಡುವ ಹುಂಜಕ್ಕೂ ಅದೇ ಗೌರವ ಸಿಕ್ಕಿತು!</p>
+        <hr class="divider fade-up">
+        <h4 class="fade-up">ಚಾಂಪಿಯನ್ ಜೀವನ</h4>
+        <p class="fade-up">ಹೋರಾಟದ ಕೋಳಿಗಳು ಬಂಟ ಮತ್ತು ಬಿಲ್ಲವ ಸಮುದಾಯಗಳ ವಿದ್ಯಾವಂತ ಜನರಿಗೆ ಸೇರಿದ್ದವು. ಈ ಕೋಳಿಗಳಿಗೆ ಭತ್ತವನ್ನು ನೀಡಲಾಗುತ್ತಿತ್ತು — ಆದರೆ ಸಾಮಾನ್ಯ ಕೋಳಿಗಳಿಗಿಂತ ಹೆಚ್ಚು ಉತ್ತಮ ಗುಣಮಟ್ಟದ್ದಾಗಿರುತ್ತಿತ್ತು.</p>
+        <div class="fun-fact fade-up"><strong>ಮೋಜಿನ ಸಂಗತಿ:</strong> ಒಂದು ಕೋಳಿ 12 ಪಂದ್ಯಗಳನ್ನು ಗೆದ್ದರೆ, ಅದಕ್ಕೆ ವಿಶೇಷ ಗೌರವ ಸಿಗುತ್ತದೆ — ಸಮುದ್ರದಲ್ಲಿ ಸ್ನಾನ! ಮತ್ತು ಒಂದು ಕೋಳಿ ಹೋರಾಟದಲ್ಲಿ ಸೋತು ಸತ್ತರೆ, ಅದರ ಮಾಲೀಕರು ಅದನ್ನು ಎಂದಿಗೂ ಕರಿ ಬೇಯಿಸುವುದಿಲ್ಲ — ಅದು ನಾಚಿಕೆಗೇಡಿನ ಸಂಗತಿ.</div>
+        <p class="fade-up">ಈ ಪಕ್ಷಿಗಳಿಗೆ ನೀಡಲಾಗುವ ಕಾಳಜಿಯು ತುಳು ಸಂಸ್ಕೃತಿಯು ಶಿಸ್ತು, ಗೌರವ ಮತ್ತು ಸಂಪ್ರದಾಯವನ್ನು ಎಷ್ಟು ಆಳವಾಗಿ ಗೌರವಿಸುತ್ತದೆ ಎಂಬುದನ್ನು ತೋರಿಸುತ್ತದೆ — ಪ್ರಾಣಿಗಳಿಗೂ ಸಹ!</p>
+        <div class="closing-quote fade-up">ಪ್ರತಿ ಚಾಂಪಿಯನ್‌ಗೂ ಗೌರವದಿಂದ ನಡೆಸಿಕೊಳ್ಳಲು ಅರ್ಹತೆ ಇದೆ — ಗರಿಗಳಿರುವವನಿಗೂ ಸಹ.</div>
+      </div>
     </div>
-  	<!-- body code goes here -->
-
-
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-	<script src="../../../../Work/IFA Grant/WORKING DOCS/Exhibition Root/js/jquery-3.4.1.min.js"></script>
-
-	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="../../../../Work/IFA Grant/WORKING DOCS/Exhibition Root/js/popper.min.js"></script> 
-	<script src="../../../../Work/IFA Grant/WORKING DOCS/Exhibition Root/js/bootstrap-4.4.1.js"></script>
-	  
+  </div>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap-4.4.1.js"></script>
+  <script>
+    var obs = new IntersectionObserver(function(e) { e.forEach(function(x) { if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target);} }); },{threshold:0.1});
+    document.querySelectorAll('.fade-up').forEach(function(el,i){el.style.transitionDelay=(i*0.06)+'s';obs.observe(el);});
+  </script>
 </body>
-	
 </html>

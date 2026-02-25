@@ -1,76 +1,138 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>RATM</title>
-    <!-- Bootstrap -->
-	<style type="text/css">
-	</style>
-<link href="style.css" rel="stylesheet" type="text/css">
-	<link href="css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
+<html lang="kn">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ಕೊಠಡಿ ೮ — RATM</title>
+  <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+  <style>
+    :root { --bg: #FFF7CC; --navbar: #8C1B07; --border: rgba(140,27,7,0.2); }
+    body { background-color: var(--bg); color: #000; font-family: inherit; }
+    .site-nav { background: var(--navbar); padding: 0.75rem 1.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; }
+    .site-nav .lang-icon img { width: 48px; height: 48px; border-radius: 50%; }
+    .nav-links { display: flex; gap: 0; flex-wrap: wrap; margin-left: auto; }
+    .nav-links a { color: #fff; text-decoration: none; font-size: 1.05rem; padding: 0.5rem 1rem; min-height: 44px; display: flex; align-items: center; }
+    .nav-links a:hover { opacity: 0.75; }
+    .room-hero { background: var(--navbar); padding: 2rem 1.5rem 1.75rem; text-align: center; color: #fff; }
+    .room-number { font-size: 0.82rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.7; margin-bottom: 0.3rem; }
+    .room-title { font-size: clamp(1.7rem, 4vw, 2.6rem); font-weight: 700; margin: 0; }
+    .room-subtitle { font-size: 1rem; opacity: 0.65; margin-top: 0.35rem; font-style: italic; }
+    .room-body { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+    .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start; }
+    @media (max-width: 767px) { .content-grid { grid-template-columns: 1fr; gap: 1.5rem; } }
+    .image-panel { position: sticky; top: 74px; }
+    @media (max-width: 767px) { .image-panel { position: static; } }
+    .room-image-wrap img { width: 100%; height: auto; display: block; }
+    .audio-section { margin-top: 1rem; }
+    .audio-section audio { width: 100%; margin-bottom: 0.5rem; }
+    .audio-caption { font-size: 0.95rem; font-style: italic; color: #555; }
+    p { font-size: 1.05rem; line-height: 1.85; margin-bottom: 1rem; }
+    h4 { font-size: 1.2rem; font-weight: 700; margin: 1.4rem 0 0.6rem; }
+    hr.divider { border: none; border-top: 1px solid var(--border); margin: 1.5rem 0 1.25rem; }
+    .step-item { border-bottom: 1px solid var(--border); }
+    .step-toggle { width: 100%; background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.75rem; padding: 0.85rem 0.5rem; text-align: left; font-size: 1.05rem; font-family: inherit; color: #000; min-height: 52px; }
+    .step-toggle:hover { background: rgba(140,27,7,0.06); }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid var(--navbar); display: flex; align-items: center; justify-content: center; font-size: 0.82rem; color: var(--navbar); flex-shrink: 0; transition: all 0.2s; }
+    .step-item.open .step-num { background: var(--navbar); color: #fff; }
+    .step-arrow { margin-left: auto; font-size: 0.7rem; color: var(--navbar); transition: transform 0.3s; }
+    .step-item.open .step-arrow { transform: rotate(180deg); }
+    .step-content { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease; padding: 0 0.5rem 0 3.2rem; font-size: 1rem; line-height: 1.75; }
+    .step-item.open .step-content { max-height: 200px; padding: 0 0.5rem 0.9rem 3.2rem; }
+    .insights-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.85rem; margin: 0.75rem 0 1rem; }
+    @media (max-width: 500px) { .insights-grid { grid-template-columns: 1fr; } }
+    .insight-card { background: #fff; border: 1px solid var(--border); border-left: 3px solid var(--navbar); padding: 0.9rem 1rem; }
+    .insight-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.25rem; }
+    .insight-text { font-size: 0.9rem; line-height: 1.6; margin: 0; }
+    .closing-quote { margin-top: 1.75rem; padding: 1.35rem 1.5rem; background: var(--navbar); color: #fff; font-style: italic; font-size: 1.05rem; line-height: 1.7; text-align: center; }
+    .fade-up { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+  </style>
 </head>
-  <body>
-  	<nav class="navbar navbar-expand-lg navbar-light bg-light col-xl-12"> <a href="Room8.html"><img src="Images/EnglishIcon.png" alt="Placeholder image" width="74" height="74" class="rounded-circle img-fluid"></a> <a class="navbar-brand" href="index.html">&nbsp; &nbsp; &nbsp; &nbsp; ಮನೆ&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a> <a class="navbar-brand" href="Room7_kn.html">&lt; 
-ಹಿಂದಿನ ಕೊಠಡಿ&nbsp; &nbsp; &nbsp; &nbsp;</a> <a class="navbar-brand" href="Room9_kn.html">ಮುಂದಿನ ಕೊಠಡಿ &gt;&nbsp;</a>
-  	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span></button>
-  	  	  
-      <div class="collapse navbar-collapse" id="navbarSupportedContent1"></div>
+<body>
+  <nav class="site-nav">
+    <a href="Room8.html" class="lang-icon"><img src="Images/EnglishIcon.png" alt="English version"></a>
+    <div class="nav-links">
+      <a href="index.html">ಮನೆ</a>
+      <a href="Room7_kn.html">&lt; ಹಿಂದಿನ ಕೊಠಡಿ</a>
+      <a href="Room9_kn.html">ಮುಂದಿನ ಕೊಠಡಿ &gt;</a>
+    </div>
   </nav>
-    <div class="container-fluid">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6"><img src="Images/Room8.png" class="img-fluid" alt="Placeholder image">&nbsp;<br>
-            <audio title="SeedSaver Audio" controls="controls" >
-              <source src="Audio/SeedSaverAudio.mp3" type="audio/mp3">
-            </audio>
-          <br><em> ಈ ವಸ್ತುವಿನ ಬಗ್ಗೆ ಒಂದು ಕಥೆಯನ್ನು ಕೇಳಿ</em></div>
-          <div class="col-lg-6">
-            <p dir="ltr">ತುಳು ರೈತರು ತಮ್ಮ ಅತ್ಯಂತ ಅಮೂಲ್ಯವಾದ ನಿಧಿಯನ್ನು - ಮುಂದಿನ ನೆಟ್ಟ ಋತುವಿಗೆ ಬೀಜಗಳನ್ನು ಇಟ್ಟುಕೊಂಡಿರುವ ಸಂಗ್ರಹಣಾ ಕೊಠಡಿಗೆ ಸುಸ್ವಾಗತ!           </p>
-            <p dir="ltr">ನೀವು ಒಬ್ಬ ರೈತ ಎಂದು ಕಲ್ಪಿಸಿಕೊಳ್ಳಿ. ನೀವು ಭತ್ತವನ್ನು ಬೆಳೆಯಲು ಋತುವಿನಾದ್ಯಂತ ಶ್ರಮಿಸಿದ್ದೀರಿ ಮತ್ತು ಅಂತಿಮವಾಗಿ, ನೀವು ಅದನ್ನು ಕೊಯ್ಲು ಮಾಡುತ್ತೀರಿ. ಮುಂದಿನ ವರ್ಷ ನೆಡಲು ನೀವು ಕೆಲವು ಬೀಜಗಳನ್ನು ಉಳಿಸುತ್ತೀರಿ. ಆದರೆ ಒಂದು ದೊಡ್ಡ ಸಮಸ್ಯೆ ಇದೆ: ಸಣ್ಣ ಹುಳುಗಳು ಮತ್ತು ಕೀಟಗಳು ಸಂಗ್ರಹಿಸಿದ ಬೀಜಗಳನ್ನು ತಿನ್ನಲು ಇಷ್ಟಪಡುತ್ತವೆ! ನಿಮ್ಮ ಬೀಜಗಳು ನಾಶವಾದರೆ, ಮುಂದಿನ ವರ್ಷ ನೀವು ಬೆಳೆಗಳನ್ನು ನೆಡಲು ಸಾಧ್ಯವಿಲ್ಲ, ಮತ್ತು ನಿಮ್ಮ ಕುಟುಂಬವು ಹಸಿವಿನಿಂದ ಬಳಲಬಹುದು.</p>
-            <p dir="ltr">ಹಾಗಾದರೆ ನಾವು ರಾಸಾಯನಿಕ ಕೀಟನಾಶಕಗಳು ಮತ್ತು ಅಲಂಕಾರಿಕ ಶೇಖರಣಾ ಚೀಲಗಳನ್ನು ಹೊಂದುವ ಮೊದಲು ತುಳು ರೈತರು ಏನು ಮಾಡಿದರು?</p>
-            <h4 dir="ltr"><strong id="docs-internal-guid-088d136e-7fff-bb0f-8a33-a865ac395a3c">ತೆಂಗಿನ ಚಿಪ್ಪಿನ ಬೂದಿ ಪರಿಹಾರ</strong></h4>
-            <p dir="ltr">ಸುಟ್ಟ ತೆಂಗಿನ ಚಿಪ್ಪಿನಿಂದ ಬಂದ ಬೂದಿಯು ಬೀಜಗಳನ್ನು ರಕ್ಷಿಸುವ ವಿಶೇಷ ಶಕ್ತಿಯನ್ನು ಹೊಂದಿದೆ ಎಂದು ತುಳು ರೈತರು ಕಂಡುಹಿಡಿದರು! ಅವರು ಅದನ್ನು ಹೇಗೆ ಮಾಡಿದರು ಎಂಬುದು ಇಲ್ಲಿದೆ:</p>
-            <ul>
-              <li>ಹಂತ 1: ಬಿಸಿ ಬೂದಿಯಾಗುವವರೆಗೆ ತೆಂಗಿನ ಚಿಪ್ಪುಗಳನ್ನು ಸುಟ್ಟುಹಾಕಿ</li>
-              <li>ಹಂತ 2: ಬೀಜಗಳನ್ನು ಈ ಬಿಸಿ ತೆಂಗಿನ ಚಿಪ್ಪಿನ ಬೂದಿಯೊಂದಿಗೆ ಬೆರೆಸಿ&nbsp;</li>
-              <li>ಹಂತ 3: ಮಿಶ್ರಣವನ್ನು ಮಣ್ಣಿನ ಪಾತ್ರೆಯಲ್ಲಿ ಹಾಕಿ&nbsp;</li>
-              <li>ಹಂತ 4: ಮಡಕೆಯನ್ನು ಹಸುವಿನ ಸಗಣಿಯಿಂದ ಮುಚ್ಚಿ ಸೂರ್ಯನ ಬೆಳಕಿನಲ್ಲಿ ಇರಿಸಿ</li>
-              <li>ಹಂತ 5: ಅದನ್ನು ಸುರಕ್ಷಿತವಾಗಿ ಸಂಗ್ರಹಿಸಿ&nbsp;</li>
-            </ul>
-            <p dir="ltr">ವರ್ಷಗಳ ನಂತರವೂ, ಬೀಜಗಳು ಪರಿಪೂರ್ಣವಾಗಿರುತ್ತವೆ! ಹುಳುಗಳಿಲ್ಲ, ಕೊಳೆತಿಲ್ಲ, ಹಾನಿಯಿಲ್ಲ. ತೆಂಗಿನ ಚಿಪ್ಪಿನ ಬೂದಿ ನೈಸರ್ಗಿಕ ಕೀಟನಾಶಕ ಮತ್ತು ಸಂರಕ್ಷಕದಂತೆ ಕಾರ್ಯನಿರ್ವಹಿಸಿತು. ರೈತನಿಗೆ ಅಗತ್ಯವಿದ್ದಾಗ ಬೀಜಗಳನ್ನು ನೆಡಲು ಸಿದ್ಧವಾಗುತ್ತಿತ್ತು.           </p>
-            <p dir="ltr">ಬೂದಿ ಹಲವಾರು ಕೆಲಸಗಳನ್ನು ಮಾಡಿತು:</p>
-            <ul>
-              <li>ತೇವಾಂಶವನ್ನು ದೂರವಿಡುತ್ತದೆ (ಹುಳುಗಳು ತೇವಾಂಶವುಳ್ಳ ಸ್ಥಳಗಳನ್ನು ಇಷ್ಟಪಡುತ್ತವೆ)</li>
-              <li>ಬೂದಿಯಲ್ಲಿ ಕೀಟಗಳ ಮೇಲೆ ಪರಿಣಾಮ ಬೀರುವ ರಾಸಾಯನಿಕಗಳು ಇದ್ದಿರಬಹುದು</li>
-              <li>ಮುಚ್ಚಿದ ಮಡಕೆ ಗಾಳಿಯನ್ನು ಇಡುತ್ತದೆ ಮತ್ತು ಕೀಟಗಳನ್ನು ಹೊರಹಾಕುತ್ತದೆ</li>
-              <li>ಬೂದಿ ಯಾವುದೇ ಹೆಚ್ಚುವರಿ ತೇವಾಂಶವನ್ನು ಹೀರಿಕೊಳ್ಳುತ್ತದೆ</li>
-            </ul>
-            <p dir="ltr">ಇಂದು, ರೈತರು ತಮ್ಮ ಬೀಜಗಳನ್ನು ರಕ್ಷಿಸಲು ರಾಸಾಯನಿಕ ಗೊಬ್ಬರಗಳು ಮತ್ತು ಕೀಟನಾಶಕಗಳನ್ನು ಬಳಸುತ್ತಾರೆ. ಆದರೆ ಈ ರಾಸಾಯನಿಕಗಳು ಕೆಲವೊಮ್ಮೆ ಮಣ್ಣು ಮತ್ತು ಪರಿಸರಕ್ಕೆ ಹಾನಿ ಮಾಡಬಹುದು. ಹಳೆಯ ತುಳು ಪದ್ಧತಿ ಸಂಪೂರ್ಣವಾಗಿ ನೈಸರ್ಗಿಕವಾಗಿತ್ತು! ತೆಂಗಿನ ಮರವು ತನ್ನ ಫಲವನ್ನು ನೀಡಿದ ನಂತರವೂ ರಕ್ಷಣೆ ನೀಡಿತು. ಯಾವುದನ್ನೂ ವ್ಯರ್ಥ ಮಾಡಲಿಲ್ಲ ಮತ್ತು ಭೂಮಿಗೆ ಹಾನಿಕಾರಕ ಏನನ್ನೂ ಸೇರಿಸಲಿಲ್ಲ.</p>
-            <p>&nbsp;</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6 col-xl-1"></div>
-          <div class="col-lg-6 col-xl-2"></div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6">&nbsp;</div>
-          <div class="col-lg-6">&nbsp;</div>
+  <div class="room-hero">
+    <div class="room-number">ಕೊಠಡಿ ೮ · ಬೀಜ ಸಂಗ್ರಹ</div>
+    <h1 class="room-title">ತೆಂಗಿನ ಚಿಪ್ಪಿನ ಬೂದಿ ಪರಿಹಾರ</h1>
+    <p class="room-subtitle">ತುಳು ರೈತರು ತಲೆಮಾರುಗಳಿಗೆ ಬೀಜಗಳನ್ನು ಹೇಗೆ ರಕ್ಷಿಸಿದರು</p>
+  </div>
+  <div class="room-body">
+    <div class="content-grid">
+      <div class="image-panel fade-up">
+        <div class="room-image-wrap"><img src="Images/Room8.png" alt="ಬೀಜ ಸಂಗ್ರಹ ವಸ್ತುಗಳು"></div>
+        <div class="audio-section">
+          <audio controls title="ಬೀಜ ಸಂರಕ್ಷಕ ಆಡಿಯೋ">
+            <source src="Audio/SeedSaverAudio.mp3" type="audio/mp3">
+          </audio>
+          <div class="audio-caption">ಈ ವಸ್ತುವಿನ ಬಗ್ಗೆ ಒಂದು ಕಥೆಯನ್ನು ಕೇಳಿ.</div>
         </div>
       </div>
+      <div class="text-panel">
+        <p class="fade-up">ತುಳು ರೈತರು ತಮ್ಮ ಅತ್ಯಂತ ಅಮೂಲ್ಯವಾದ ನಿಧಿಯನ್ನು — ಮುಂದಿನ ನೆಟ್ಟ ಋತುವಿಗೆ ಬೀಜಗಳನ್ನು ಇಟ್ಟುಕೊಂಡಿರುವ ಸಂಗ್ರಹಣಾ ಕೊಠಡಿಗೆ ಸುಸ್ವಾಗತ!</p>
+        <p class="fade-up">ನೀವು ಒಬ್ಬ ರೈತ ಎಂದು ಕಲ್ಪಿಸಿಕೊಳ್ಳಿ. ಭತ್ತ ಬೆಳೆಯಲು ಋತುವಿನಾದ್ಯಂತ ಶ್ರಮಿಸಿ ಕೊಯ್ಲು ಮಾಡಿದ್ದೀರಿ. ಮುಂದಿನ ವರ್ಷ ನೆಡಲು ಕೆಲವು ಬೀಜಗಳನ್ನು ಉಳಿಸಿದ್ದೀರಿ. ಆದರೆ ದೊಡ್ಡ ಸಮಸ್ಯೆ: ಸಣ್ಣ ಹುಳುಗಳು ಮತ್ತು ಕೀಟಗಳು ಸಂಗ್ರಹಿಸಿದ ಬೀಜಗಳನ್ನು ತಿನ್ನಲು ಇಷ್ಟಪಡುತ್ತವೆ!</p>
+        <p class="fade-up">ರಾಸಾಯನಿಕ ಕೀಟನಾಶಕಗಳು ಬರುವ ಮೊದಲು ತುಳು ರೈತರು ಏನು ಮಾಡಿದರು?</p>
+        <hr class="divider fade-up">
+        <h4 class="fade-up">5 ಹಂತದ ಪ್ರಕ್ರಿಯೆ</h4>
+        <div class="fade-up">
+          <div class="step-item">
+            <button class="step-toggle" onclick="toggleStep(this)"><span class="step-num">೧</span> ತೆಂಗಿನ ಚಿಪ್ಪುಗಳನ್ನು ಸುಡಿ <span class="step-arrow">▼</span></button>
+            <div class="step-content">ತೆಂಗಿನ ಚಿಪ್ಪುಗಳನ್ನು ಬಿಸಿ ಬೂದಿಯಾಗುವವರೆಗೆ ಸುಡಲಾಗುತ್ತದೆ — ಬೀಜ ರಕ್ಷಣೆಯ ಮುಖ್ಯ ಘಟಕ.</div>
+          </div>
+          <div class="step-item">
+            <button class="step-toggle" onclick="toggleStep(this)"><span class="step-num">೨</span> ಬೀಜಗಳನ್ನು ಬಿಸಿ ಬೂದಿಯೊಂದಿಗೆ ಬೆರೆಸಿ <span class="step-arrow">▼</span></button>
+            <div class="step-content">ಬಿಸಿ ಬೂದಿ ಇನ್ನೂ ಬೆಚ್ಚಗಿರುವಾಗ ಬೀಜಗಳನ್ನು ಚೆನ್ನಾಗಿ ಬೆರೆಸಲಾಗುತ್ತದೆ.</div>
+          </div>
+          <div class="step-item">
+            <button class="step-toggle" onclick="toggleStep(this)"><span class="step-num">೩</span> ಮಣ್ಣಿನ ಪಾತ್ರೆಯಲ್ಲಿ ತುಂಬಿ <span class="step-arrow">▼</span></button>
+            <div class="step-content">ಬೂದಿ-ಬೀಜ ಮಿಶ್ರಣವನ್ನು ಮಣ್ಣಿನ ಪಾತ್ರೆಯಲ್ಲಿ ತುಂಬಲಾಗುತ್ತದೆ — ನೈಸರ್ಗಿಕ, ಉಸಿರಾಡಬಲ್ಲ ಪಾತ್ರೆ.</div>
+          </div>
+          <div class="step-item">
+            <button class="step-toggle" onclick="toggleStep(this)"><span class="step-num">೪</span> ಹಸುವಿನ ಸಗಣಿಯಿಂದ ಮುಚ್ಚಿ ಸೂರ್ಯನ ಬೆಳಕಿನಲ್ಲಿ ಇರಿಸಿ <span class="step-arrow">▼</span></button>
+            <div class="step-content">ಸಗಣಿ ಪಾತ್ರೆಯನ್ನು ಮುಚ್ಚಿ, ಸೂರ್ಯನ ಬೆಳಕು ಅದನ್ನು ನೈಸರ್ಗಿಕವಾಗಿ ಶುದ್ಧಗೊಳಿಸುತ್ತದೆ.</div>
+          </div>
+          <div class="step-item">
+            <button class="step-toggle" onclick="toggleStep(this)"><span class="step-num">೫</span> ಸುರಕ್ಷಿತವಾಗಿ ಸಂಗ್ರಹಿಸಿ <span class="step-arrow">▼</span></button>
+            <div class="step-content">ಮುಚ್ಚಿದ ಪಾತ್ರೆ ಸುರಕ್ಷಿತವಾಗಿ ಸಂಗ್ರಹಿಸಲ್ಪಡುತ್ತದೆ. ವರ್ಷಗಳ ನಂತರವೂ, ಬೀಜಗಳು ಪರಿಪೂರ್ಣವಾಗಿರುತ್ತವೆ.</div>
+          </div>
+        </div>
+        <hr class="divider fade-up">
+        <h4 class="fade-up">ಬೂದಿ ಏಕೆ ಕೆಲಸ ಮಾಡಿತು</h4>
+        <div class="insights-grid fade-up">
+          <div class="insight-card">
+            <div class="insight-title">ತೇವಾಂಶ ದೂರ ಇಡಿತು</div>
+            <div class="insight-text">ಹುಳುಗಳು ತೇವ ಸ್ಥಳ ಇಷ್ಟಪಡುತ್ತವೆ — ಬೂದಿ ಒಣ ವಾತಾವರಣ ಕಾಪಾಡಿತು.</div>
+          </div>
+          <div class="insight-card">
+            <div class="insight-title">ನೈಸರ್ಗಿಕ ಕೀಟನಾಶಕ</div>
+            <div class="insight-text">ಬೂದಿ ಕೀಟಗಳ ಮೇಲೆ ಪರಿಣಾಮ ಬೀರುವ ರಾಸಾಯನಿಕಗಳನ್ನು ಹೊಂದಿದೆ.</div>
+          </div>
+          <div class="insight-card">
+            <div class="insight-title">ಮುಚ್ಚಿದ ವಾತಾವರಣ</div>
+            <div class="insight-text">ಮುಚ್ಚಿದ ಪಾತ್ರೆ ಗಾಳಿ ಮತ್ತು ಕೀಟಗಳನ್ನು ಸಂಪೂರ್ಣವಾಗಿ ದೂರ ಇಟ್ಟಿತು.</div>
+          </div>
+          <div class="insight-card">
+            <div class="insight-title">ಹೆಚ್ಚುವರಿ ತೇವ ಹೀರಿಕೊಂಡಿತು</div>
+            <div class="insight-text">ಉಳಿದ ಆರ್ದ್ರತೆಯನ್ನು ಬೂದಿ ಹೀರಿಕೊಂಡಿತು.</div>
+          </div>
+        </div>
+        <div class="closing-quote fade-up">ತೆಂಗಿನ ಮರವು ತನ್ನ ಫಲವನ್ನು ನೀಡಿದ ನಂತರವೂ ರಕ್ಷಣೆ ನೀಡಿತು. ಯಾವುದನ್ನೂ ವ್ಯರ್ಥ ಮಾಡಲಿಲ್ಲ.</div>
+      </div>
     </div>
-  	<!-- body code goes here -->
-
-
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-	<script src="../../../../Work/IFA Grant/WORKING DOCS/Exhibition Root/js/jquery-3.4.1.min.js"></script>
-
-	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="../../../../Work/IFA Grant/WORKING DOCS/Exhibition Root/js/popper.min.js"></script> 
-	<script src="../../../../Work/IFA Grant/WORKING DOCS/Exhibition Root/js/bootstrap-4.4.1.js"></script>
-	  
+  </div>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap-4.4.1.js"></script>
+  <script>
+    function toggleStep(btn){var item=btn.closest('.step-item');var isOpen=item.classList.contains('open');document.querySelectorAll('.step-item').forEach(function(el){el.classList.remove('open');});if(!isOpen)item.classList.add('open');}
+    var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target);}});},{threshold:0.1});
+    document.querySelectorAll('.fade-up').forEach(function(el,i){el.style.transitionDelay=(i*0.06)+'s';obs.observe(el);});
+  </script>
 </body>
-	
 </html>

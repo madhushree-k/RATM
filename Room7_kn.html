@@ -1,73 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>RATM</title>
-    <!-- Bootstrap -->
-	<style type="text/css">
-	</style>
-<link href="style.css" rel="stylesheet" type="text/css">
-	<link href="css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
+<html lang="kn">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ಕೊಠಡಿ ೭ — RATM</title>
+  <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+  <style>
+    :root { --bg: #FFF7CC; --navbar: #8C1B07; --border: rgba(140,27,7,0.2); }
+    body { background-color: var(--bg); color: #000; font-family: inherit; }
+    .site-nav { background: var(--navbar); padding: 0.75rem 1.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; }
+    .site-nav .lang-icon img { width: 48px; height: 48px; border-radius: 50%; }
+    .nav-links { display: flex; gap: 0; flex-wrap: wrap; margin-left: auto; }
+    .nav-links a { color: #fff; text-decoration: none; font-size: 1.05rem; padding: 0.5rem 1rem; min-height: 44px; display: flex; align-items: center; }
+    .nav-links a:hover { opacity: 0.75; }
+    .room-hero { background: var(--navbar); padding: 2rem 1.5rem 1.75rem; text-align: center; color: #fff; }
+    .room-number { font-size: 0.82rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.7; margin-bottom: 0.3rem; }
+    .room-title { font-size: clamp(1.7rem, 4vw, 2.6rem); font-weight: 700; margin: 0; }
+    .room-subtitle { font-size: 1rem; opacity: 0.65; margin-top: 0.35rem; font-style: italic; }
+    .room-body { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+    .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start; }
+    @media (max-width: 767px) { .content-grid { grid-template-columns: 1fr; gap: 1.5rem; } }
+    .image-panel { position: sticky; top: 74px; }
+    @media (max-width: 767px) { .image-panel { position: static; } }
+    .room-image-wrap img { width: 100%; height: auto; display: block; }
+    .audio-section { margin-top: 1rem; }
+    .audio-section audio { width: 100%; }
+    .audio-caption { font-size: 0.95rem; font-style: italic; color: #555; }
+    p { font-size: 1.05rem; line-height: 1.85; margin-bottom: 1rem; }
+    h4 { font-size: 1.2rem; font-weight: 700; margin: 1.4rem 0 0.6rem; }
+    hr.divider { border: none; border-top: 1px solid var(--border); margin: 1.5rem 0 1.25rem; }
+    .step-item { border-bottom: 1px solid var(--border); }
+    .step-toggle { width: 100%; background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.75rem; padding: 0.85rem 0.5rem; text-align: left; font-size: 1.05rem; font-family: inherit; color: #000; min-height: 52px; }
+    .step-toggle:hover { background: rgba(140,27,7,0.06); }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid var(--navbar); display: flex; align-items: center; justify-content: center; font-size: 0.82rem; color: var(--navbar); flex-shrink: 0; transition: all 0.2s; }
+    .step-item.open .step-num { background: var(--navbar); color: #fff; }
+    .step-arrow { margin-left: auto; font-size: 0.7rem; color: var(--navbar); transition: transform 0.3s; }
+    .step-item.open .step-arrow { transform: rotate(180deg); }
+    .step-content { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease; padding: 0 0.5rem 0 3.2rem; font-size: 1rem; line-height: 1.75; }
+    .step-item.open .step-content { max-height: 200px; padding: 0 0.5rem 0.9rem 3.2rem; }
+    .fun-fact { background: rgba(140,27,7,0.07); border-left: 3px solid var(--navbar); padding: 0.9rem 1rem; margin: 1rem 0; font-size: 1rem; line-height: 1.75; }
+    .fun-fact strong { color: var(--navbar); }
+    .closing-quote { margin-top: 1.75rem; padding: 1.35rem 1.5rem; background: var(--navbar); color: #fff; font-style: italic; font-size: 1.05rem; line-height: 1.7; text-align: center; }
+    .fade-up { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+  </style>
 </head>
-  <body>
-  	<nav class="navbar navbar-expand-lg navbar-light bg-light col-xl-12"> <a href="Room7.html"><img src="Images/EnglishIcon.png" alt="Placeholder image" width="74" height="74" class="rounded-circle img-fluid"></a> <a class="navbar-brand" href="index.html">&nbsp; &nbsp; &nbsp; &nbsp; ಮನೆ&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a> <a class="navbar-brand" href="Room6_kn.html">&lt; 
-ಹಿಂದಿನ ಕೊಠಡಿ&nbsp; &nbsp; &nbsp; &nbsp;</a> <a class="navbar-brand" href="Room8_kn.html">ಮುಂದಿನ ಕೊಠಡಿ &gt;&nbsp;</a>
-  	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span></button>
-  	  	  
-      <div class="collapse navbar-collapse" id="navbarSupportedContent1"></div>
+<body>
+  <nav class="site-nav">
+    <a href="Room7.html" class="lang-icon"><img src="Images/EnglishIcon.png" alt="English version"></a>
+    <div class="nav-links">
+      <a href="index.html">ಮನೆ</a>
+      <a href="Room6_kn.html">&lt; ಹಿಂದಿನ ಕೊಠಡಿ</a>
+      <a href="Room8_kn.html">ಮುಂದಿನ ಕೊಠಡಿ &gt;</a>
+    </div>
   </nav>
-    <div class="container-fluid">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6"><img src="Images/Room7.png" class="img-fluid" alt="Placeholder image">&nbsp;<br><img src="Images/AudioIcon.png" alt="Placeholder image" width="81" height="81" class="rounded-circle img-fluid">&nbsp;<em>ಈ ವಸ್ತುವಿನ ಬಗ್ಗೆ ಒಂದು ಕಥೆಯನ್ನು ಕೇಳಿ.</em></div>
-          <div class="col-lg-6">
-            <p dir="ltr">ಅಡುಗೆಮನೆಯ ಹೃದಯ ಭಾಗಕ್ಕೆ ಸ್ವಾಗತ, ಅಲ್ಲಿ ರುಚಿಕರವಾದ ತುಳು ಆಹಾರವನ್ನು ಬೇಯಿಸಿ ಬಡಿಸಲಾಗುತ್ತಿತ್ತು!</p>
-            <h4 dir="ltr"><strong id="docs-internal-guid-7af42699-7fff-f3ae-3478-9d9f28a367c0">"ಸೌಟ್" - ತೆಂಗಿನಕಾಯಿ ಚಿಪ್ಪಿನ ಲ್ಯಾಡಲ್</strong></h4>
-            <p dir="ltr">ಹಿಡಿಕೆಯನ್ನು ಹೊಂದಿರುವ ಈ ಬಾಗಿದ ತೆಂಗಿನ ಚಿಪ್ಪನ್ನು "ಸೌಟ್" ಎಂದು ಕರೆಯಲಾಗುತ್ತದೆ. ಇದು ತುಳು ಅಡುಗೆಮನೆಯಲ್ಲಿ ಅತ್ಯಂತ ಪ್ರಮುಖ ಸಾಧನವಾಗಿತ್ತು! ಸೌಟ್ ಬಹುತೇಕ ಎಲ್ಲವನ್ನೂ ಮಾಡಬಲ್ಲದು:</p>
-            <ul>
-              <li>ಮಡಕೆಯಿಂದ ಅನ್ನವನ್ನು ತೆಗೆಯಿರಿ ಅಥವಾ ಸಾಂಬಾರ್ (ಮಸಾಲೆಯುಕ್ತ ಮಸೂರ ಸೂಪ್) ಅನ್ನು ಬಟ್ಟಲುಗಳಿಗೆ ಸುರಿಯಿರಿ</li>
-              <li>ಹಾಲು ಅಳೆಯಿರಿ</li>
-              <li>ಅಡುಗೆಗೆ ಎಣ್ಣೆಯನ್ನು ಸುರಿಯಿರಿ</li>
-              <li>ಕುಡಿಯಲು ಬಟ್ಟಲಾಗಿಯೂ ಸಹ ಬಳಸಲಾಗುತ್ತದೆ!</li>
-            </ul>
-            <h4 dir="ltr"><strong id="docs-internal-guid-7af42699-7fff-f3ae-3478-9d9f28a367c0">ಸೋರಿಕೆ ನಿರೋಧಕವಾಗಿರುವುದರ ಮಾಂತ್ರಿಕ ಹಾಗೂ</strong></h4>
-            <p dir="ltr">ಅದ್ಭುತವಾದದ್ದು ಇಲ್ಲಿದೆ: ಸರಿಯಾಗಿ ತಯಾರಿಸಿದಾಗ, ತೆಂಗಿನಕಾಯಿ ಚಿಪ್ಪಿನ ಲ್ಯಾಡಲ್‌ನಿಂದ ಒಂದು ಹನಿ ದ್ರವವೂ ಸೋರಿಕೆಯಾಗುವುದಿಲ್ಲ! ಅವರು ಅದನ್ನು ಹೇಗೆ ಮಾಡಿದರು? ಇದಕ್ಕೆ ನಂಬಲಾಗದ ಕೌಶಲ್ಯ ಬೇಕಿತ್ತು. ಕುಶಲಕರ್ಮಿಗಳು ಹೀಗೆ ಮಾಡಬೇಕಾಗಿತ್ತು:</p>
-            <ol>
-              <li>ಸರಿಯಾದ ತೆಂಗಿನಕಾಯಿಯನ್ನು ಆರಿಸಿ (ತುಂಬಾ ಚಿಕ್ಕದಲ್ಲ, ತುಂಬಾ ಹಳೆಯದಲ್ಲ)</li>
-              <li>ಅದನ್ನು ಸಂಪೂರ್ಣವಾಗಿ ಅರ್ಧದಷ್ಟು ಕತ್ತರಿಸಿ</li>
-              <li>ಯಾವುದೇ ಬಿರುಕುಗಳಿಲ್ಲದಂತೆ ಅದನ್ನು ನಯವಾಗಿ ಮರಳು ಮಾಡಿ</li>
-              <li>ಹಿಡಿಕೆಯನ್ನು ಮುರಿಯದೆ ಜೋಡಿಸಿ</li>
-              <li>ಎಲ್ಲಾ ನೈಸರ್ಗಿಕ ನಾರುಗಳು ಮುಚ್ಚಲ್ಪಟ್ಟಿವೆಯೇ ಎಂದು ಖಚಿತಪಡಿಸಿಕೊಳ್ಳಿ</li>
-            </ol>
-            <p dir="ltr">ಕಠಿಣವಾದ ಭಾಗವೆಂದರೆ ಬಿದಿರು ಅಥವಾ ಮರದಿಂದ ಮಾಡಿದಹಿಡಿಕೆಯನ್ನು ಜೋಡಿಸುವುದು. ಕುಶಲಕರ್ಮಿಗಳು ದಪ್ಪ ತೆಂಗಿನ ಚಿಪ್ಪಿನಲ್ಲಿ ಎಚ್ಚರಿಕೆಯಿಂದ ಒಂದು ಸಣ್ಣ ರಂಧ್ರವನ್ನು ಮಾಡಿ, ಬಿಸಿ, ಹಬೆಯಾಡುವ ಅಡುಗೆಮನೆಗಳಲ್ಲಿ ವರ್ಷಗಳ ಕಾಲ ಬಳಸಿದ ನಂತರವೂ ಅದು ಎಂದಿಗೂ ಬೀಳದಂತೆ ಹಿಡಿಕೆಯನ್ನು ಬಲವಾಗಿ ಜೋಡಿಸುತ್ತಿದ್ದರು!</p>
-            <h4 dir="ltr"><strong id="docs-internal-guid-7af42699-7fff-f3ae-3478-9d9f28a367c0">ಬನ್ನಂಗಾಯು ರಹಸ್ಯ</strong></h4>
-            <p dir="ltr">ಕೆಲವೊಮ್ಮೆ ತೆಂಗಿನ ಚಿಪ್ಪುಗಳು ತುಂಬಾ ಗಟ್ಟಿಯಾಗಿರುತ್ತವೆ ಮತ್ತು ಅವುಗಳ ಮೇಲೆ ಕೆಲಸ ಮಾಡುವಾಗ ಬಿರುಕು ಬಿಡುತ್ತಿದ್ದವು. ತುಳು ಜನರು ಒಂದು ಬುದ್ಧಿವಂತ ಪರಿಹಾರವನ್ನು ಕಂಡುಕೊಂಡರು: ಅವರು "ಬನ್ನಂಗಾಯು" - ಇನ್ನೂ ಸಂಪೂರ್ಣವಾಗಿ ಬೆಳೆಯದ ತೆಂಗಿನಕಾಯಿ - ತೆಗೆದುಕೊಂಡು ಅದನ್ನು ಬಿಸಿ ನೀರಿನಲ್ಲಿ ನೆನೆಸಿ ಕುದಿಸುತ್ತಿದ್ದರು. ಏನಾಯಿತು ಎಂದು ಊಹಿಸಿ? ಅದು ರಬ್ಬರ್‌ನಂತೆ ಹೊಂದಿಕೊಳ್ಳುತ್ತದೆ! ನೀವು ಅದನ್ನು ನೀವು ಬಯಸಿದ ಯಾವುದೇ ದಿಕ್ಕಿನಲ್ಲಿ ಬಗ್ಗಿಸಬಹುದು. ಇದು ಮುರಿಯದೆ ಆಕಾರ ಮತ್ತು ಕತ್ತರಿಸಲು ಹೆಚ್ಚು ಸುಲಭವಾಯಿತು.</p>
-<br> ಸಾಮಾನ್ಯ ಜನರು ಸಹ ಈ ಲ್ಯಾಡಲ್‌ಗಳನ್ನು ತಯಾರಿಸಲು ಕಲಿಯಬಹುದು. ಇದು ಕೇವಲ ತಜ್ಞರಿಗೆ ಮಾತ್ರವಲ್ಲ! ತಾಳ್ಮೆ ಮತ್ತು ಕೌಶಲ್ಯ ಹೊಂದಿರುವ ಯಾರಾದರೂ ಈ ಉಪಯುಕ್ತ ಸಾಧನಗಳನ್ನು ರಚಿಸಬಹುದು. ಪ್ಲಾಸ್ಟಿಕ್ ಮತ್ತು ಉಕ್ಕು ವಹಿಸಿಕೊಳ್ಳುವ ಮೊದಲು, ಪ್ರತಿ ತುಳುವರ ಮನೆಯಲ್ಲೂ ಅಡುಗೆಮನೆಯಲ್ಲಿ ಹಲವಾರು ತೆಂಗಿನ ಚಿಪ್ಪಿನ ಲ್ಯಾಡಲ್‌ಗಳು ನೇತಾಡುತ್ತಿದ್ದವು!
-            <p>&nbsp;</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6">&nbsp;</div>
-          <div class="col-lg-6">&nbsp;</div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6">&nbsp;</div>
-          <div class="col-lg-6">&nbsp;</div>
+  <div class="room-hero">
+    <div class="room-number">ಕೊಠಡಿ ೭ · ಅಡುಗೆಮನೆ</div>
+    <h1 class="room-title">ಸೌಟ್ — ತೆಂಗಿನಕಾಯಿ ಚಿಪ್ಪಿನ ಲ್ಯಾಡಲ್</h1>
+    <p class="room-subtitle">ತುಳು ಅಡುಗೆಮನೆಯ ಅತ್ಯಂತ ಪ್ರಮುಖ ಸಾಧನ</p>
+  </div>
+  <div class="room-body">
+    <div class="content-grid">
+      <div class="image-panel fade-up">
+        <div class="room-image-wrap"><img src="Images/Room7.png" alt="ತೆಂಗಿನ ಚಿಪ್ಪಿನ ಲ್ಯಾಡಲ್"></div>
+        <div class="audio-section">
+          <audio controls style="width:100%;margin-bottom:0.5rem;">
+            <source src="Audio/Room7Audio.mp3" type="audio/mp3">
+          </audio>
+          <div class="audio-caption">ಈ ವಸ್ತುವಿನ ಬಗ್ಗೆ ಒಂದು ಕಥೆಯನ್ನು ಕೇಳಿ.</div>
         </div>
       </div>
+      <div class="text-panel">
+        <p class="fade-up">ಅಡುಗೆಮನೆಯ ಹೃದಯ ಭಾಗಕ್ಕೆ ಸ್ವಾಗತ, ಅಲ್ಲಿ ರುಚಿಕರವಾದ ತುಳು ಆಹಾರವನ್ನು ಬೇಯಿಸಿ ಬಡಿಸಲಾಗುತ್ತಿತ್ತು!</p>
+        <p class="fade-up">ಹಿಡಿಕೆಯನ್ನು ಹೊಂದಿರುವ ಈ ಬಾಗಿದ ತೆಂಗಿನ ಚಿಪ್ಪನ್ನು "ಸೌಟ್" ಎಂದು ಕರೆಯಲಾಗುತ್ತದೆ. ಇದು ತುಳು ಅಡುಗೆಮನೆಯಲ್ಲಿ ಅತ್ಯಂತ ಪ್ರಮುಖ ಸಾಧನ! ಮಡಕೆಯಿಂದ ಅನ್ನ ತೆಗೆಯಲು, ಸಾಂಬಾರ್ ಸುರಿಯಲು, ಹಾಲು ಅಳೆಯಲು, ಎಣ್ಣೆ ಸುರಿಯಲು, ಮತ್ತು ಕುಡಿಯುವ ಬಟ್ಟಲಾಗಿಯೂ ಬಳಸಲಾಗುತ್ತಿತ್ತು!</p>
+        <hr class="divider fade-up">
+        <h4 class="fade-up">ಸೋರಿಕೆ ನಿರೋಧಕ ಮಾಂತ್ರಿಕ</h4>
+        <p class="fade-up">ಸರಿಯಾಗಿ ತಯಾರಿಸಿದಾಗ, ತೆಂಗಿನ ಚಿಪ್ಪಿನ ಲ್ಯಾಡಲ್‌ನಿಂದ ಒಂದು ಹನಿ ದ್ರವವೂ ಸೋರಿಕೆಯಾಗುತ್ತಿರಲಿಲ್ಲ! ಪ್ರತಿ ಹಂತ ಒತ್ತಿ ತಿಳಿಯಿರಿ:</p>
+        <div class="fade-up">
+          <div class="step-item">
+            <button class="step-toggle" onclick="toggleStep(this)"><span class="step-num">೧</span> ಸರಿಯಾದ ತೆಂಗಿನಕಾಯಿ ಆಯ್ಕೆ <span class="step-arrow">▼</span></button>
+            <div class="step-content">ತುಂಬಾ ಚಿಕ್ಕದಲ್ಲ, ತುಂಬಾ ಹಳೆಯದಲ್ಲ — ಚಿಪ್ಪಿನ ದಪ್ಪ ಸರಿಯಾಗಿರಬೇಕು.</div>
+          </div>
+          <div class="step-item">
+            <button class="step-toggle" onclick="toggleStep(this)"><span class="step-num">೨</span> ಅದನ್ನು ಸಂಪೂರ್ಣವಾಗಿ ಅರ್ಧದಷ್ಟು ಕತ್ತರಿಸಿ <span class="step-arrow">▼</span></button>
+            <div class="step-content">ಅಸಮ ಕಡಿತ ಎಂದರೆ ಸರಿಯಾಗಿ ತೆಗೆಯದ ಲ್ಯಾಡಲ್. ನಿಖರತೆ ಮುಖ್ಯ!</div>
+          </div>
+          <div class="step-item">
+            <button class="step-toggle" onclick="toggleStep(this)"><span class="step-num">೩</span> ನಯವಾಗಿ ಮರಳು ಮಾಡಿ — ಬಿರುಕಿಲ್ಲ <span class="step-arrow">▼</span></button>
+            <div class="step-content">ಒಂದು ಸಣ್ಣ ಬಿರುಕು ಸಹ ಸೋರಿಕೆಗೆ ಕಾರಣವಾಗುತ್ತದೆ. ಪ್ರತಿ ಮೇಲ್ಮೈ ಪರಿಪೂರ್ಣವಾಗಿ ಮುಚ್ಚಿರಬೇಕು.</div>
+          </div>
+          <div class="step-item">
+            <button class="step-toggle" onclick="toggleStep(this)"><span class="step-num">೪</span> ಹಿಡಿಕೆ ಜೋಡಿಸಿ — ಮುರಿಯದೆ <span class="step-arrow">▼</span></button>
+            <div class="step-content">ಬಿದಿರು ಅಥವಾ ಮರದ ಹಿಡಿಕೆ ಎಂದಿಗೂ ಬೀಳದಂತೆ ಬಲವಾಗಿ ಜೋಡಿಸಬೇಕು — ಬಿಸಿ ಅಡುಗೆಮನೆಯಲ್ಲಿ ವರ್ಷಗಳ ಬಳಕೆಗೆ ಸಿದ್ಧ.</div>
+          </div>
+          <div class="step-item">
+            <button class="step-toggle" onclick="toggleStep(this)"><span class="step-num">೫</span> ನೈಸರ್ಗಿಕ ನಾರುಗಳನ್ನು ಮುಚ್ಚಿ <span class="step-arrow">▼</span></button>
+            <div class="step-content">ತೆಂಗಿನ ಚಿಪ್ಪಿನ ಒಳ ನಾರುಗಳು ರಂಧ್ರಯುಕ್ತ. ನಿಜವಾದ ಸೋರಿಕೆ ನಿರೋಧಕ ಲ್ಯಾಡಲ್‌ಗಾಗಿ ಎಲ್ಲಾ ಅಂತರಗಳನ್ನು ಮುಚ್ಚಬೇಕು.</div>
+          </div>
+        </div>
+        <hr class="divider fade-up">
+        <h4 class="fade-up">ಬನ್ನಂಗಾಯು ರಹಸ್ಯ</h4>
+        <p class="fade-up">ಕೆಲವೊಮ್ಮೆ ತೆಂಗಿನ ಚಿಪ್ಪುಗಳು ತುಂಬಾ ಗಟ್ಟಿಯಾಗಿ ಬಿರುಕು ಬಿಡುತ್ತಿದ್ದವು. ಪರಿಹಾರ: "ಬನ್ನಂಗಾಯು" — ಇನ್ನೂ ಸಂಪೂರ್ಣವಾಗಿ ಬೆಳೆಯದ ತೆಂಗಿನಕಾಯಿ — ಬಿಸಿ ನೀರಿನಲ್ಲಿ ನೆನೆಸಿ ಕುದಿಸಿ. ಅದು ರಬ್ಬರ್‌ನಂತೆ ಹೊಂದಿಕೊಳ್ಳುತ್ತಿತ್ತು! ಮುರಿಯದೆ ಯಾವುದೇ ದಿಕ್ಕಿನಲ್ಲಿ ಬಗ್ಗಿಸಬಹುದಿತ್ತು.</p>
+        <div class="fun-fact fade-up"><strong>ಮೋಜಿನ ಸಂಗತಿ:</strong> ಪ್ಲಾಸ್ಟಿಕ್ ಮತ್ತು ಉಕ್ಕು ವಹಿಸಿಕೊಳ್ಳುವ ಮೊದಲು, ಪ್ರತಿ ತುಳುವರ ಮನೆಯ ಅಡುಗೆಮನೆಯಲ್ಲಿ ಹಲವಾರು ಸೌಟ್‌ಗಳು ನೇತಾಡುತ್ತಿದ್ದವು — ಮತ್ತು ತಾಳ್ಮೆ ಹೊಂದಿರುವ ಯಾರಾದರೂ ಅದನ್ನು ಮಾಡಲು ಕಲಿಯಬಹುದಿತ್ತು!</div>
+        <div class="closing-quote fade-up">ಒಂದು ಹನಿ ವ್ಯರ್ಥವಿಲ್ಲ — ಅದು ತುಳು ಅಡುಗೆಮನೆಯ ಮಾನದಂಡ.</div>
+      </div>
     </div>
-  	<!-- body code goes here -->
-
-
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-	<script src="../../../../Work/IFA Grant/WORKING DOCS/Exhibition Root/js/jquery-3.4.1.min.js"></script>
-
-	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="../../../../Work/IFA Grant/WORKING DOCS/Exhibition Root/js/popper.min.js"></script> 
-	<script src="../../../../Work/IFA Grant/WORKING DOCS/Exhibition Root/js/bootstrap-4.4.1.js"></script>
-	  
+  </div>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap-4.4.1.js"></script>
+  <script>
+    function toggleStep(btn){var item=btn.closest('.step-item');var isOpen=item.classList.contains('open');document.querySelectorAll('.step-item').forEach(function(el){el.classList.remove('open');});if(!isOpen)item.classList.add('open');}
+    var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target);}});},{threshold:0.1});
+    document.querySelectorAll('.fade-up').forEach(function(el,i){el.style.transitionDelay=(i*0.06)+'s';obs.observe(el);});
+  </script>
 </body>
-	
 </html>

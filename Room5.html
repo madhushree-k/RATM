@@ -1,68 +1,105 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>RATM</title>
-    <!-- Bootstrap -->
-	<style type="text/css">
-	</style>
-<link href="style.css" rel="stylesheet" type="text/css">
-	<link href="css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Room 5 — RATM</title>
+  <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+  <style>
+    :root { --bg: #FFF7CC; --navbar: #8C1B07; --border: rgba(140,27,7,0.2); }
+    body { background-color: var(--bg); color: #000; font-family: inherit; }
+    .site-nav { background: var(--navbar); padding: 0.75rem 1.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; }
+    .site-nav .lang-icon img { width: 48px; height: 48px; border-radius: 50%; }
+    .nav-links { display: flex; gap: 0; flex-wrap: wrap; margin-left: auto; }
+    .nav-links a { color: #fff; text-decoration: none; font-size: 1.05rem; padding: 0.5rem 1rem; min-height: 44px; display: flex; align-items: center; }
+    .nav-links a:hover { opacity: 0.75; }
+    .room-hero { background: var(--navbar); padding: 2rem 1.5rem 1.75rem; text-align: center; color: #fff; }
+    .room-number { font-size: 0.82rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.7; margin-bottom: 0.3rem; }
+    .room-title { font-size: clamp(1.7rem, 4vw, 2.6rem); font-weight: 700; margin: 0; }
+    .room-subtitle { font-size: 1rem; opacity: 0.65; margin-top: 0.35rem; font-style: italic; }
+    .room-body { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+    .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start; }
+    @media (max-width: 767px) { .content-grid { grid-template-columns: 1fr; gap: 1.5rem; } }
+    .image-panel { position: sticky; top: 74px; }
+    @media (max-width: 767px) { .image-panel { position: static; } }
+    .room-image-wrap img { width: 100%; height: auto; display: block; }
+    .audio-section { margin-top: 1rem; }
+    .audio-section audio { width: 100%; }
+    .audio-caption { font-size: 0.95rem; font-style: italic; color: #555; }
+    p { font-size: 1.05rem; line-height: 1.85; margin-bottom: 1rem; }
+    h4 { font-size: 1.2rem; font-weight: 700; margin: 1.4rem 0 0.6rem; }
+    hr.divider { border: none; border-top: 1px solid var(--border); margin: 1.5rem 0 1.25rem; }
+    .insights-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.85rem; margin: 0.75rem 0 1rem; }
+    @media (max-width: 600px) { .insights-grid { grid-template-columns: 1fr; } }
+    .insight-card { background: #fff; border: 1px solid var(--border); border-left: 3px solid var(--navbar); padding: 0.9rem 1rem; }
+    .insight-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.25rem; }
+    .insight-text { font-size: 0.9rem; line-height: 1.6; margin: 0; }
+    .closing-quote { margin-top: 1.75rem; padding: 1.35rem 1.5rem; background: var(--navbar); color: #fff; font-style: italic; font-size: 1.05rem; line-height: 1.7; text-align: center; }
+    .fade-up { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+  </style>
 </head>
-  <body>
-  	<nav class="navbar navbar-expand-lg navbar-light bg-light"><a href="Room5_kn.html"><img src="Images/KannadaIcon.png" alt="Placeholder image" width="74" class="rounded-circle img-fluid"></a> <a class="navbar-brand" href="index.html">&nbsp; &nbsp; &nbsp; &nbsp; Home&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a> <a class="navbar-brand" href="Room4.html">&lt; Previous Room&nbsp; &nbsp; &nbsp; &nbsp;</a> <a class="navbar-brand" href="Room6.html">Next Room &gt;&nbsp;</a>
-  	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span></button>
-  	  <div class="collapse navbar-collapse" id="navbarSupportedContent1"></div>
+<body>
+  <nav class="site-nav">
+    <a href="Room5_kn.html" class="lang-icon"><img src="Images/KannadaIcon.png" alt="Kannada version"></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="Room4.html">&lt; Previous Room</a>
+      <a href="Room6.html">Next Room &gt;</a>
+    </div>
   </nav>
-    <div class="container-fluid">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6"><img src="Images/Room5.png" class="img-fluid" alt="Placeholder image">&nbsp;<br><img src="Images/AudioIcon.png" alt="Placeholder image" width="81" height="81" class="rounded-circle img-fluid">&nbsp;<em>Tap here to listen to a story about this object.</em></div>
-          <div class="col-lg-6">
-            <p dir="ltr">Welcome to the women's room, where you'll discover a special knife that tells the story of Tulu women's strength and responsibility.</p>
-            <h4 dir="ltr"><strong id="docs-internal-guid-3a811407-7fff-2ac5-2a32-5a249522cf7b">The Lady's Knife - Symbol of Power</strong></h4>
-            <p dir="ltr">This is the &quot;<em>Gejje Kathi</em>&quot; - a knife carried by Tulu women. But this wasn't just any knife for cutting vegetables! It was a symbol of a woman's role in protecting her family and managing her household.</p>
-            <h4 dir="ltr"><strong id="docs-internal-guid-3a811407-7fff-2ac5-2a32-5a249522cf7b">Different Knives for Different Families</strong></h4>
-            <p dir="ltr">Just like the baby food grinders, the <em>Gejje Kathi </em>came in different versions:</p>
-            <ul>
-              <li dir="ltr" aria-level="1">
-                <p dir="ltr" role="presentation">Poor families: Simple iron knife</p>
-              </li>
-              <li dir="ltr" aria-level="1">
-                <p dir="ltr" role="presentation">Middle-class families: Better quality iron</p>
-              </li>
-              <li dir="ltr" aria-level="1">
-                <p dir="ltr" role="presentation">Rich families: Beautiful knives decorated with copper and silver!</p>
-              </li>
-            </ul>
-            <p dir="ltr">But regardless of how fancy it was, every knife carried the same meaning: responsibility.</p>
-            <h4 dir="ltr"><strong id="docs-internal-guid-3a811407-7fff-2ac5-2a32-5a249522cf7b">Ceremonial Uses</strong></h4>
-            <p dir="ltr">A woman receives her first <em>Gejje Kathi</em> during a special ceremony that happens when she attains puberty. After this she holds the knife during special ceremonies like her wedding or the birth of her child.  This meant she was now fully responsible for her household and her child's safety.</p>
-            <p dir="ltr">From birth to death, Tulu women carried this knife as a sign of their strength. It showed that women in Tulu culture were protectors, decision-makers, and powerful members of society!</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6">&nbsp;</div>
-          <div class="col-lg-6">&nbsp;</div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6">&nbsp;</div>
-          <div class="col-lg-6">&nbsp;</div>
+  <div class="room-hero">
+    <div class="room-number">Room 5 · Women's Room</div>
+    <h1 class="room-title">The Lady's Knife — Symbol of Power</h1>
+    <p class="room-subtitle">The Gejje Kathi and the strength of Tulu women</p>
+  </div>
+  <div class="room-body">
+    <div class="content-grid">
+      <div class="image-panel fade-up">
+        <div class="room-image-wrap"><img src="Images/Room5.png" alt="Gejje Kathi knife"></div>
+        <div class="audio-section">
+          <audio controls style="width:100%;margin-bottom:0.5rem;">
+            <source src="Audio/Room5Audio.mp3" type="audio/mp3">
+          </audio>
+          <div class="audio-caption">Tap here to listen to a story about this object.</div>
         </div>
       </div>
+      <div class="text-panel">
+        <p class="fade-up">Welcome to the women's room, where you'll discover a special knife that tells the story of Tulu women's strength and responsibility.</p>
+        <p class="fade-up">This is the "<em>Gejje Kathi</em>" — a knife carried by Tulu women. But this wasn't just any knife for cutting vegetables! It was a symbol of a woman's role in protecting her family and managing her household.</p>
+        <hr class="divider fade-up">
+        <h4 class="fade-up">Different Knives for Different Families</h4>
+        <p class="fade-up">Just like the baby food grinders, the <em>Gejje Kathi</em> came in different versions:</p>
+        <div class="insights-grid fade-up">
+          <div class="insight-card">
+            <div class="insight-title">Poor Families</div>
+            <div class="insight-text">Simple iron knife — functional and essential.</div>
+          </div>
+          <div class="insight-card">
+            <div class="insight-title">Middle-Class Families</div>
+            <div class="insight-text">Better quality iron — well-crafted and reliable.</div>
+          </div>
+          <div class="insight-card">
+            <div class="insight-title">Rich Families</div>
+            <div class="insight-text">Beautiful knives decorated with copper and silver!</div>
+          </div>
+        </div>
+        <p class="fade-up">But regardless of how fancy it was, every knife carried the same meaning: <strong>responsibility</strong>.</p>
+        <hr class="divider fade-up">
+        <h4 class="fade-up">Ceremonial Uses</h4>
+        <p class="fade-up">A woman receives her first <em>Gejje Kathi</em> during a special ceremony when she attains puberty. After this, she holds the knife during important ceremonies like her wedding or the birth of her child — meaning she is now fully responsible for her household and her child's safety.</p>
+        <p class="fade-up">From birth to death, Tulu women carried this knife as a sign of their strength. It showed that women in Tulu culture were protectors, decision-makers, and powerful members of society!</p>
+        <div class="closing-quote fade-up">From birth to death, Tulu women carried this knife as a sign of their strength.</div>
+      </div>
     </div>
-  	<!-- body code goes here -->
-
-
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-	<script src="../../../../Work/IFA Grant/WORKING DOCS/Exhibition Root/js/jquery-3.4.1.min.js"></script>
-
-	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="../../../../Work/IFA Grant/WORKING DOCS/Exhibition Root/js/popper.min.js"></script> 
-	<script src="../../../../Work/IFA Grant/WORKING DOCS/Exhibition Root/js/bootstrap-4.4.1.js"></script>
-	  
+  </div>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap-4.4.1.js"></script>
+  <script>
+    var obs = new IntersectionObserver(function(e) { e.forEach(function(x) { if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target);} }); },{threshold:0.1});
+    document.querySelectorAll('.fade-up').forEach(function(el,i){el.style.transitionDelay=(i*0.06)+'s';obs.observe(el);});
+  </script>
 </body>
-	
 </html>

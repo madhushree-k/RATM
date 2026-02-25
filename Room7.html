@@ -1,72 +1,119 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>RATM</title>
-    <!-- Bootstrap -->
-	<style type="text/css">
-	</style>
-<link href="style.css" rel="stylesheet" type="text/css">
-	<link href="css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Room 7 — RATM</title>
+  <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+  <style>
+    :root { --bg: #FFF7CC; --navbar: #8C1B07; --border: rgba(140,27,7,0.2); }
+    body { background-color: var(--bg); color: #000; font-family: inherit; }
+    .site-nav { background: var(--navbar); padding: 0.75rem 1.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; }
+    .site-nav .lang-icon img { width: 48px; height: 48px; border-radius: 50%; }
+    .nav-links { display: flex; gap: 0; flex-wrap: wrap; margin-left: auto; }
+    .nav-links a { color: #fff; text-decoration: none; font-size: 1.05rem; padding: 0.5rem 1rem; min-height: 44px; display: flex; align-items: center; }
+    .nav-links a:hover { opacity: 0.75; }
+    .room-hero { background: var(--navbar); padding: 2rem 1.5rem 1.75rem; text-align: center; color: #fff; }
+    .room-number { font-size: 0.82rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.7; margin-bottom: 0.3rem; }
+    .room-title { font-size: clamp(1.7rem, 4vw, 2.6rem); font-weight: 700; margin: 0; }
+    .room-subtitle { font-size: 1rem; opacity: 0.65; margin-top: 0.35rem; font-style: italic; }
+    .room-body { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+    .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start; }
+    @media (max-width: 767px) { .content-grid { grid-template-columns: 1fr; gap: 1.5rem; } }
+    .image-panel { position: sticky; top: 74px; }
+    @media (max-width: 767px) { .image-panel { position: static; } }
+    .room-image-wrap img { width: 100%; height: auto; display: block; }
+    .audio-section { margin-top: 1rem; }
+    .audio-section audio { width: 100%; }
+    .audio-caption { font-size: 0.95rem; font-style: italic; color: #555; }
+    p { font-size: 1.05rem; line-height: 1.85; margin-bottom: 1rem; }
+    h4 { font-size: 1.2rem; font-weight: 700; margin: 1.4rem 0 0.6rem; }
+    hr.divider { border: none; border-top: 1px solid var(--border); margin: 1.5rem 0 1.25rem; }
+    .step-item { border-bottom: 1px solid var(--border); }
+    .step-toggle { width: 100%; background: none; border: none; cursor: pointer; display: flex; align-items: center; gap: 0.75rem; padding: 0.85rem 0.5rem; text-align: left; font-size: 1.05rem; font-family: inherit; color: #000; min-height: 52px; }
+    .step-toggle:hover { background: rgba(140,27,7,0.06); }
+    .step-num { width: 28px; height: 28px; border-radius: 50%; border: 1.5px solid var(--navbar); display: flex; align-items: center; justify-content: center; font-size: 0.82rem; color: var(--navbar); flex-shrink: 0; transition: all 0.2s; }
+    .step-item.open .step-num { background: var(--navbar); color: #fff; }
+    .step-arrow { margin-left: auto; font-size: 0.7rem; color: var(--navbar); transition: transform 0.3s; }
+    .step-item.open .step-arrow { transform: rotate(180deg); }
+    .step-content { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease; padding: 0 0.5rem 0 3.2rem; font-size: 1rem; line-height: 1.75; }
+    .step-item.open .step-content { max-height: 200px; padding: 0 0.5rem 0.9rem 3.2rem; }
+    .fun-fact { background: rgba(140,27,7,0.07); border-left: 3px solid var(--navbar); padding: 0.9rem 1rem; margin: 1rem 0; font-size: 1rem; line-height: 1.75; }
+    .fun-fact strong { color: var(--navbar); }
+    .closing-quote { margin-top: 1.75rem; padding: 1.35rem 1.5rem; background: var(--navbar); color: #fff; font-style: italic; font-size: 1.05rem; line-height: 1.7; text-align: center; }
+    .fade-up { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+  </style>
 </head>
-  <body>
-  	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a href="Room7_kn.html"><img src="Images/KannadaIcon.png" alt="Placeholder image" width="74" class="rounded-circle img-fluid"></a><a class="navbar-brand" href="index.html">&nbsp; &nbsp; &nbsp; &nbsp; Home&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a> <a class="navbar-brand" href="Room6.html">&lt; Previous Room&nbsp; &nbsp; &nbsp; &nbsp;</a> <a class="navbar-brand" href="Room8.html">Next Room &gt;&nbsp;</a>
-  	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span></button>
-  	  <div class="collapse navbar-collapse" id="navbarSupportedContent1"></div>
+<body>
+  <nav class="site-nav">
+    <a href="Room7_kn.html" class="lang-icon"><img src="Images/KannadaIcon.png" alt="Kannada version"></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="Room6.html">&lt; Previous Room</a>
+      <a href="Room8.html">Next Room &gt;</a>
+    </div>
   </nav>
-    <div class="container-fluid">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6"><img src="Images/Room7.png" class="img-fluid" alt="Placeholder image">&nbsp;<br><img src="Images/AudioIcon.png" alt="Placeholder image" width="81" height="81" class="rounded-circle img-fluid">&nbsp;<em>Tap here to listen to a story about this object.</em></div>
-          <div class="col-lg-6">
-            <p dir="ltr">Welcome to the heart of the kitchen, where delicious Tulu food was cooked and served!</p>
-            <h4 dir="ltr"><strong id="docs-internal-guid-7af42699-7fff-f3ae-3478-9d9f28a367c0">The &quot;Sout&quot; - The Coconut Shell Ladle</strong></h4>
-            <p dir="ltr">This curved coconut shell with a handle is called &quot;Sout&quot;. It was the most important tool in a Tulu kitchen!             The Sout could do almost everything:</p>
-            <ul>
-              <li>Scoop rice from the pot or pour sambar (spicy lentil soup) into bowls</li>
-              <li>Measure milk</li>
-              <li>Pour oil for cooking</li>
-              <li>Even used as a bowl for drinking!</li>
-            </ul>
-            <h4 dir="ltr"><strong id="docs-internal-guid-7af42699-7fff-f3ae-3478-9d9f28a367c0">The Magic of Being Leak-Proof</strong></h4>
-            <p dir="ltr">Here's what's amazing: when made correctly, not a single drop of liquid would leak from a coconut shell ladle! How did they do it? It required incredible skill. The craftsperson had to:</p>
-            <ol>
-              <li>Choose the right coconut (not too young, not too old)</li>
-              <li>Cut it perfectly in half</li>
-              <li>Sand it smooth so there were no cracks</li>
-              <li>Attach a handle without breaking it</li>
-              <li>Make sure all the natural fibers were sealed</li>
-            </ol>
-            <p dir="ltr">The hardest part was attaching a handle made from bamboo or wood. The craftsperson would carefully make a small hole in the thick coconut shell and attach the handle so strongly that it would never fall off, even after years of use in hot, steaming kitchens!</p>
-            <h4 dir="ltr"><strong id="docs-internal-guid-7af42699-7fff-f3ae-3478-9d9f28a367c0">The Bannangayu Secret</strong></h4>
-            <p dir="ltr">Sometimes coconut shells were too hard and would crack while working on them. Tulu people discovered a clever solution: they'd take a &quot;Bannangayu&quot; - a coconut that hadn't fully grown yet - and soak it in hot water and boil it. Guess what happened? It became as flexible as rubber! You could bend it any direction you wanted. This made it much easier to shape and cut without breaking.</p>
-            <p dir="ltr"> Even ordinary people could learn to make these ladles. It wasn't just for experts! Anyone with patience and skill could create these useful tools. Before plastic and steel took over, every Tulu home had several coconut shell ladles hanging in the kitchen!</p>
-<br>
-            <p>&nbsp;</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6">&nbsp;</div>
-          <div class="col-lg-6">&nbsp;</div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6">&nbsp;</div>
-          <div class="col-lg-6">&nbsp;</div>
+  <div class="room-hero">
+    <div class="room-number">Room 7 · Kitchen</div>
+    <h1 class="room-title">The Sout — Coconut Shell Ladle</h1>
+    <p class="room-subtitle">The most important tool in a Tulu kitchen</p>
+  </div>
+  <div class="room-body">
+    <div class="content-grid">
+      <div class="image-panel fade-up">
+        <div class="room-image-wrap"><img src="Images/Room7.png" alt="Coconut shell ladle"></div>
+        <div class="audio-section">
+          <audio controls style="width:100%;margin-bottom:0.5rem;">
+            <source src="Audio/Room7Audio.mp3" type="audio/mp3">
+          </audio>
+          <div class="audio-caption">Tap here to listen to a story about this object.</div>
         </div>
       </div>
+      <div class="text-panel">
+        <p class="fade-up">Welcome to the heart of the kitchen, where delicious Tulu food was cooked and served!</p>
+        <p class="fade-up">This curved coconut shell with a handle is called "Sout." It was the most important tool in a Tulu kitchen! The Sout could do almost everything — scoop rice from the pot, pour sambar (spicy lentil soup) into bowls, measure milk, pour oil for cooking, and even be used as a drinking bowl!</p>
+        <hr class="divider fade-up">
+        <h4 class="fade-up">The Magic of Being Leak-Proof</h4>
+        <p class="fade-up">When made correctly, not a single drop of liquid would leak from a coconut shell ladle! It required incredible skill. Tap each step to learn more:</p>
+        <div class="fade-up">
+          <div class="step-item">
+            <button class="step-toggle" onclick="toggleStep(this)"><span class="step-num">1</span> Choose the right coconut <span class="step-arrow">▼</span></button>
+            <div class="step-content">Not too young, not too old — the shell thickness has to be just right to be strong but workable.</div>
+          </div>
+          <div class="step-item">
+            <button class="step-toggle" onclick="toggleStep(this)"><span class="step-num">2</span> Cut it perfectly in half <span class="step-arrow">▼</span></button>
+            <div class="step-content">An uneven cut means an uneven ladle that won't scoop properly. Precision matters!</div>
+          </div>
+          <div class="step-item">
+            <button class="step-toggle" onclick="toggleStep(this)"><span class="step-num">3</span> Sand it smooth — no cracks <span class="step-arrow">▼</span></button>
+            <div class="step-content">Even a hairline crack means leaks. Every surface had to be perfectly sealed.</div>
+          </div>
+          <div class="step-item">
+            <button class="step-toggle" onclick="toggleStep(this)"><span class="step-num">4</span> Attach a handle without breaking <span class="step-arrow">▼</span></button>
+            <div class="step-content">A small hole drilled carefully, with a bamboo or wood handle fixed so strongly it would last years in a hot, steaming kitchen.</div>
+          </div>
+          <div class="step-item">
+            <button class="step-toggle" onclick="toggleStep(this)"><span class="step-num">5</span> Seal all the natural fibres <span class="step-arrow">▼</span></button>
+            <div class="step-content">The inner fibres of a coconut shell are porous. All gaps had to be sealed for a truly leak-proof ladle.</div>
+          </div>
+        </div>
+        <hr class="divider fade-up">
+        <h4 class="fade-up">The Bannangayu Secret</h4>
+        <p class="fade-up">Sometimes coconut shells were too hard and would crack while working on them. Tulu people discovered a clever solution: take a <em>Bannangayu</em> — a coconut that hadn't fully grown yet — and soak and boil it in hot water. It became as flexible as rubber! You could bend it any direction you wanted, making it far easier to shape without breaking.</p>
+        <div class="fun-fact fade-up"><strong>Fun Fact:</strong> Before plastic and steel took over, every Tulu home had several coconut shell ladles hanging in the kitchen — and anyone with patience and skill could learn to make them!</div>
+        <div class="closing-quote fade-up">Not a single drop wasted — that was the standard in a Tulu kitchen.</div>
+      </div>
     </div>
-  	<!-- body code goes here -->
-
-
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-	<script src="../../../../Work/IFA Grant/WORKING DOCS/Exhibition Root/js/jquery-3.4.1.min.js"></script>
-
-	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="../../../../Work/IFA Grant/WORKING DOCS/Exhibition Root/js/popper.min.js"></script> 
-	<script src="../../../../Work/IFA Grant/WORKING DOCS/Exhibition Root/js/bootstrap-4.4.1.js"></script>
-	  
+  </div>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap-4.4.1.js"></script>
+  <script>
+    function toggleStep(btn){var item=btn.closest('.step-item');var isOpen=item.classList.contains('open');document.querySelectorAll('.step-item').forEach(function(el){el.classList.remove('open');});if(!isOpen)item.classList.add('open');}
+    var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target);}});},{threshold:0.1});
+    document.querySelectorAll('.fade-up').forEach(function(el,i){el.style.transitionDelay=(i*0.06)+'s';obs.observe(el);});
+  </script>
 </body>
-	
 </html>

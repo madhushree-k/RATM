@@ -1,52 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>RATM</title>
-    <!-- Bootstrap -->
-	<style type="text/css">
-	</style>
-<link href="style.css" rel="stylesheet" type="text/css">
-	<link href="css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Room 1 — RATM</title>
+  <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+  <style>
+    :root { --bg: #FFF7CC; --navbar: #8C1B07; --border: rgba(140,27,7,0.2); }
+    body { background-color: var(--bg); color: #000; font-family: inherit; }
+    .site-nav { background: var(--navbar); padding: 0.75rem 1.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; }
+    .site-nav .lang-icon img { width: 48px; height: 48px; border-radius: 50%; }
+    .nav-links { display: flex; gap: 0; flex-wrap: wrap; margin-left: auto; }
+    .nav-links a { color: #fff; text-decoration: none; font-size: 1.05rem; padding: 0.5rem 1rem; min-height: 44px; display: flex; align-items: center; }
+    .nav-links a:hover { opacity: 0.75; }
+    .room-hero { background: var(--navbar); padding: 2rem 1.5rem 1.75rem; text-align: center; color: #fff; }
+    .room-number { font-size: 0.82rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.7; margin-bottom: 0.3rem; }
+    .room-title { font-size: clamp(1.7rem, 4vw, 2.6rem); font-weight: 700; margin: 0; }
+    .room-subtitle { font-size: 1rem; opacity: 0.65; margin-top: 0.35rem; font-style: italic; }
+    .room-body { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+    .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start; }
+    @media (max-width: 767px) { .content-grid { grid-template-columns: 1fr; gap: 1.5rem; } }
+    .image-panel { position: sticky; top: 74px; }
+    @media (max-width: 767px) { .image-panel { position: static; } }
+    .room-image-wrap img { width: 100%; height: auto; display: block; }
+    .audio-section { margin-top: 1rem; }
+    .audio-section audio { width: 100%; }
+    .audio-caption { font-size: 0.95rem; font-style: italic; color: #555; }
+    p { font-size: 1.05rem; line-height: 1.85; margin-bottom: 1rem; }
+    h4 { font-size: 1.2rem; font-weight: 700; margin: 1.4rem 0 0.6rem; }
+    hr.divider { border: none; border-top: 1px solid var(--border); margin: 1.5rem 0 1.25rem; }
+    .closing-quote { margin-top: 1.75rem; padding: 1.35rem 1.5rem; background: var(--navbar); color: #fff; font-style: italic; font-size: 1.05rem; line-height: 1.7; text-align: center; }
+    .fade-up { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+  </style>
 </head>
-  <body>
- <nav class="navbar navbar-expand-lg navbar-light bg-light"> <a href="Room1_kn.html"><img src="Images/KannadaIcon.png" alt="Placeholder image" width="74" class="rounded-circle img-fluid"></a> <a class="navbar-brand" href="index.html">&nbsp; &nbsp; &nbsp; &nbsp; Home&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a> <a class="navbar-brand" href="Room1.html">&lt; Previous Room&nbsp; &nbsp; &nbsp; &nbsp;</a> <a class="navbar-brand" href="Room3.html">Next Room &gt;&nbsp;</a>
-  	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span></button>
+<body>
+  <nav class="site-nav">
+    <a href="Room1_kn.html" class="lang-icon"><img src="Images/KannadaIcon.png" alt="Kannada version"></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="Room10.html">&lt; Previous Room</a>
+      <a href="Room2.html">Next Room &gt;</a>
+    </div>
   </nav>
-    <div class="container-fluid">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6"><img src="Images/Room1.png" class="img-fluid" alt="Placeholder image">&nbsp;<br><img src="Images/AudioIcon.png" alt="Placeholder image" width="81" height="81" class="rounded-circle img-fluid">&nbsp;<em>Tap here to listen to a story about this object.</em></div>
-          <div class="col-lg-6">
-             <h4 dir="ltr">The Magical Three-Eyed Coconut</h4>
-             <p dir="ltr">Have you ever noticed that a coconut has three dark spots that look like eyes? In Tulu culture, people believed these &quot;eyes&quot; were special and magical!<br>
-             When a baby was born, mothers would take a coconut shell and make a small hole in one of these three eyes. Then they would fill it with warm water and gently pour it over the newborn baby. Why? Because pouring water directly from a pot might be too harsh for a tiny baby's soft skin. The coconut shell lets the water trickle out slowly and gently, like a natural baby shower!</p>
-            <h4 dir="ltr">The Sacred Cradle</h4>
-            <p dir="ltr"> Look at this beautiful wooden cradle! It might look simple, but it's actually very special. Traditional Tulu cradles were made from 5 or 9 different types of wood. Each type of wood was chosen carefully to protect the baby and bring good luck. Here's something amazing: the same craftspeople who made these cradles were from communities like the<em> Koraga, Mugera, Billava, Banta, Mugaveera</em>, and <em>Ulala</em> - the original residents of Tulu Nadu. They were masters at working with wood!</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6 col-xl-1">&nbsp;</div>
-          <div class="col-lg-6 col-xl-2"></div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6">&nbsp;</div>
-          <div class="col-lg-6">&nbsp;</div>
+  <div class="room-hero">
+    <div class="room-number">Room 1 · Birth Room</div>
+    <h1 class="room-title">The Magical Coconut &amp; Sacred Cradle</h1>
+    <p class="room-subtitle">Traditions surrounding new life in Tulu culture</p>
+  </div>
+  <div class="room-body">
+    <div class="content-grid">
+      <div class="image-panel fade-up">
+        <div class="room-image-wrap"><img src="Images/Room1.png" alt="Birth room objects"></div>
+        <div class="audio-section">
+          <audio controls style="width:100%;margin-bottom:0.5rem;">
+            <source src="Audio/Room1Audio.mp3" type="audio/mp3">
+          </audio>
+          <div class="audio-caption">Tap here to listen to a story about this object.</div>
         </div>
       </div>
+      <div class="text-panel">
+        <h4 class="fade-up">The Magical Three-Eyed Coconut</h4>
+        <p class="fade-up">Have you ever noticed that a coconut has three dark spots that look like eyes? In Tulu culture, people believed these "eyes" were special and magical!</p>
+        <p class="fade-up">When a baby was born, mothers would take a coconut shell and make a small hole in one of these three eyes. Then they would fill it with warm water and gently pour it over the newborn baby. Why? Because pouring water directly from a pot might be too harsh for a tiny baby's soft skin. The coconut shell lets the water trickle out slowly and gently — like a natural baby shower!</p>
+        <hr class="divider fade-up">
+        <h4 class="fade-up">The Sacred Cradle</h4>
+        <p class="fade-up">Look at this beautiful wooden cradle! It might look simple, but it's actually very special. Traditional Tulu cradles were made from 5 or 9 different types of wood. Each type of wood was chosen carefully to protect the baby and bring good luck.</p>
+        <p class="fade-up">Here's something amazing: the craftspeople who made these cradles came from communities like the <em>Koraga, Mugera, Billava, Banta, Mugaveera</em>, and <em>Ulala</em> — the original residents of Tulu Nadu. They were masters at working with wood!</p>
+        <div class="closing-quote fade-up">The same coconut that gave them water to drink also gently welcomed their children into the world.</div>
+      </div>
     </div>
-  	<!-- body code goes here -->
-
-
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-	<script src="../../../../Work/IFA Grant/WORKING DOCS/Exhibition Root/js/jquery-3.4.1.min.js"></script>
-
-	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="../../../../Work/IFA Grant/WORKING DOCS/Exhibition Root/js/popper.min.js"></script> 
-	<script src="../../../../Work/IFA Grant/WORKING DOCS/Exhibition Root/js/bootstrap-4.4.1.js"></script>
-	  
+  </div>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap-4.4.1.js"></script>
+  <script>
+    var obs = new IntersectionObserver(function(e) { e.forEach(function(x) { if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target);} }); },{threshold:0.1});
+    document.querySelectorAll('.fade-up').forEach(function(el,i){el.style.transitionDelay=(i*0.06)+'s';obs.observe(el);});
+  </script>
 </body>
-	
 </html>

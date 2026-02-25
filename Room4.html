@@ -1,57 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>RATM</title>
-    <!-- Bootstrap -->
-	<style type="text/css">
-	</style>
-<link href="style.css" rel="stylesheet" type="text/css">
-	<link href="css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Room 4 — RATM</title>
+  <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+  <style>
+    :root { --bg: #FFF7CC; --navbar: #8C1B07; --border: rgba(140,27,7,0.2); }
+    body { background-color: var(--bg); color: #000; font-family: inherit; }
+    .site-nav { background: var(--navbar); padding: 0.75rem 1.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; }
+    .site-nav .lang-icon img { width: 48px; height: 48px; border-radius: 50%; }
+    .nav-links { display: flex; gap: 0; flex-wrap: wrap; margin-left: auto; }
+    .nav-links a { color: #fff; text-decoration: none; font-size: 1.05rem; padding: 0.5rem 1rem; min-height: 44px; display: flex; align-items: center; }
+    .nav-links a:hover { opacity: 0.75; }
+    .room-hero { background: var(--navbar); padding: 2rem 1.5rem 1.75rem; text-align: center; color: #fff; }
+    .room-number { font-size: 0.82rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.7; margin-bottom: 0.3rem; }
+    .room-title { font-size: clamp(1.7rem, 4vw, 2.6rem); font-weight: 700; margin: 0; }
+    .room-subtitle { font-size: 1rem; opacity: 0.65; margin-top: 0.35rem; font-style: italic; }
+    .room-body { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+    .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start; }
+    @media (max-width: 767px) { .content-grid { grid-template-columns: 1fr; gap: 1.5rem; } }
+    .image-panel { position: sticky; top: 74px; }
+    @media (max-width: 767px) { .image-panel { position: static; } }
+    .room-image-wrap img { width: 100%; height: auto; display: block; }
+    .audio-section { margin-top: 1rem; }
+    .audio-section audio { width: 100%; }
+    .audio-caption { font-size: 0.95rem; font-style: italic; color: #555; }
+    p { font-size: 1.05rem; line-height: 1.85; margin-bottom: 1rem; }
+    h4 { font-size: 1.2rem; font-weight: 700; margin: 1.4rem 0 0.6rem; }
+    hr.divider { border: none; border-top: 1px solid var(--border); margin: 1.5rem 0 1.25rem; }
+    .fun-fact { background: rgba(140,27,7,0.07); border-left: 3px solid var(--navbar); padding: 0.9rem 1rem; margin: 1rem 0; font-size: 1rem; line-height: 1.75; }
+    .fun-fact strong { color: var(--navbar); }
+    .closing-quote { margin-top: 1.75rem; padding: 1.35rem 1.5rem; background: var(--navbar); color: #fff; font-style: italic; font-size: 1.05rem; line-height: 1.7; text-align: center; }
+    .fade-up { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+  </style>
 </head>
-  <body>
-  	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a href="Room4_kn.html"><img src="Images/KannadaIcon.png" alt="Placeholder image" width="74" class="rounded-circle img-fluid"></a><a class="navbar-brand" href="index.html">&nbsp; &nbsp; &nbsp; &nbsp; Home&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a> <a class="navbar-brand" href="Room3.html">&lt; Previous Room&nbsp; &nbsp; &nbsp; &nbsp;</a> <a class="navbar-brand" href="Room5.html">Next Room &gt;&nbsp;</a>
-  	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span></button>
-  	  <div class="collapse navbar-collapse" id="navbarSupportedContent1"></div>
+<body>
+  <nav class="site-nav">
+    <a href="Room4_kn.html" class="lang-icon"><img src="Images/KannadaIcon.png" alt="Kannada version"></a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="Room3.html">&lt; Previous Room</a>
+      <a href="Room5.html">Next Room &gt;</a>
+    </div>
   </nav>
-    <div class="container-fluid">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6"><img src="Images/Room4.png" class="img-fluid" alt="Placeholder image">&nbsp;<br><img src="Images/AudioIcon.png" alt="Placeholder image" width="81" height="81" class="rounded-circle img-fluid">&nbsp;<em>Tap here to listen to a story about this object.</em></div>
-          <div class="col-lg-6">
-            <p dir="ltr">Enter carefully! This room holds the weapons of tiny warriors.</p>
-            <h4 dir="ltr"><strong id="docs-internal-guid-462f4226-7fff-ba2f-ea7c-9b5d4a48e2c8">The Balu - A Rooster's Sword</strong></h4>
-            <p dir="ltr">This small, sharp blade is called &quot;Balu,&quot; and it was tied to a fighting cock's leg during a match. But don't think it was just tied on carelessly! Creating and attaching this blade was serious business.</p>
-            <p dir="ltr">Special craftsmen called Acharyas would make these blades one by one, with incredible care. Each blade was unique and perfectly balanced.The knife had to be sharp enough to be effective but designed so carefully that it would hit only specific spots - the opponent's eye, neck, or heart. This wasn't about being cruel; it was about skill and precision, like a martial art.</p>
-            <p dir="ltr">Not just anyone could tie the Balu to a rooster's leg! It required special training and delicate hands. The blade had to be tied at exactly the right angle so that when the rooster moved forward to attack, the blade would strike accurately. Tie it wrong, and it wouldn't work. Tie it too tight, and you'd hurt your own rooster. It was all about balance and knowledge passed down through generations.</p>
-            <h4 dir="ltr"><strong id="docs-internal-guid-462f4226-7fff-ba2f-ea7c-9b5d4a48e2c8">Two Types of Fighters</strong></h4>
-            <p dir="ltr">There were &quot;Vatte Kori&quot; and &quot;Bante Kori&quot; - different types of fighting roosters from different communities. Each had their own style and technique!</p>
-            <strong>Fun Fact:</strong> In old times, not everyone was allowed to tie the Balu or train fighting cocks. Cockfighting was not just entertainment it was also a ritual. It was a respected skill, and only certain people had the knowledge.
-            <p>&nbsp;</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6">&nbsp;</div>
-          <div class="col-lg-6">&nbsp;</div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6">&nbsp;</div>
-          <div class="col-lg-6">&nbsp;</div>
+  <div class="room-hero">
+    <div class="room-number">Room 4 · Weapons Room</div>
+    <h1 class="room-title">The Balu — A Rooster's Sword</h1>
+    <p class="room-subtitle">The weapons of tiny warriors in Tulu Nadu</p>
+  </div>
+  <div class="room-body">
+    <div class="content-grid">
+      <div class="image-panel fade-up">
+        <div class="room-image-wrap"><img src="Images/Room4.png" alt="Balu blade weapons"></div>
+        <div class="audio-section">
+          <audio controls style="width:100%;margin-bottom:0.5rem;">
+            <source src="Audio/Room4Audio.mp3" type="audio/mp3">
+          </audio>
+          <div class="audio-caption">Tap here to listen to a story about this object.</div>
         </div>
       </div>
+      <div class="text-panel">
+        <p class="fade-up">Enter carefully! This room holds the weapons of tiny warriors.</p>
+        <p class="fade-up">This small, sharp blade is called "Balu," and it was tied to a fighting cock's leg during a match. But don't think it was just tied on carelessly — creating and attaching this blade was serious business.</p>
+        <p class="fade-up">Special craftsmen called <em>Acharyas</em> would make these blades one by one, with incredible care. Each blade was unique and perfectly balanced. The knife had to be sharp enough to be effective, but designed so carefully that it would only strike specific spots — the opponent's eye, neck, or heart. This wasn't about cruelty; it was about skill and precision, like a martial art.</p>
+        <p class="fade-up">Not just anyone could tie the Balu to a rooster's leg! It required special training and delicate hands. The blade had to be tied at exactly the right angle so that when the rooster lunged forward, it would strike accurately. Tie it wrong, and it wouldn't work. Tie it too tight, and you'd hurt your own rooster. It was all about balance — and knowledge passed down through generations.</p>
+        <hr class="divider fade-up">
+        <h4 class="fade-up">Two Types of Fighters</h4>
+        <p class="fade-up">There were <em>Vatte Kori</em> and <em>Bante Kori</em> — different types of fighting roosters from different communities. Each had their own style and technique!</p>
+        <div class="fun-fact fade-up"><strong>Fun Fact:</strong> In old times, not everyone was allowed to tie the Balu or train fighting cocks. Cockfighting was not just entertainment — it was also a ritual. It was a respected skill, and only certain people held that knowledge.</div>
+        <div class="closing-quote fade-up">Skill, precision, and generations of knowledge — even in the smallest blade.</div>
+      </div>
     </div>
-  	<!-- body code goes here -->
-
-
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-	<script src="../../../../Work/IFA Grant/WORKING DOCS/Exhibition Root/js/jquery-3.4.1.min.js"></script>
-
-	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="../../../../Work/IFA Grant/WORKING DOCS/Exhibition Root/js/popper.min.js"></script> 
-	<script src="../../../../Work/IFA Grant/WORKING DOCS/Exhibition Root/js/bootstrap-4.4.1.js"></script>
-	  
+  </div>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap-4.4.1.js"></script>
+  <script>
+    var obs = new IntersectionObserver(function(e) { e.forEach(function(x) { if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target);} }); },{threshold:0.1});
+    document.querySelectorAll('.fade-up').forEach(function(el,i){el.style.transitionDelay=(i*0.06)+'s';obs.observe(el);});
+  </script>
 </body>
-	
 </html>

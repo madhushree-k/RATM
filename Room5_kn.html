@@ -1,71 +1,105 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>RATM</title>
-    <!-- Bootstrap -->
-	<style type="text/css">
-	</style>
-<link href="style.css" rel="stylesheet" type="text/css">
-	<link href="css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
+<html lang="kn">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ಕೊಠಡಿ ೫ — RATM</title>
+  <link href="css/bootstrap-4.4.1.css" rel="stylesheet">
+  <style>
+    :root { --bg: #FFF7CC; --navbar: #8C1B07; --border: rgba(140,27,7,0.2); }
+    body { background-color: var(--bg); color: #000; font-family: inherit; }
+    .site-nav { background: var(--navbar); padding: 0.75rem 1.5rem; display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; position: sticky; top: 0; z-index: 100; }
+    .site-nav .lang-icon img { width: 48px; height: 48px; border-radius: 50%; }
+    .nav-links { display: flex; gap: 0; flex-wrap: wrap; margin-left: auto; }
+    .nav-links a { color: #fff; text-decoration: none; font-size: 1.05rem; padding: 0.5rem 1rem; min-height: 44px; display: flex; align-items: center; }
+    .nav-links a:hover { opacity: 0.75; }
+    .room-hero { background: var(--navbar); padding: 2rem 1.5rem 1.75rem; text-align: center; color: #fff; }
+    .room-number { font-size: 0.82rem; letter-spacing: 0.2em; text-transform: uppercase; opacity: 0.7; margin-bottom: 0.3rem; }
+    .room-title { font-size: clamp(1.7rem, 4vw, 2.6rem); font-weight: 700; margin: 0; }
+    .room-subtitle { font-size: 1rem; opacity: 0.65; margin-top: 0.35rem; font-style: italic; }
+    .room-body { max-width: 1100px; margin: 0 auto; padding: 2.5rem 1.5rem 4rem; }
+    .content-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 2.5rem; align-items: start; }
+    @media (max-width: 767px) { .content-grid { grid-template-columns: 1fr; gap: 1.5rem; } }
+    .image-panel { position: sticky; top: 74px; }
+    @media (max-width: 767px) { .image-panel { position: static; } }
+    .room-image-wrap img { width: 100%; height: auto; display: block; }
+    .audio-section { margin-top: 1rem; }
+    .audio-section audio { width: 100%; }
+    .audio-caption { font-size: 0.95rem; font-style: italic; color: #555; }
+    p { font-size: 1.05rem; line-height: 1.85; margin-bottom: 1rem; }
+    h4 { font-size: 1.2rem; font-weight: 700; margin: 1.4rem 0 0.6rem; }
+    hr.divider { border: none; border-top: 1px solid var(--border); margin: 1.5rem 0 1.25rem; }
+    .insights-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 0.85rem; margin: 0.75rem 0 1rem; }
+    @media (max-width: 600px) { .insights-grid { grid-template-columns: 1fr; } }
+    .insight-card { background: #fff; border: 1px solid var(--border); border-left: 3px solid var(--navbar); padding: 0.9rem 1rem; }
+    .insight-title { font-weight: 700; font-size: 0.95rem; margin-bottom: 0.25rem; }
+    .insight-text { font-size: 0.9rem; line-height: 1.6; margin: 0; }
+    .closing-quote { margin-top: 1.75rem; padding: 1.35rem 1.5rem; background: var(--navbar); color: #fff; font-style: italic; font-size: 1.05rem; line-height: 1.7; text-align: center; }
+    .fade-up { opacity: 0; transform: translateY(14px); transition: opacity 0.5s ease, transform 0.5s ease; }
+    .fade-up.visible { opacity: 1; transform: translateY(0); }
+  </style>
 </head>
-  <body>
-  	<nav class="navbar navbar-expand-lg navbar-light bg-light col-xl-12"> <a href="Room5.html"><img src="Images/EnglishIcon.png" alt="Placeholder image" width="74" height="74" class="rounded-circle img-fluid"></a> <a class="navbar-brand" href="index.html">&nbsp; &nbsp; &nbsp; &nbsp; ಮನೆ&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;</a> <a class="navbar-brand" href="Room4_kn.html">&lt; 
-ಹಿಂದಿನ ಕೊಠಡಿ&nbsp; &nbsp; &nbsp; &nbsp;</a> <a class="navbar-brand" href="Room6_kn.html">ಮುಂದಿನ ಕೊಠಡಿ &gt;&nbsp;</a>
-  	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span></button>
-  	  	  
-      <div class="collapse navbar-collapse" id="navbarSupportedContent1"></div>
+<body>
+  <nav class="site-nav">
+    <a href="Room5.html" class="lang-icon"><img src="Images/EnglishIcon.png" alt="English version"></a>
+    <div class="nav-links">
+      <a href="index.html">ಮನೆ</a>
+      <a href="Room4_kn.html">&lt; ಹಿಂದಿನ ಕೊಠಡಿ</a>
+      <a href="Room6_kn.html">ಮುಂದಿನ ಕೊಠಡಿ &gt;</a>
+    </div>
   </nav>
-    <div class="container-fluid">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-6"><img src="Images/Room5.png" class="img-fluid" alt="Placeholder image">&nbsp;<br><img src="Images/AudioIcon.png" alt="Placeholder image" width="81" height="81" class="rounded-circle img-fluid">&nbsp;<em>ಈ ವಸ್ತುವಿನ ಬಗ್ಗೆ ಒಂದು ಕಥೆಯನ್ನು ಕೇಳಿ.</em></div>
-          <div class="col-lg-6">
-            <p dir="ltr">ಮಹಿಳಾ ಕೋಣೆಗೆ ಸುಸ್ವಾಗತ, ಅಲ್ಲಿ ನೀವು ತುಳು ಮಹಿಳೆಯರ ಶಕ್ತಿ ಮತ್ತು ಜವಾಬ್ದಾರಿಯ ಕಥೆಯನ್ನು ಹೇಳುವ ವಿಶೇಷ ಚಾಕುವನ್ನು ಕಂಡುಕೊಳ್ಳುವಿರಿ.</p>
-            <h4 dir="ltr"><strong id="docs-internal-guid-3a811407-7fff-2ac5-2a32-5a249522cf7b">ಮಹಿಳೆಯರ ಚಾಕು - ಶಕ್ತಿಯ ಸಂಕೇತ</strong></h4>
-            <p dir="ltr">ಇದು "ಗೆಜ್ಜೆ ಕಥಿ" - ತುಳು ಮಹಿಳೆಯರು ಹೊತ್ತೊಯ್ಯುವ ಚಾಕು. ಆದರೆ ಇದು ತರಕಾರಿಗಳನ್ನು ಕತ್ತರಿಸಲು ಮಾತ್ರ ಬಳಸುವ ಚಾಕು ಅಲ್ಲ! ಇದು ತನ್ನ ಕುಟುಂಬವನ್ನು ರಕ್ಷಿಸುವಲ್ಲಿ ಮತ್ತು ತನ್ನ ಮನೆಯನ್ನು ನಿರ್ವಹಿಸುವಲ್ಲಿ ಮಹಿಳೆಯ ಪಾತ್ರದ ಸಂಕೇತವಾಗಿತ್ತು.</p>
-            <h4 dir="ltr"><strong id="docs-internal-guid-3a811407-7fff-2ac5-2a32-5a249522cf7b">ವಿವಿಧ ಕುಟುಂಬಗಳಿಗೆ ವಿಭಿನ್ನ ಚಾಕುಗಳು</strong></h4>
-            <p dir="ltr">ಶಿಶು ಆಹಾರ ಗ್ರೈಂಡರ್‌ಗಳಂತೆಯೇ, ಗೆಜ್ಜೆ ಕಥಿ ವಿಭಿನ್ನ ಆವೃತ್ತಿಗಳಲ್ಲಿ ಬಂದಿತು:</p>
-            <ul>
-              <li dir="ltr" aria-level="1">
-                <p dir="ltr" role="presentation">ಬಡ ಕುಟುಂಬಗಳು: ಸರಳ ಕಬ್ಬಿಣದ ಚಾಕು</p>
-              </li>
-              <li dir="ltr" aria-level="1">
-                <p dir="ltr" role="presentation">ಮಧ್ಯಮ ವರ್ಗದ ಕುಟುಂಬಗಳು: ಉತ್ತಮ ಗುಣಮಟ್ಟದ ಕಬ್ಬಿಣ</p>
-              </li>
-              <li dir="ltr" aria-level="1">
-                <p dir="ltr" role="presentation">ಶ್ರೀಮಂತ ಕುಟುಂಬಗಳು: ತಾಮ್ರ ಮತ್ತು ಬೆಳ್ಳಿಯಿಂದ ಅಲಂಕರಿಸಲ್ಪಟ್ಟ ಸುಂದರವಾದ ಚಾಕುಗಳು!</p>
-              </li>
-            </ul>
-            <p dir="ltr">ಆದರೆ ಅದು ಎಷ್ಟೇ ಅಲಂಕಾರಿಕವಾಗಿದ್ದರೂ, ಪ್ರತಿ ಚಾಕು ಒಂದೇ ಅರ್ಥವನ್ನು ಹೊಂದಿತ್ತು: ಜವಾಬ್ದಾರಿ.</p>
-            <h4 dir="ltr"><strong id="docs-internal-guid-3a811407-7fff-2ac5-2a32-5a249522cf7b">ಉಪಯೋಗಗಳು</strong></h4>
-            <p dir="ltr">ಒಬ್ಬ ಮಹಿಳೆ ಪ್ರೌಢಾವಸ್ಥೆಗೆ ಬಂದಾಗ ನಡೆಯುವ ವಿಶೇಷ ಸಮಾರಂಭದಲ್ಲಿ ತನ್ನ ಮೊದಲ ಗೆಜ್ಜೆ ಕಥಿಯನ್ನು ಪಡೆಯುತ್ತಾಳೆ. ಇದರ ನಂತರ ಅವಳು ತನ್ನ ಮದುವೆ ಅಥವಾ ತನ್ನ ಮಗುವಿನ ಜನನದಂತಹ ವಿಶೇಷ ಸಮಾರಂಭಗಳಲ್ಲಿ ಚಾಕುವನ್ನು ಹಿಡಿಯುತ್ತಾಳೆ. ಇದರರ್ಥ ಅವಳು ಈಗ ತನ್ನ ಮನೆಯ ಮತ್ತು ಮಗುವಿನ ಸುರಕ್ಷತೆಗೆ ಸಂಪೂರ್ಣ ಜವಾಬ್ದಾರಳಾಗಿದ್ದಾಳೆ.</p>
-			  
-			  <p dir="ltr"> ಹುಟ್ಟಿನಿಂದ ಸಾವಿನವರೆಗೆ, ತುಳು ಮಹಿಳೆಯರು ತಮ್ಮ ಶಕ್ತಿಯ ಸಂಕೇತವಾಗಿ ಈ ಚಾಕುವನ್ನು ಹೊತ್ತೊಯ್ಯುತ್ತಿದ್ದರು. ತುಳು ಸಂಸ್ಕೃತಿಯಲ್ಲಿ ಮಹಿಳೆಯರು ರಕ್ಷಕರು, ನಿರ್ಧಾರ ತೆಗೆದುಕೊಳ್ಳುವವರು ಮತ್ತು ಸಮಾಜದ ಪ್ರಭಾವಿ ಸದಸ್ಯರು ಎಂದು ಇದು ತೋರಿಸಿದೆ!</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6">&nbsp;</div>
-          <div class="col-lg-6">&nbsp;</div>
-        </div>
-        <div class="row">
-          <div class="col-lg-6">&nbsp;</div>
-          <div class="col-lg-6">&nbsp;</div>
+  <div class="room-hero">
+    <div class="room-number">ಕೊಠಡಿ ೫ · ಮಹಿಳಾ ಕೊಠಡಿ</div>
+    <h1 class="room-title">ಮಹಿಳೆಯರ ಚಾಕು — ಶಕ್ತಿಯ ಸಂಕೇತ</h1>
+    <p class="room-subtitle">ಗೆಜ್ಜೆ ಕಥಿ ಮತ್ತು ತುಳು ಮಹಿಳೆಯರ ಶಕ್ತಿ</p>
+  </div>
+  <div class="room-body">
+    <div class="content-grid">
+      <div class="image-panel fade-up">
+        <div class="room-image-wrap"><img src="Images/Room5.png" alt="ಗೆಜ್ಜೆ ಕಥಿ ಚಾಕು"></div>
+        <div class="audio-section">
+          <audio controls style="width:100%;margin-bottom:0.5rem;">
+            <source src="Audio/Room5Audio.mp3" type="audio/mp3">
+          </audio>
+          <div class="audio-caption">ಈ ವಸ್ತುವಿನ ಬಗ್ಗೆ ಒಂದು ಕಥೆಯನ್ನು ಕೇಳಿ.</div>
         </div>
       </div>
+      <div class="text-panel">
+        <p class="fade-up">ಮಹಿಳಾ ಕೋಣೆಗೆ ಸುಸ್ವಾಗತ, ಅಲ್ಲಿ ನೀವು ತುಳು ಮಹಿಳೆಯರ ಶಕ್ತಿ ಮತ್ತು ಜವಾಬ್ದಾರಿಯ ಕಥೆಯನ್ನು ಹೇಳುವ ವಿಶೇಷ ಚಾಕುವನ್ನು ಕಂಡುಕೊಳ್ಳುವಿರಿ.</p>
+        <p class="fade-up">ಇದು "ಗೆಜ್ಜೆ ಕಥಿ" — ತುಳು ಮಹಿಳೆಯರು ಹೊತ್ತೊಯ್ಯುವ ಚಾಕು. ಆದರೆ ಇದು ತರಕಾರಿಗಳನ್ನು ಕತ್ತರಿಸಲು ಮಾತ್ರ ಬಳಸುವ ಚಾಕು ಅಲ್ಲ! ಇದು ತನ್ನ ಕುಟುಂಬವನ್ನು ರಕ್ಷಿಸುವಲ್ಲಿ ಮತ್ತು ತನ್ನ ಮನೆಯನ್ನು ನಿರ್ವಹಿಸುವಲ್ಲಿ ಮಹಿಳೆಯ ಪಾತ್ರದ ಸಂಕೇತವಾಗಿತ್ತು.</p>
+        <hr class="divider fade-up">
+        <h4 class="fade-up">ವಿವಿಧ ಕುಟುಂಬಗಳಿಗೆ ವಿಭಿನ್ನ ಚಾಕುಗಳು</h4>
+        <p class="fade-up">ಶಿಶು ಆಹಾರ ಗ್ರೈಂಡರ್‌ಗಳಂತೆಯೇ, ಗೆಜ್ಜೆ ಕಥಿ ವಿಭಿನ್ನ ಆವೃತ್ತಿಗಳಲ್ಲಿ ಬಂದಿತು:</p>
+        <div class="insights-grid fade-up">
+          <div class="insight-card">
+            <div class="insight-title">ಬಡ ಕುಟುಂಬಗಳು</div>
+            <div class="insight-text">ಸರಳ ಕಬ್ಬಿಣದ ಚಾಕು — ಸರಳ ಮತ್ತು ಅಗತ್ಯ.</div>
+          </div>
+          <div class="insight-card">
+            <div class="insight-title">ಮಧ್ಯಮ ವರ್ಗದ ಕುಟುಂಬಗಳು</div>
+            <div class="insight-text">ಉತ್ತಮ ಗುಣಮಟ್ಟದ ಕಬ್ಬಿಣ — ಚಾಕಚಕ್ಯತೆಯಿಂದ ತಯಾರಿಸಿದ್ದು.</div>
+          </div>
+          <div class="insight-card">
+            <div class="insight-title">ಶ್ರೀಮಂತ ಕುಟುಂಬಗಳು</div>
+            <div class="insight-text">ತಾಮ್ರ ಮತ್ತು ಬೆಳ್ಳಿಯಿಂದ ಅಲಂಕರಿಸಲ್ಪಟ್ಟ ಸುಂದರವಾದ ಚಾಕುಗಳು!</div>
+          </div>
+        </div>
+        <p class="fade-up">ಆದರೆ ಅದು ಎಷ್ಟೇ ಅಲಂಕಾರಿಕವಾಗಿದ್ದರೂ, ಪ್ರತಿ ಚಾಕು ಒಂದೇ ಅರ್ಥವನ್ನು ಹೊಂದಿತ್ತು: <strong>ಜವಾಬ್ದಾರಿ</strong>.</p>
+        <hr class="divider fade-up">
+        <h4 class="fade-up">ಉಪಯೋಗಗಳು</h4>
+        <p class="fade-up">ಒಬ್ಬ ಮಹಿಳೆ ಪ್ರೌಢಾವಸ್ಥೆಗೆ ಬಂದಾಗ ನಡೆಯುವ ವಿಶೇಷ ಸಮಾರಂಭದಲ್ಲಿ ತನ್ನ ಮೊದಲ ಗೆಜ್ಜೆ ಕಥಿಯನ್ನು ಪಡೆಯುತ್ತಾಳೆ. ಇದರ ನಂತರ ಅವಳು ತನ್ನ ಮದುವೆ ಅಥವಾ ತನ್ನ ಮಗುವಿನ ಜನನದಂತಹ ವಿಶೇಷ ಸಮಾರಂಭಗಳಲ್ಲಿ ಚಾಕುವನ್ನು ಹಿಡಿಯುತ್ತಾಳೆ — ಅಂದರೆ ಅವಳು ಈಗ ತನ್ನ ಮನೆಯ ಮತ್ತು ಮಗುವಿನ ಸುರಕ್ಷತೆಗೆ ಸಂಪೂರ್ಣ ಜವಾಬ್ದಾರಳಾಗಿದ್ದಾಳೆ.</p>
+        <p class="fade-up">ಹುಟ್ಟಿನಿಂದ ಸಾವಿನವರೆಗೆ, ತುಳು ಮಹಿಳೆಯರು ತಮ್ಮ ಶಕ್ತಿಯ ಸಂಕೇತವಾಗಿ ಈ ಚಾಕುವನ್ನು ಹೊತ್ತೊಯ್ಯುತ್ತಿದ್ದರು. ತುಳು ಸಂಸ್ಕೃತಿಯಲ್ಲಿ ಮಹಿಳೆಯರು ರಕ್ಷಕರು, ನಿರ್ಧಾರ ತೆಗೆದುಕೊಳ್ಳುವವರು ಮತ್ತು ಸಮಾಜದ ಪ್ರಭಾವಿ ಸದಸ್ಯರು ಎಂದು ಇದು ತೋರಿಸಿದೆ!</p>
+        <div class="closing-quote fade-up">ಹುಟ್ಟಿನಿಂದ ಸಾವಿನವರೆಗೆ, ತುಳು ಮಹಿಳೆಯರು ತಮ್ಮ ಶಕ್ತಿಯ ಸಂಕೇತವಾಗಿ ಈ ಚಾಕುವನ್ನು ಹೊತ್ತೊಯ್ಯುತ್ತಿದ್ದರು.</div>
+      </div>
     </div>
-  	<!-- body code goes here -->
-
-
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-	<script src="../../../../Work/IFA Grant/WORKING DOCS/Exhibition Root/js/jquery-3.4.1.min.js"></script>
-
-	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="../../../../Work/IFA Grant/WORKING DOCS/Exhibition Root/js/popper.min.js"></script> 
-	<script src="../../../../Work/IFA Grant/WORKING DOCS/Exhibition Root/js/bootstrap-4.4.1.js"></script>
-	  
+  </div>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap-4.4.1.js"></script>
+  <script>
+    var obs = new IntersectionObserver(function(e) { e.forEach(function(x) { if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target);} }); },{threshold:0.1});
+    document.querySelectorAll('.fade-up').forEach(function(el,i){el.style.transitionDelay=(i*0.06)+'s';obs.observe(el);});
+  </script>
 </body>
-	
 </html>
