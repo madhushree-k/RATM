@@ -8,21 +8,18 @@
     <link href="style.css" rel="stylesheet" type="text/css">
     <link href="css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
     <style type="text/css">
-      /* Make the image container responsive */
       .image-container {
         position: relative;
         width: 100%;
         overflow: hidden;
       }
 
-      /* Make background image fully responsive */
       .background-image {
         width: 100%;
         height: auto;
         display: block;
       }
 
-      /* Overlay image fixed on top of everything */
       .overlay-image {
         position: fixed;
         top: 0;
@@ -32,6 +29,59 @@
         object-fit: cover;
         z-index: 9999;
         cursor: pointer;
+        transition: opacity 0.2s ease;
+      }
+
+      /* Hotspot dot overlays */
+      .hotspot {
+        position: absolute;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+        background: rgba(255, 200, 50, 0.35);
+        border: 3px solid rgba(255, 200, 50, 0.9);
+        box-shadow: 0 0 12px 4px rgba(255, 200, 50, 0.5);
+        animation: pulse 1.8s ease-in-out infinite;
+        text-decoration: none;
+        display: block;
+        z-index: 10;
+        /* aspect-ratio ensures perfectly round circles at all screen sizes */
+        aspect-ratio: 1 / 1;
+      }
+
+      .hotspot:hover {
+        background: rgba(255, 200, 50, 0.6);
+      }
+
+      @keyframes pulse {
+        0%   { opacity: 1;   transform: translate(-50%, -50%) scale(1); }
+        50%  { opacity: 0.3; transform: translate(-50%, -50%) scale(0.85); }
+        100% { opacity: 1;   transform: translate(-50%, -50%) scale(1); }
+      }
+
+      /* Word-by-word intro message */
+      .intro-message {
+        position: absolute;
+        top: 2%;
+        left: 1.5%;
+        z-index: 20;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        font-size: clamp(0.75rem, 1.2vw, 1.1rem);
+        color: rgba(33, 37, 41, 0.85);
+        max-width: 22%;
+        line-height: 1.6;
+        pointer-events: none;
+      }
+
+      .intro-message .word {
+        display: inline;
+        opacity: 0;
+        animation: wordFadeIn 0.4s ease forwards;
+      }
+
+      @keyframes wordFadeIn {
+        from { opacity: 0; transform: translateY(4px); }
+        to   { opacity: 1; transform: translateY(0); }
       }
     </style>
   </head>
@@ -49,40 +99,75 @@
 
     <div class="container-fluid p-0">
       <div class="image-container">
-        <img src="Images/background_image.png" alt="Background Image" class="background-image" width="3840" height="2160" usemap="#housemap" id="background">
-        <map name="housemap">
-          <area shape="circle" coords="479,853,79"   href="Room1.html"  target="_self" alt="Room 1">
-          <area shape="circle" coords="670,399,75"   href="Room2.html"  target="_self" alt="Room 2">
-          <area shape="circle" coords="1546,438,56"  href="Room3.html"  target="_self" alt="Room 3">
-          <area shape="circle" coords="1548,624,58"  href="Room4.html"  target="_self" alt="Room 4">
-          <area shape="circle" coords="1100,642,57"  href="Room5.html"  target="_self" alt="Room 5">
-          <area shape="circle" coords="965,280,46"   href="Room6.html"  target="_self" alt="Room 6">
-          <area shape="circle" coords="1103,276,52"  href="Room7.html"  target="_self" alt="Room 7">
-          <area shape="circle" coords="1411,910,89"  href="Room8.html"  target="_self" alt="Room 8">
-          <area shape="circle" coords="957,895,58"   href="Room9.html"  target="_self" alt="Room 9">
-          <area shape="circle" coords="87,625,66"    href="Room10.html" target="_self" alt="Room 10">
-        </map>
+        <img src="Images/background_image.png" alt="Background Image" class="background-image" width="3840" height="2160" id="background">
+        <!-- Hotspot overlays: coords from image-map.net, converted to % of 3840x2160 -->
+        <a class="hotspot" href="Room1.html"  title="Room 1"  style="left:20.443%;top:65.787%;width:6.719%;"></a>
+        <a class="hotspot" href="Room2.html"  title="Room 2"  style="left:29.193%;top:30.926%;width:5.312%;"></a>
+        <a class="hotspot" href="Room3.html"  title="Room 3"  style="left:66.927%;top:33.611%;width:5.156%;"></a>
+        <a class="hotspot" href="Room4.html"  title="Room 4"  style="left:66.927%;top:48.194%;width:4.896%;"></a>
+        <a class="hotspot" href="Room5.html"  title="Room 5"  style="left:47.578%;top:49.306%;width:4.740%;"></a>
+        <a class="hotspot" href="Room6.html"  title="Room 6"  style="left:41.927%;top:21.019%;width:4.010%;"></a>
+        <a class="hotspot" href="Room7.html"  title="Room 7"  style="left:47.734%;top:21.667%;width:3.594%;"></a>
+        <a class="hotspot" href="Room8.html"  title="Room 8"  style="left:61.276%;top:70.324%;width:8.500%;"></a>
+        <a class="hotspot" href="Room9.html"  title="Room 9"  style="left:41.302%;top:68.935%;width:3.802%;"></a>
+        <a class="hotspot" href="Room10.html" title="Room 10" style="left:3.672%;top:48.194%;width:5.104%;"></a>
+        <div class="intro-message" id="introMessage"></div>
       </div>
     </div>
 
     <script>
+      // Word-by-word animation — runs after overlay is dismissed
+      // Word-by-word animation — runs after overlay is dismissed
+      function startIntroMessage() {
+        var english = "Tap on one of the rooms to enter this guthu house and explore the stories behind everyday objects.";
+        var kannada = "ಈ ಗುತ್ತು ಮನೆಗೆ ಪ್ರವೇಶಿಸಲು ಮತ್ತು ದಿನನಿತ್ಯದ ವಸ್ತುಗಳ ಹಿಂದಿನ ಕಥೆಗಳನ್ನು ಅನ್ವೇಷಿಸಲು ಕೊಠಡಿಗಳಲ್ಲಿ ಒಂದನ್ನು ಟ್ಯಾಪ್ ಮಾಡಿ.";
+        var container = document.getElementById("introMessage");
+        var delay = 0.3;
+        var index = 0;
+
+        // English words
+        english.split(" ").forEach(function(word) {
+          var span = document.createElement("span");
+          span.className = "word";
+          span.textContent = word + " ";
+          span.style.animationDelay = (index * delay) + "s";
+          container.appendChild(span);
+          index++;
+        });
+
+        // Line break between English and Kannada
+        var br = document.createElement("br");
+        container.appendChild(br);
+
+        // Kannada words — continue delay sequence after English
+        kannada.split(" ").forEach(function(word) {
+          var span = document.createElement("span");
+          span.className = "word";
+          span.textContent = word + " ";
+          span.style.animationDelay = (index * delay) + "s";
+          container.appendChild(span);
+          index++;
+        });
+      }
+
+      function playDoorSound() {
+        new Audio('Audio/dooropen.mp3').play();
+      }
+
       function hideOverlay() {
-        document.getElementById("overlayImage").style.display = "none";
+        playDoorSound();
+        var overlay = document.getElementById("overlayImage");
+        overlay.style.opacity = "0";
+        setTimeout(function() {
+          overlay.style.display = "none";
+          startIntroMessage();
+        }, 200);
       }
     </script>
 
-    <!-- Load jQuery FIRST, then plugins that depend on it -->
     <script src="js/jquery-3.4.1.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap-4.4.1.js"></script>
-    <script src="js/jquery.rwdImageMaps.min.js"></script>
-
-    <script>
-      $(document).ready(function () {
-        // This rescales all image map coords when the image resizes
-        $('img[usemap]').rwdImageMaps();
-      });
-    </script>
 
   </body>
 </html>
