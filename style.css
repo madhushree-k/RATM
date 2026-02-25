@@ -37,6 +37,13 @@ html,body
     background-image: -o-linear-gradient(270deg,rgba(140,27,7,1.00) 0%,rgba(140,27,7,1.00) 100%);
     background-image: linear-gradient(180deg,rgba(140,27,7,1.00) 0%,rgba(140,27,7,1.00) 100%);
 }
+
+img[usemap]{
+	border: none;
+	height: auto;
+	max-width: 100%;
+	width: auto;
+}
 #navbarSupportedContent1 .navbar-nav.mr-auto .nav-item {
     color: #8C1B07;
 }

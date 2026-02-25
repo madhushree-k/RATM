@@ -1,56 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-	  <script src="../../../../Work/IFA Grant/WORKING DOCS/Exhibition Root/js/jquery.rwdImageMaps.min.js"></script>
     <meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>RATM</title>
-    <!-- Bootstrap -->
-	<style type="text/css">
-	</style>
-<link href="style.css" rel="stylesheet" type="text/css">
-	<link href="css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
-</head>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="css/bootstrap-4.4.1.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+      /* Make the image container responsive */
+      .image-container {
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+      }
+
+      /* Make background image fully responsive */
+      .background-image {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+
+      /* Overlay image fixed on top of everything */
+      .overlay-image {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 9999;
+        cursor: pointer;
+      }
+    </style>
+  </head>
   <body>
-	 <!--<a href="#"><img src="Images/overlay_image.jpg" alt="Overlay Image" class="overlay-image" id="overlayImage" onclick="hideOverlay();"></a> -->
-  	<nav class="navbar navbar-expand-lg navbar-light bg-light"> <a class="navbar-brand" href="index.html">Home&nbsp;</a>
-  	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation"> <span class="navbar-toggler-icon"></span></button>
-  	  <div class="collapse navbar-collapse" id="navbarSupportedContent1"></div>
-  </nav>
-	  
-  <div class="container-fluid">
-<div class="image-container">
-  <img src="Images/background_image.png" alt="Background Image" class="background-image" width="3840" height="2160" usemap="#housemap" id="background">
-  <map name="housemap"><area shape="circle" coords="153,1041,127" href="Room10.html" target="_self" alt="Room 10"><area shape="circle" coords="1594,1489,85" href="Room9.html" target="_self" alt="Room 9"><area shape="circle" coords="2352,1509,163" href="Room8.html" target="_self" alt="Room 8"><area shape="circle" coords="1830,465,82" href="Room7.html" target="_self" alt="Room 7"><area shape="circle" coords="1609,462,78" href="Room6.html" target="_self" alt="Room 6"><area shape="circle" coords="1826,1065,90" href="Room5.html" target="_self" alt="Room 5"><area shape="circle" coords="2576,1041,106" href="Room4.html" target="_self" alt="Room 4"><area shape="circle" coords="2566,730,105" href="Room3.html" target="_self" alt="Room 3"><area shape="circle" coords="1127,654,131" href="Room2.html" target="_self" alt="Room 2"><area shape="circle" coords="792,1421,124" href="Room1.html" target="_self" alt="Room 1">
-        
-      </map>
-  
+
+    <a href="#"><img src="Images/overlay_image.jpg" alt="Overlay Image" class="overlay-image" id="overlayImage" onclick="hideOverlay();"></a>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <a class="navbar-brand" href="index.html">Home&nbsp;</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent1" aria-controls="navbarSupportedContent1" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent1"></div>
+    </nav>
+
+    <div class="container-fluid p-0">
+      <div class="image-container">
+        <img src="Images/background_image.png" alt="Background Image" class="background-image" width="3840" height="2160" usemap="#housemap" id="background">
+        <map name="housemap">
+          <area shape="circle" coords="479,853,79"   href="Room1.html"  target="_self" alt="Room 1">
+          <area shape="circle" coords="670,399,75"   href="Room2.html"  target="_self" alt="Room 2">
+          <area shape="circle" coords="1546,438,56"  href="Room3.html"  target="_self" alt="Room 3">
+          <area shape="circle" coords="1548,624,58"  href="Room4.html"  target="_self" alt="Room 4">
+          <area shape="circle" coords="1100,642,57"  href="Room5.html"  target="_self" alt="Room 5">
+          <area shape="circle" coords="965,280,46"   href="Room6.html"  target="_self" alt="Room 6">
+          <area shape="circle" coords="1103,276,52"  href="Room7.html"  target="_self" alt="Room 7">
+          <area shape="circle" coords="1411,910,89"  href="Room8.html"  target="_self" alt="Room 8">
+          <area shape="circle" coords="957,895,58"   href="Room9.html"  target="_self" alt="Room 9">
+          <area shape="circle" coords="87,625,66"    href="Room10.html" target="_self" alt="Room 10">
+        </map>
+      </div>
     </div>
-</div>
-  	<!-- body code goes here -->
- <script>
-    // Function to hide the overlay image
-    function hideOverlay() {
-        var overlay = document.getElementById("overlayImage");
-            overlay.style.display = "none"; // Hides the image
-    }
 
-</script>
+    <script>
+      function hideOverlay() {
+        document.getElementById("overlayImage").style.display = "none";
+      }
+    </script>
 
+    <!-- Load jQuery FIRST, then plugins that depend on it -->
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap-4.4.1.js"></script>
+    <script src="js/jquery.rwdImageMaps.min.js"></script>
 
-	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
-	<script src="../../../../Work/IFA Grant/WORKING DOCS/Exhibition Root/js/jquery-3.4.1.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // This rescales all image map coords when the image resizes
+        $('img[usemap]').rwdImageMaps();
+      });
+    </script>
 
-	<!-- Include all compiled plugins (below), or include individual files as needed -->
-	<script src="../../../../Work/IFA Grant/WORKING DOCS/Exhibition Root/js/popper.min.js"></script> 
-	<script src="../../../../Work/IFA Grant/WORKING DOCS/Exhibition Root/js/bootstrap-4.4.1.js"></script>
-	  <script>
-$(document).ready(function(e) {
-    $('img[usemap]').rwdImageMaps();
-});
-</script>
-	 
-</body>
-	
+  </body>
 </html>
