@@ -45,7 +45,6 @@
         text-decoration: none;
         display: block;
         z-index: 10;
-        /* aspect-ratio ensures perfectly round circles at all screen sizes */
         aspect-ratio: 1 / 1;
       }
 
@@ -59,18 +58,26 @@
         100% { opacity: 1;   transform: translate(-50%, -50%) scale(1); }
       }
 
-      /* Word-by-word intro message */
+      /* Intro message — right side, vertically centred */
       .intro-message {
         position: absolute;
-        top: 2%;
-        left: 1.5%;
+        top: 50%;
+        right: 1.5%;
+        transform: translateY(-50%);
         z-index: 20;
         font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
         font-size: clamp(0.75rem, 1.2vw, 1.1rem);
         color: rgba(33, 37, 41, 0.85);
-        max-width: 22%;
-        line-height: 1.6;
+        width: 20%;
+        line-height: 1.8;
         pointer-events: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+      }
+
+      .intro-message .lang-block {
+        display: block;
       }
 
       .intro-message .word {
@@ -116,8 +123,6 @@
     </div>
 
     <script>
-      // Word-by-word animation — runs after overlay is dismissed
-      // Word-by-word animation — runs after overlay is dismissed
       function startIntroMessage() {
         var english = "Tap on one of the rooms to enter this guthu house and explore the stories behind everyday objects.";
         var kannada = "ಈ ಗುತ್ತು ಮನೆಗೆ ಪ್ರವೇಶಿಸಲು ಮತ್ತು ದಿನನಿತ್ಯದ ವಸ್ತುಗಳ ಹಿಂದಿನ ಕಥೆಗಳನ್ನು ಅನ್ವೇಷಿಸಲು ಕೊಠಡಿಗಳಲ್ಲಿ ಒಂದನ್ನು ಟ್ಯಾಪ್ ಮಾಡಿ.";
@@ -125,29 +130,31 @@
         var delay = 0.3;
         var index = 0;
 
-        // English words
+        // English block
+        var enBlock = document.createElement("span");
+        enBlock.className = "lang-block";
         english.split(" ").forEach(function(word) {
           var span = document.createElement("span");
           span.className = "word";
           span.textContent = word + " ";
           span.style.animationDelay = (index * delay) + "s";
-          container.appendChild(span);
+          enBlock.appendChild(span);
           index++;
         });
+        container.appendChild(enBlock);
 
-        // Line break between English and Kannada
-        var br = document.createElement("br");
-        container.appendChild(br);
-
-        // Kannada words — continue delay sequence after English
+        // Kannada block — continues delay after English finishes
+        var knBlock = document.createElement("span");
+        knBlock.className = "lang-block";
         kannada.split(" ").forEach(function(word) {
           var span = document.createElement("span");
           span.className = "word";
           span.textContent = word + " ";
           span.style.animationDelay = (index * delay) + "s";
-          container.appendChild(span);
+          knBlock.appendChild(span);
           index++;
         });
+        container.appendChild(knBlock);
       }
 
       function playDoorSound() {
