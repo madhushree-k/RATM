@@ -44,7 +44,6 @@
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="Room9.html">&lt; Previous Room</a>
-      <a href="Room1.html">Next Room &gt;</a>
     </div>
   </nav>
   <div class="room-hero">
@@ -92,6 +91,9 @@
   <script>
     var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target);}});},{threshold:0.1});
     document.querySelectorAll('.fade-up').forEach(function(el,i){el.style.transitionDelay=(i*0.06)+'s';obs.observe(el);});
-  </script>
+  
+      // Tell index.html this room was reached (for visited chain tracking)
+      (function(){ try { var h = parseInt(sessionStorage.getItem('highestRoom')||'0'); var r = 10; if(r > h) sessionStorage.setItem('highestRoom', r); } catch(e){} })();
+</script>
 </body>
 </html>

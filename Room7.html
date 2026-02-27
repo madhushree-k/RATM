@@ -114,6 +114,9 @@
     function toggleStep(btn){var item=btn.closest('.step-item');var isOpen=item.classList.contains('open');document.querySelectorAll('.step-item').forEach(function(el){el.classList.remove('open');});if(!isOpen)item.classList.add('open');}
     var obs=new IntersectionObserver(function(e){e.forEach(function(x){if(x.isIntersecting){x.target.classList.add('visible');obs.unobserve(x.target);}});},{threshold:0.1});
     document.querySelectorAll('.fade-up').forEach(function(el,i){el.style.transitionDelay=(i*0.06)+'s';obs.observe(el);});
-  </script>
+  
+      // Tell index.html this room was reached (for visited chain tracking)
+      (function(){ try { var h = parseInt(sessionStorage.getItem('highestRoom')||'0'); var r = 7; if(r > h) sessionStorage.setItem('highestRoom', r); } catch(e){} })();
+</script>
 </body>
 </html>
