@@ -30,6 +30,10 @@
         transition: opacity 0.4s ease;
       }
 
+      @media (max-width: 767px) {
+        .overlay-image { display: none !important; }
+      }
+
       /* ── Hotspots ── */
       .hotspot {
         position: absolute;
@@ -195,9 +199,247 @@
         line-height: 1.75;
         opacity: 0.85;
       }
+
+      /* ══════════════════════════════════════
+         MOBILE VIEW  (max-width: 767px)
+         Hides the map entirely, shows a grid
+      ══════════════════════════════════════ */
+      @media (max-width: 767px) {
+        /* hide everything map-related */
+        .image-container { display: none !important; }
+
+        /* show mobile grid */
+        .mobile-grid-view { display: block !important; }
+      }
+
+      /* hidden by default (desktop) */
+      .mobile-grid-view { display: none; }
+
+      .mobile-grid-view .mobile-header {
+        background: #8C1B07;
+        padding: 1.4rem 1.2rem 1rem;
+        text-align: center;
+        color: #fff;
+      }
+
+      .mobile-grid-view .mobile-header h1 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        margin: 0 0 0.2rem;
+        letter-spacing: 0.03em;
+      }
+
+      .mobile-intro {
+        margin: 1rem 1rem 0.5rem;
+        background: rgba(255, 200, 50, 0.88);
+        color: #3a2000;
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        font-size: 0.95rem;
+        line-height: 1.7;
+        padding: 0.8em 1em;
+        border-radius: 4px;
+      }
+
+      .mobile-intro .mi-kn {
+        border-top: 1px solid rgba(58,32,0,0.2);
+        margin-top: 0.5em;
+        padding-top: 0.5em;
+      }
+
+      .mobile-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.85rem;
+        padding: 1rem;
+      }
+
+      .mobile-card {
+        background: #FFF7CC;
+        border-radius: 6px;
+        overflow: hidden;
+        text-decoration: none;
+        color: #3a2000;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+        transition: transform 0.18s ease, box-shadow 0.18s ease;
+        display: flex;
+        flex-direction: column;
+        position: relative;
+      }
+
+      .mobile-card:active {
+        transform: scale(0.97);
+        box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+      }
+
+      .mobile-card.visited {
+        opacity: 0.45;
+        filter: grayscale(80%);
+      }
+
+      .mobile-card .card-icon {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        background: #FFF7CC;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15%;
+      }
+
+      .mobile-card .card-icon img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        display: block;
+      }
+
+      .mobile-card .card-label {
+        padding: 0.5rem 0.6rem 0.55rem;
+        background: #FFF7CC;
+        border-top: 2px solid #8C1B07;
+        flex: 1;
+      }
+
+      .mobile-card .card-title {
+        font-size: 0.82rem;
+        font-weight: 700;
+        line-height: 1.3;
+        color: #3a2000;
+      }
+
+      /* visited tick badge */
+      .mobile-card .visited-badge {
+        display: none;
+        position: absolute;
+        top: 0.4rem; right: 0.4rem;
+        background: rgba(100,100,100,0.75);
+        color: #fff;
+        border-radius: 50%;
+        width: 22px; height: 22px;
+        font-size: 0.75rem;
+        align-items: center;
+        justify-content: center;
+      }
+      .mobile-card.visited .visited-badge { display: flex; }
+
     </style>
   </head>
   <body>
+
+    <!-- ══ MOBILE GRID VIEW ══ -->
+    <div class="mobile-grid-view" id="mobileGridView">
+      <div class="mobile-header">
+        <h1>Beneath the Green Canopy</h1>
+      </div>
+      <div class="mobile-intro">
+        <div>Tap on one of the objects to explore the stories behind them.</div>
+        <div class="mi-kn">ಒಂದು ವಸ್ತುವಿನ ಮೇಲೆ ಟ್ಯಾಪ್ ಮಾಡಿ ಅವುಗಳ ಹಿಂದಿನ ಕಥೆಗಳನ್ನು ಅನ್ವೇಷಿಸಿ.</div>
+      </div>
+      <div class="mobile-grid" id="mobileGrid">
+      <a class="mobile-card" id="mc1" href="Room1.html" data-room="1" onclick="mobileMarkVisited(1)">
+        <span class="visited-badge">&#10003;</span>
+        <div class="card-icon">
+          <img src="Images/Room_1_circle_icon.png" alt="The Magical Coconut &amp; Sacred Cradle">
+        </div>
+        <div class="card-label">
+          <div class="card-title-en">The Magical Coconut &amp; Sacred Cradle</div>
+          <div class="card-title-kn">ಮಾಂತ್ರಿಕ ತೆಂಗಿನಕಾಯಿ ಮತ್ತು ಪವಿತ್ರ ತೊಟ್ಟಿಲು</div>
+        </div>
+      </a>
+      <a class="mobile-card" id="mc2" href="Room2.html" data-room="2" onclick="mobileMarkVisited(2)">
+        <span class="visited-badge">&#10003;</span>
+        <div class="card-icon">
+          <img src="Images/Room_2_circle_icon.png" alt="Feeding Time!">
+        </div>
+        <div class="card-label">
+          <div class="card-title-en">Feeding Time!</div>
+          <div class="card-title-kn">ಆಹಾರ ನೀಡುವ ಸಮಯ!</div>
+        </div>
+      </a>
+      <a class="mobile-card" id="mc3" href="Room3.html" data-room="3" onclick="mobileMarkVisited(3)">
+        <span class="visited-badge">&#10003;</span>
+        <div class="card-icon">
+          <img src="Images/Room_3_circle_icon.png" alt="Not Just Any Chicken!">
+        </div>
+        <div class="card-label">
+          <div class="card-title-en">Not Just Any Chicken!</div>
+          <div class="card-title-kn">ಯಾವುದೋ ಕೋಳಿಯಲ್ಲ!</div>
+        </div>
+      </a>
+      <a class="mobile-card" id="mc4" href="Room4.html" data-room="4" onclick="mobileMarkVisited(4)">
+        <span class="visited-badge">&#10003;</span>
+        <div class="card-icon">
+          <img src="Images/Room_4_circle_icon.png" alt="The Balu — A Rooster's Sword">
+        </div>
+        <div class="card-label">
+          <div class="card-title-en">The Balu — A Rooster's Sword</div>
+          <div class="card-title-kn">ಬಾಲು — ಹುಂಜದ ಕತ್ತಿ</div>
+        </div>
+      </a>
+      <a class="mobile-card" id="mc5" href="Room5.html" data-room="5" onclick="mobileMarkVisited(5)">
+        <span class="visited-badge">&#10003;</span>
+        <div class="card-icon">
+          <img src="Images/Room_5_circle_icon.png" alt="The Lady's Knife — Symbol of Power">
+        </div>
+        <div class="card-label">
+          <div class="card-title-en">The Lady's Knife — Symbol of Power</div>
+          <div class="card-title-kn">ಮಹಿಳೆಯರ ಚಾಕು — ಶಕ್ತಿಯ ಸಂಕೇತ</div>
+        </div>
+      </a>
+      <a class="mobile-card" id="mc6" href="Room6.html" data-room="6" onclick="mobileMarkVisited(6)">
+        <span class="visited-badge">&#10003;</span>
+        <div class="card-icon">
+          <img src="Images/Room_6_circle_icon.png" alt="The Sprouted Coconut's Second Life">
+        </div>
+        <div class="card-label">
+          <div class="card-title-en">The Sprouted Coconut's Second Life</div>
+          <div class="card-title-kn">ಮೊಳಕೆಯೊಡೆದ ತೆಂಗಿನಕಾಯಿಯ ಎರಡನೇ ಜೀವನ</div>
+        </div>
+      </a>
+      <a class="mobile-card" id="mc7" href="Room7.html" data-room="7" onclick="mobileMarkVisited(7)">
+        <span class="visited-badge">&#10003;</span>
+        <div class="card-icon">
+          <img src="Images/Room_7_circle_icon.png" alt="The Sout — Coconut Shell Ladle">
+        </div>
+        <div class="card-label">
+          <div class="card-title-en">The Sout — Coconut Shell Ladle</div>
+          <div class="card-title-kn">ಸೌಟ್ — ತೆಂಗಿನಕಾಯಿ ಚಿಪ್ಪಿನ ಲ್ಯಾಡಲ್</div>
+        </div>
+      </a>
+      <a class="mobile-card" id="mc8" href="Room8.html" data-room="8" onclick="mobileMarkVisited(8)">
+        <span class="visited-badge">&#10003;</span>
+        <div class="card-icon">
+          <img src="Images/Room_8_circle_icon.png" alt="The Coconut Shell Ash Solution">
+        </div>
+        <div class="card-label">
+          <div class="card-title-en">The Coconut Shell Ash Solution</div>
+          <div class="card-title-kn">ತೆಂಗಿನ ಚಿಪ್ಪಿನ ಬೂದಿ ಪರಿಹಾರ</div>
+        </div>
+      </a>
+      <a class="mobile-card" id="mc9" href="Room9.html" data-room="9" onclick="mobileMarkVisited(9)">
+        <span class="visited-badge">&#10003;</span>
+        <div class="card-icon">
+          <img src="Images/Room_9_circle_icon.png" alt="Good Spirits &amp; Evil Spirits">
+        </div>
+        <div class="card-label">
+          <div class="card-title-en">Good Spirits &amp; Evil Spirits</div>
+          <div class="card-title-kn">ಒಳ್ಳೆಯ ಆತ್ಮಗಳು ಮತ್ತು ದುಷ್ಟ ಆತ್ಮಗಳು</div>
+        </div>
+      </a>
+      <a class="mobile-card" id="mc10" href="Room10.html" data-room="10" onclick="mobileMarkVisited(10)">
+        <span class="visited-badge">&#10003;</span>
+        <div class="card-icon">
+          <img src="Images/Room_10_circle_icon.png" alt="The Sacred Circle of Life">
+        </div>
+        <div class="card-label">
+          <div class="card-title-en">The Sacred Circle of Life</div>
+          <div class="card-title-kn">ಜೀವನದ ಪವಿತ್ರ ವೃತ್ತ</div>
+        </div>
+      </a>
+      </div>
+    </div>
+    <!-- ══ END MOBILE GRID VIEW ══ -->
+
 
     <a href="#"><img src="Images/overlay_image.jpg" alt="Overlay Image" class="overlay-image" id="overlayImage" onclick="hideOverlay();"></a>
 
@@ -461,6 +703,26 @@
         document.getElementById('completionPopup').classList.remove('visible');
       }
 
+
+      // ── Mobile grid visited state ──
+      function mobileMarkVisited(roomNum) {
+        markVisited(roomNum);
+        var card = document.getElementById("mc" + roomNum);
+        if (card) card.classList.add("visited");
+      }
+
+      function mobileRestoreVisited() {
+        var visited = getVisited();
+        var highest = getHighest();
+        var first = visited.length > 0
+          ? visited.reduce(function(a,b){ return b<a?b:a; }, 99)
+          : 0;
+        for (var r = first; r <= highest; r++) {
+          var card = document.getElementById("mc" + r);
+          if (card) card.classList.add("visited");
+        }
+      }
+
       window.addEventListener("load", function() {
         attachHotspotListeners();
         attachInactivityListeners();
@@ -471,6 +733,7 @@
           overlay.style.display = "none";
           startIntroMessage();
           restoreVisited();
+          mobileRestoreVisited();
           updateLabels();
           resetInactivityTimer();
         } else {
